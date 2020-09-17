@@ -84,3 +84,750 @@ Migrating to CreateTasks (20200917173252)
   ↳ bin/rails:9
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.7ms)[0m  [1m[32mINSERT INTO "tasks" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2020-09-17 17:52:00.093557"], ["updated_at", "2020-09-17 17:52:00.093557"]]
+  [1m[35m (30.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2020-09-17 19:22:24 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/wilromeo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/wilromeo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.2.4.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/wilromeo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.2.4.4/lib/rails/templates/rails/welcome/index.html.erb (4.4ms)
+Completed 200 OK in 32ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-09-17 19:23:43 +0100
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/wilromeo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered tasks/index.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (Missing partial layouts/_task with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/wilromeo/Bureau/TasksApp/app/views"
+):
+    1: 
+    2: <%=render 'layouts/task'%>
+    3: <div class="container">
+    4: <h3>Tasks List</h3>
+    5:   <%@tasks.each do |task|%>
+  
+app/views/tasks/index.html.erb:2:in `_app_views_tasks_index_html_erb__363160795354373804_47440600141820'
+Started GET "/" for ::1 at 2020-09-17 19:25:04 +0100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/wilromeo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered tasks/index.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 3.1ms)
+
+
+  
+ActionView::Template::Error (Missing partial layouts/_tasks with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/wilromeo/Bureau/TasksApp/app/views"
+):
+    1: 
+    2: <%=render 'layouts/tasks'%>
+    3: <div class="container">
+    4: <h3>Tasks List</h3>
+    5:   <%@tasks.each do |task|%>
+  
+app/views/tasks/index.html.erb:2:in `_app_views_tasks_index_html_erb__814442024533633332_47227638166740'
+Started GET "/" for ::1 at 2020-09-17 19:25:06 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered tasks/index.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial layouts/_tasks with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/wilromeo/Bureau/TasksApp/app/views"
+):
+    1: 
+    2: <%=render 'layouts/tasks'%>
+    3: <div class="container">
+    4: <h3>Tasks List</h3>
+    5:   <%@tasks.each do |task|%>
+  
+app/views/tasks/index.html.erb:2:in `_app_views_tasks_index_html_erb__814442024533633332_47227635055700'
+Started GET "/" for ::1 at 2020-09-17 19:26:43 +0100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/wilromeo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered tasks/index.html.erb within layouts/application (8.3ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 2.5ms)
+
+
+  
+ActionView::Template::Error (Missing partial layouts/_task with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/wilromeo/Bureau/TasksApp/app/views"
+):
+    1: 
+    2: <%=render'layouts/task'%>
+    3: <div class="container">
+    4: <h3>Tasks List</h3>
+    5:   <%@tasks.each do |task|%>
+  
+app/views/tasks/index.html.erb:2:in `_app_views_tasks_index_html_erb___2502807185205470118_47060412489260'
+Started GET "/" for ::1 at 2020-09-17 19:29:09 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/wilromeo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered tasks/index.html.erb within layouts/application (6.9ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (Missing partial layouts/_task with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/wilromeo/Bureau/TasksApp/app/views"
+):
+    1: 
+    2: <%=render'layouts/task'%>
+    3: <div class="container">
+    4: <h3>Tasks List</h3>
+    5:   <%@tasks.each do |task|%>
+  
+app/views/tasks/index.html.erb:2:in `_app_views_tasks_index_html_erb__1421609173688169519_47445961087860'
+Started GET "/" for ::1 at 2020-09-17 19:33:21 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/wilromeo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (0.7ms)
+  [1m[36mTask Load (38.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL[0m
+  ↳ app/views/tasks/index.html.erb:5
+  Rendered tasks/index.html.erb within layouts/application (44.7ms)
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 41.3ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERREUR:  la colonne tasks.project_id n'existe pas
+LINE 1: SELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS ...
+                                            ^
+: SELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL):
+    2: <%=render'layouts/task'%>
+    3: <div class="container">
+    4: <h3>Tasks List</h3>
+    5:   <%@tasks.each do |task|%>
+    6:     <div class="task_list">
+    7:       <%=link_to " #{task.name}", task_path(task.id),:class=>"fas fa-folder-open"%>
+    8:     </div>
+  
+app/views/tasks/index.html.erb:5:in `_app_views_tasks_index_html_erb__2280496010069260011_70206781147780'
+Started GET "/" for ::1 at 2020-09-17 19:43:06 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/wilromeo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (0.8ms)
+  [1m[36mTask Load (1.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL[0m
+  ↳ app/views/tasks/index.html.erb:5
+  Rendered tasks/index.html.erb within layouts/application (9.8ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 3.3ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERREUR:  la colonne tasks.project_id n'existe pas
+LINE 1: SELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS ...
+                                            ^
+: SELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL):
+    2: <%=render 'layouts/task'%>
+    3: <div class="container">
+    4: <h3>Tasks List</h3>
+    5:   <%@tasks.each do |task|%>
+    6:     <div class="task_list">
+    7:       <%=link_to " #{task.name}", task_path(task.id),:class=>"fas fa-folder-open"%>
+    8:     </div>
+  
+app/views/tasks/index.html.erb:5:in `_app_views_tasks_index_html_erb___14974347371881959_70196782004900'
+Started POST "/__web_console/repl_sessions/f52241d54c90bc8829576290f66303b3/trace" for ::1 at 2020-09-17 19:43:23 +0100
+Started POST "/__web_console/repl_sessions/f52241d54c90bc8829576290f66303b3/trace" for ::1 at 2020-09-17 19:44:27 +0100
+Started GET "/" for ::1 at 2020-09-17 19:46:56 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/wilromeo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (0.6ms)
+  [1m[36mTask Load (1.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL[0m
+  ↳ app/views/tasks/index.html.erb:5
+  Rendered tasks/index.html.erb within layouts/application (8.2ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 4.5ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERREUR:  la colonne tasks.project_id n'existe pas
+LINE 1: SELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS ...
+                                            ^
+: SELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL):
+    2: <%=render 'layouts/task'%>
+    3: <div class="container">
+    4: <h3>Tasks List</h3>
+    5:   <%@tasks.each do |task|%>
+    6:     <div class="task_list">
+    7:       <%=link_to " #{task.name}", task_path(task.id),:class=>"fas fa-folder-open"%>
+    8:     </div>
+  
+app/views/tasks/index.html.erb:5:in `_app_views_tasks_index_html_erb__3210927619480303237_47193074484420'
+Started POST "/__web_console/repl_sessions/0569510bb5c582660d20a096169f4694/trace" for ::1 at 2020-09-17 19:47:00 +0100
+Started GET "/" for ::1 at 2020-09-17 19:48:29 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/wilromeo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (0.5ms)
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL[0m
+  ↳ app/views/tasks/index.html.erb:5
+  Rendered tasks/index.html.erb within layouts/application (7.8ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 3.2ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERREUR:  la colonne tasks.project_id n'existe pas
+LINE 1: SELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS ...
+                                            ^
+: SELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL):
+    2: <%=render 'layouts/task'%>
+    3: <div class="container">
+    4: <h3>Tasks List</h3>
+    5:   <%@tasks.each do |task|%>
+    6:     <div class="task_list">
+    7:       <%=link_to " #{task.name}", task_path(task.id),:class=>"fas fa-folder-open"%>
+    8:     </div>
+  
+app/views/tasks/index.html.erb:5:in `_app_views_tasks_index_html_erb___1086383505518699544_47380787389900'
+Started GET "/" for ::1 at 2020-09-17 19:49:27 +0100
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/wilromeo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (1.9ms)
+  [1m[36mTask Load (4.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL[0m
+  ↳ app/views/tasks/index.html.erb:5
+  Rendered tasks/index.html.erb within layouts/application (13.2ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 8.5ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERREUR:  la colonne tasks.project_id n'existe pas
+LINE 1: SELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS ...
+                                            ^
+: SELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL):
+    2: <%=render 'layouts/task'%>
+    3: <div class="container">
+    4: <h3>Tasks List</h3>
+    5:   <%@tasks.each do |task|%>
+    6:     <div class="task_list">
+    7:       <%=link_to " #{task.name}", task_path(task.id),:class=>"fas fa-folder-open"%>
+    8:     </div>
+  
+app/views/tasks/index.html.erb:5:in `_app_views_tasks_index_html_erb___1222670187265603681_47190854742420'
+Started GET "/" for ::1 at 2020-09-17 20:11:28 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/wilromeo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (2.5ms)
+  [1m[36mTask Load (3.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL[0m
+  ↳ app/views/tasks/index.html.erb:5
+  Rendered tasks/index.html.erb within layouts/application (17.2ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 6.9ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERREUR:  la colonne tasks.project_id n'existe pas
+LINE 1: SELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS ...
+                                            ^
+: SELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL):
+    2: <%=render 'layouts/task'%>
+    3: <div class="container">
+    4: <h3>Tasks List</h3>
+    5:   <%@tasks.each do |task|%>
+    6:     <div class="task_list">
+    7:       <%=link_to " #{task.name}", task_path(task.id),:class=>"fas fa-folder-open"%>
+    8:     </div>
+  
+app/views/tasks/index.html.erb:5:in `_app_views_tasks_index_html_erb__3883168261869597801_47314793777880'
+Started GET "/" for ::1 at 2020-09-17 20:11:50 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/wilromeo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered tasks/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3749ms (Views: 3730.5ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/" for ::1 at 2020-09-17 20:12:04 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered tasks/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/task" for ::1 at 2020-09-17 20:12:16 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/task"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/tasks" for ::1 at 2020-09-17 20:12:25 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered tasks/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-09-17 21:23:15 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/wilromeo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered tasks/index.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.8ms)
+
+
+  
+SyntaxError (/home/wilromeo/Bureau/TasksApp/app/views/tasks/index.html.erb:12: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/tasks/index.html.erb:12: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/" for ::1 at 2020-09-17 21:23:51 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/wilromeo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (0.9ms)
+  [1m[36mTask Load (1.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL[0m
+  ↳ app/views/tasks/index.html.erb:5
+  Rendered tasks/index.html.erb within layouts/application (12.0ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 3.8ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERREUR:  la colonne tasks.project_id n'existe pas
+LINE 1: SELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS ...
+                                            ^
+: SELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL):
+    2: <%=render 'layouts/task'%>
+    3: <div class="container">
+    4: <h3>Tasks List</h3>
+    5:   <%@tasks.each do |task|%>
+    6:     <div class="task_list">
+    7:       <%=link_to " #{task.name}", task_path(task.id),:class=>"fas fa-folder-open"%>
+    8:     </div>
+  
+app/views/tasks/index.html.erb:5:in `_app_views_tasks_index_html_erb__504345101468605434_47431761820640'
+Started GET "/" for ::1 at 2020-09-17 21:24:56 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/wilromeo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered tasks/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 5.8ms)
+
+
+  
+SyntaxError (/home/wilromeo/Bureau/TasksApp/app/views/tasks/index.html.erb:10: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/tasks/index.html.erb:10: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/" for ::1 at 2020-09-17 21:25:35 +0100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/wilromeo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (2.1ms)
+  Rendered tasks/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 257ms (Views: 239.0ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/tasks" for ::1 at 2020-09-17 21:25:39 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (1.0ms)
+  Rendered tasks/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 26ms (Views: 23.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2020-09-17 21:25:43 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (0.6ms)
+  Rendered tasks/_form.html.erb (1294.8ms)
+  Rendered tasks/new.html.erb within layouts/application (1297.5ms)
+Completed 200 OK in 1334ms (Views: 1318.5ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/tasks/new" for ::1 at 2020-09-17 21:25:46 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (0.5ms)
+  Rendered tasks/_form.html.erb (2.8ms)
+  Rendered tasks/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 28ms (Views: 26.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2020-09-17 21:25:50 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (0.7ms)
+  Rendered tasks/_form.html.erb (2.7ms)
+  Rendered tasks/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 32ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tasks" for ::1 at 2020-09-17 21:26:00 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"blbZeRSphQV+zmuWb0ziJos/E8qiy/sC2sdGT0NT9e0sgMznsQb6CSOzDcV59fksab+QlOZ0fJyUIUjfmczTPw==", "task"=>{"name"=>"jr", "detail"=>"ld;ùl;"}, "commit"=>"Create Task"}
+Unpermitted parameters: :utf8, :authenticity_token, :task, :commit
+Completed 500 Internal Server Error in 195ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<TasksController:0x007fc3dcc31020>):
+  
+app/controllers/tasks_controller.rb:58:in `task_params'
+app/controllers/tasks_controller.rb:12:in `create'
+Started POST "/tasks" for ::1 at 2020-09-17 21:28:53 +0100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/wilromeo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"blbZeRSphQV+zmuWb0ziJos/E8qiy/sC2sdGT0NT9e0sgMznsQb6CSOzDcV59fksab+QlOZ0fJyUIUjfmczTPw==", "task"=>{"name"=>"jr", "detail"=>"ld;ùl;"}, "commit"=>"Create Task"}
+Unpermitted parameters: :utf8, :authenticity_token, :task, :commit
+Completed 500 Internal Server Error in 223ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `current_task' for #<TasksController:0x005573f2ff03c8>):
+  
+app/controllers/tasks_controller.rb:58:in `task_params'
+app/controllers/tasks_controller.rb:12:in `create'
+Started POST "/tasks" for ::1 at 2020-09-17 21:34:18 +0100
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/wilromeo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"blbZeRSphQV+zmuWb0ziJos/E8qiy/sC2sdGT0NT9e0sgMznsQb6CSOzDcV59fksab+QlOZ0fJyUIUjfmczTPw==", "task"=>{"name"=>"jr", "detail"=>"ld;ùl;"}, "commit"=>"Create Task"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tasks_controller.rb:12
+  [1m[36mTask Create (2.0ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "detail", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "jr"], ["detail", "ld;ùl;"], ["created_at", "2020-09-17 20:34:18.302355"], ["updated_at", "2020-09-17 20:34:18.302355"]]
+  ↳ app/controllers/tasks_controller.rb:12
+  [1m[35m (395.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tasks_controller.rb:12
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 426ms (ActiveRecord: 403.2ms)
+
+
+Started GET "/tasks" for ::1 at 2020-09-17 21:34:18 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (0.8ms)
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:5
+  Rendered tasks/index.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 243ms (Views: 240.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tasks" for ::1 at 2020-09-17 21:34:21 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (0.9ms)
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:5
+  Rendered tasks/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tasks" for ::1 at 2020-09-17 21:34:24 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (0.6ms)
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:5
+  Rendered tasks/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 28ms (Views: 25.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks" for ::1 at 2020-09-17 21:34:25 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (0.5ms)
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:5
+  Rendered tasks/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 25ms (Views: 22.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/new" for ::1 at 2020-09-17 21:34:27 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (0.9ms)
+  Rendered tasks/_form.html.erb (103.5ms)
+  Rendered tasks/new.html.erb within layouts/application (106.5ms)
+Completed 200 OK in 128ms (Views: 125.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tasks" for ::1 at 2020-09-17 21:34:36 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yrD7hLo822Bx/9AlK4ZuqIowmXlsxOAPVeNK+7LKLwyIZu4aH5OkbCyCtnY9P3WiaLAaJyh7Z5EbBURraFUJ3g==", "task"=>{"name"=>"bjr", "detail"=>"jr"}, "commit"=>"Create Task"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tasks_controller.rb:12
+  [1m[36mTask Create (0.9ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "detail", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "bjr"], ["detail", "jr"], ["created_at", "2020-09-17 20:34:36.854056"], ["updated_at", "2020-09-17 20:34:36.854056"]]
+  ↳ app/controllers/tasks_controller.rb:12
+  [1m[35m (536.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tasks_controller.rb:12
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 544ms (ActiveRecord: 538.6ms)
+
+
+Started GET "/tasks" for ::1 at 2020-09-17 21:34:37 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (0.6ms)
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:5
+  Rendered tasks/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 25ms (Views: 22.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tasks/3" for ::1 at 2020-09-17 21:34:44 +0100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:43
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (1.0ms)
+  Rendered tasks/show.html.erb within layouts/application (13.4ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `content' for #<Task:0x007f556c177780>):
+    2: <div class="container">
+    3: <div class="show_content">
+    4:   <h3><%=@task.name%></h3>
+    5:   <p><%=@task.content%></p>
+    6: </div>
+    7: <span class="btn btn-info"><%=link_to "edit task", edit_task_path(@task.id),data: { confirm: 'sure to edit task?'}%></span>
+    8: <span class="btn btn-danger" ><%=link_to "delete task", task_path(@task.id), method: :delete, data: { confirm:'sure to delete task?'}%></span>
+  
+app/views/tasks/show.html.erb:5:in `_app_views_tasks_show_html_erb___934028524531496345_70002431209940'
+Started GET "/tasks" for ::1 at 2020-09-17 21:34:52 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (0.8ms)
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:5
+  Rendered tasks/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 33ms (Views: 31.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks/new" for ::1 at 2020-09-17 21:35:11 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (0.8ms)
+  Rendered tasks/_form.html.erb (2.4ms)
+  Rendered tasks/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 32ms (Views: 30.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tasks" for ::1 at 2020-09-17 21:35:39 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vPze9FCB3XQLqMLlIHtSdz2J4T0IZYUj2qklNeiytPj+Kstq9S6ieFbVpLY2wkl93wliY0zaAr2UTyulMi2SKg==", "task"=>{"name"=>"toi la", "detail"=>"toi la toi la  toi la  toi la  toi la  toi la  toi la "}, "commit"=>"Create Task"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tasks_controller.rb:12
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "detail", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "toi la"], ["detail", "toi la toi la  toi la  toi la  toi la  toi la  toi la "], ["created_at", "2020-09-17 20:35:39.238466"], ["updated_at", "2020-09-17 20:35:39.238466"]]
+  ↳ app/controllers/tasks_controller.rb:12
+  [1m[35m (119.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tasks_controller.rb:12
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 126ms (ActiveRecord: 119.7ms)
+
+
+Started GET "/tasks" for ::1 at 2020-09-17 21:35:39 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (0.8ms)
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:5
+  Rendered tasks/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 35ms (Views: 32.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tasks/4" for ::1 at 2020-09-17 21:35:40 +0100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:43
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (0.8ms)
+  Rendered tasks/show.html.erb within layouts/application (8.6ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `content' for #<Task:0x007f55693366a0>):
+    2: <div class="container">
+    3: <div class="show_content">
+    4:   <h3><%=@task.name%></h3>
+    5:   <p><%=@task.content%></p>
+    6: </div>
+    7: <span class="btn btn-info"><%=link_to "edit task", edit_task_path(@task.id),data: { confirm: 'sure to edit task?'}%></span>
+    8: <span class="btn btn-danger" ><%=link_to "delete task", task_path(@task.id), method: :delete, data: { confirm:'sure to delete task?'}%></span>
+  
+app/views/tasks/show.html.erb:5:in `_app_views_tasks_show_html_erb___934028524531496345_70002465242600'
+Started GET "/tasks/4" for ::1 at 2020-09-17 21:37:02 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/wilromeo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:43
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (1.2ms)
+  Rendered tasks/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 265ms (Views: 232.9ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/tasks/4/edit" for ::1 at 2020-09-17 21:37:11 +0100
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:43
+  Rendering tasks/edit.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (1.3ms)
+  Rendered tasks/_form.html.erb (130.7ms)
+  Rendered tasks/edit.html.erb within layouts/application (137.5ms)
+Completed 200 OK in 165ms (Views: 161.6ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/tasks/4" for ::1 at 2020-09-17 21:37:13 +0100
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oL8fM4FhcbYdmi821D1QgBr7IaTcBhyKvrrAf6HqvRtaueygUK6uF8RWtVSbXmS/JV68s+pwX129byB1H2agrg==", "task"=>{"name"=>"toi la", "detail"=>"toi la toi la  toi la  toi la  toi la  toi la  toi la "}, "commit"=>"Update Task", "id"=>"4"}
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:43
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tasks_controller.rb:26
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tasks_controller.rb:26
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 6ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/tasks" for ::1 at 2020-09-17 21:37:13 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (0.8ms)
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:5
+  Rendered tasks/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 30ms (Views: 28.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/tasks/4" for ::1 at 2020-09-17 21:37:14 +0100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:43
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (1.3ms)
+  Rendered tasks/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 29ms (Views: 26.1ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/tasks/4" for ::1 at 2020-09-17 21:37:18 +0100
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"79qpgtf6/pqVskEB7CXpFyMFEOwGC3pd9YB1TWNIZj0ibnCCzTHqiMtKLV+kk8hqbkVYFqZ/ANLlacRQ9ntx2g==", "id"=>"4"}
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:43
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tasks_controller.rb:34
+  [1m[36mTask Destroy (0.4ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/tasks_controller.rb:34
+  [1m[35m (44.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tasks_controller.rb:34
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 54ms (ActiveRecord: 45.3ms)
+
+
+Started GET "/tasks" for ::1 at 2020-09-17 21:37:19 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (0.8ms)
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:5
+  Rendered tasks/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 38ms (Views: 36.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tasks/3" for ::1 at 2020-09-17 21:37:20 +0100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:43
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (0.7ms)
+  Rendered tasks/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 33ms (Views: 30.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks" for ::1 at 2020-09-17 21:37:22 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (0.4ms)
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:5
+  Rendered tasks/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 28ms (Views: 25.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tasks/new" for ::1 at 2020-09-17 21:37:24 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (0.7ms)
+  Rendered tasks/_form.html.erb (1.7ms)
+  Rendered tasks/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks" for ::1 at 2020-09-17 21:37:25 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (0.9ms)
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:5
+  Rendered tasks/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 29ms (Views: 26.5ms | ActiveRecord: 0.6ms)
+
+
