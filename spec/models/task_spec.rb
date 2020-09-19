@@ -1,14 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Task, type: :model do
-  #pending "add some examples to (or delete) #{__FILE__}"
+  pending "add some examples to (or delete) #{__FILE__}"
 end
 require 'rails_helper'
 RSpec.describe 'Task model function', type: :model do
   describe 'Validation test' do
     context 'If the task title is empty' do
       it 'It is hard to Validation' do
-        task = Task.new(content: 'Failure test')
+        task = Task.new(details: 'Failure test')
         expect(task).not_to be_valid
       end
     end
@@ -21,7 +21,7 @@ RSpec.describe 'Task model function', type: :model do
   end
   context "if the task details are empty" do
     it 'validation is caught' do
-      task =Task.new(name:'tast', content:'content')
+      task =Task.new(name:'tast', details:'content')
       expect(task).to be_valid
     end
   end
