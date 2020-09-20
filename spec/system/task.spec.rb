@@ -1,31 +1,37 @@
 require 'rails_helper'
-
-RSpec.describe Task, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
-  require 'rails_helper'
-  describe 'task model features', type: :model do
-    describe 'Test validation' do
-      context 'If the task title is empty' do
-        it 'gets caught in the validation' do
-          task = Task.new(name: '', detail: 'failure test')
-          expect(task).not_to be_valid
-        end
-    end
-
-    context 'if the task details are empty' do
-        it 'gets caught in the validation' do
-          # Here's what you need to know
-          task = Task.new(name: 'Test from details', detail: '')
-          expect(task).not_to be_valid
-        end
-      end
-      context 'if the title and details of the task are described in detail' do
-        it 'validation passes' do
-          # Here's what you need to know
-          task = Task.new(name: 'hogehoge', detail: 'gehogeho')
-          expect(task).to be_valid
-        end
+RSpec.describe 'Task management function', type: :system do
+  describe 'New creation function' do
+    context 'When creating a new task' do
+      it 'The created task is displayed' do
+        #creer un enregistrement avec factory
+        task = FactoryBot.create(:task, name:'task', detail:'content')
+        #après la création rediriger vers l'index
+        visit tasks_path
+        expect(page).to have_detail 'task'
       end
     end
-  end  
+  end
+  describe 'List display function' do
+    context 'When transitioning to the list screen' do
+      it 'The created task list is displayed' do
+        task = FactoryBot.create(:task, name:'task', detail:'content')
+        #après la création rediriger vers l'index
+        visit tasks_path
+        #binding.irb
+        current_path
+        Task.count
+        page.html
+        expect(page).to have_detail 'task'
+      end
+    end
+  end
+  describe 'Detailed display function' do
+     context 'When transitioned to any task details screen' do
+       it 'The content of the relevant task is displayed' do
+         visit tasks_path
+         click_on 'task'
+         expect(page).to have_detail 'task'
+       end
+     end
+  end
 end

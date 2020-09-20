@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Task, type: :model do
-  #pending "add some examples to (or delete) #{__FILE__}"
+  pending "add some examples to (or delete) #{__FILE__}"
 end
 require 'rails_helper'
 RSpec.describe 'Task model function', type: :model do
@@ -12,7 +12,7 @@ RSpec.describe 'Task model function', type: :model do
         expect(task).to be_valid
       end
     end
-    context "if the task detail are empty" do
+    context "if the task details are empty" do
       it 'validation is caught' do
         task =Task.new(name:'tast')
         expect(task).to be_valid
@@ -21,7 +21,7 @@ RSpec.describe 'Task model function', type: :model do
   end
   context "if the task details are empty" do
     it 'validation is caught' do
-      task =Task.new(name:'tast', detail:'details')
+      task =Task.new(name:'tast', detail:'content')
       expect(task).to be_valid
     end
   end

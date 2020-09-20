@@ -3046,3 +3046,204 @@ Change:
 To:
   >> Coffee::Rails::TemplateHandler.call(template, source)
  (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+Started GET "/" for ::1 at 2020-09-20 21:52:23 +0100
+  [1m[35m (48.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 1.1ms | Allocations: 206)
+  [1m[36mTask Load (2.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:5
+  Rendered tasks/index.html.erb within layouts/application (Duration: 40.4ms | Allocations: 6244)
+Completed 200 OK in 759ms (Views: 711.7ms | ActiveRecord: 15.6ms | Allocations: 300644)
+
+
+Started GET "/tasks" for ::1 at 2020-09-20 21:52:28 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.5ms | Allocations: 71)
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:5
+  Rendered tasks/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1086)
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.9ms | Allocations: 13797)
+
+
+Started GET "/tasks/new" for ::1 at 2020-09-20 21:52:31 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.4ms | Allocations: 71)
+  Rendered tasks/_form.html.erb (Duration: 325.1ms | Allocations: 197384)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 327.2ms | Allocations: 197828)
+Completed 200 OK in 347ms (Views: 344.4ms | ActiveRecord: 0.0ms | Allocations: 210685)
+
+
+Started POST "/tasks" for ::1 at 2020-09-20 21:52:44 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2gfP8QybkuEF8pq9W9dmYqcXKEoEkR5vV/15JWhz5UGY0dpvqTTt7ViP/O5Nbn1oRZerFEAumfEZG3e1suzDkw==", "task"=>{"name"=>"toto", "detail"=>"totototototototototototototototototototto"}, "commit"=>"Create Task"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tasks_controller.rb:12:in `create'
+  [1m[36mTask Create (183.2ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "detail", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "toto"], ["detail", "totototototototototototototototototototto"], ["created_at", "2020-09-20 20:52:44.282454"], ["updated_at", "2020-09-20 20:52:44.282454"]]
+  ↳ app/controllers/tasks_controller.rb:12:in `create'
+  [1m[35m (23.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tasks_controller.rb:12:in `create'
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 218ms (ActiveRecord: 206.5ms | Allocations: 3253)
+
+
+Started GET "/tasks" for ::1 at 2020-09-20 21:52:44 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.5ms | Allocations: 67)
+  [1m[36mTask Load (1.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:5
+  Rendered tasks/index.html.erb within layouts/application (Duration: 8.4ms | Allocations: 1023)
+Completed 200 OK in 35ms (Views: 29.1ms | ActiveRecord: 1.3ms | Allocations: 13704)
+
+
+Started GET "/tasks/14" for ::1 at 2020-09-20 21:52:48 +0100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:44:in `set_task'
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.3ms | Allocations: 71)
+  Rendered tasks/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 436)
+Completed 200 OK in 50ms (Views: 33.2ms | ActiveRecord: 0.5ms | Allocations: 15945)
+
+
+Started DELETE "/tasks/14" for ::1 at 2020-09-20 21:52:54 +0100
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FgLFisS2UKBk1gEvg3JVrUWO0kzPvkTV5165ek8z1bvbthyK3n1EsjoubXHLxHTQCM6atm/KPlr3twhn2gDCXA==", "id"=>"14"}
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:44:in `set_task'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tasks_controller.rb:35:in `destroy'
+  [1m[36mTask Destroy (0.4ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = $1[0m  [["id", 14]]
+  ↳ app/controllers/tasks_controller.rb:35:in `destroy'
+  [1m[35m (460.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tasks_controller.rb:35:in `destroy'
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 471ms (ActiveRecord: 461.3ms | Allocations: 3150)
+
+
+Started GET "/tasks" for ::1 at 2020-09-20 21:52:54 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.3ms | Allocations: 65)
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:5
+  Rendered tasks/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 974)
+Completed 200 OK in 22ms (Views: 19.5ms | ActiveRecord: 0.6ms | Allocations: 13688)
+
+

@@ -1,6 +1,10 @@
-class ChangeColumnNullTasks < ActiveRecord::Migration[5.2]
+class CreateTasks < ActiveRecord::Migration[5.2]
   def change
-    change_column :tasks, :name, :string, null: false
-    change_column :tasks, :detail, :text, null: false
+    create_table :tasks do |t|
+      t.string :name, precence:true, null:false ,uniqueness: true, length:{ maximum:60 }
+      t.text :detail,precence:true,null:false
+
+      t.timestamps
+    end
   end
 end
