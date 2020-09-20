@@ -38,7 +38,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.8'
   gem 'factory_bot_rails'
   gem 'spring-commands-rspec'
   gem 'faker'
@@ -59,7 +59,7 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15', '< 4.0'
-  gem 'selenium-webdriver'
+  #gem 'selenium-webdriver'
   gem 'webdrivers'
   # Easy installation and use of chromedriver to run system tests with Chrome
   #gem 'chromedriver-helper'
