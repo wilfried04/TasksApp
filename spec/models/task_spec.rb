@@ -1,28 +1,30 @@
 require 'rails_helper'
 
 RSpec.describe Task, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
-require 'rails_helper'
-RSpec.describe 'Task model function', type: :model do
-  describe 'Validation test' do
-    context 'If the task title is empty' do
-      it 'It is hard to Validation' do
-        task = Task.new(detail: 'Failure test')
-        expect(task).to be_valid
+  require 'rails_helper'
+  describe 'task model features', type: :model do
+    describe 'Test validation' do
+      context 'If the task title is empty' do
+        it 'gets caught in the validation' do
+          task = Task.new(name: '', detail: 'failure test')
+          expect(task).to be_valid
+        end
+    end
+    
+    context 'if the task details are empty' do
+        it 'gets caught in the validation' do
+          # Here's what you need to know
+          task = Task.new(name: 'Test from details', detail: '')
+          expect(task).to be_valid
+        end
+      end
+      context 'if the title and details of the task are described in detail' do
+        it 'validation passes' do
+          # Here's what you need to know
+          task = Task.new(name: 'toi', detail: 'moi')
+          expect(task).to be_valid
+        end
       end
     end
-    context "if the task details are empty" do
-      it 'validation is caught' do
-        task =Task.new(name:'tast')
-        expect(task).to be_valid
-      end
-    end
-  end
-  context "if the task details are empty" do
-    it 'validation is caught' do
-      task =Task.new(name:'tast', detail:'content')
-      expect(task).to be_valid
-    end
-  end
+  end  
 end

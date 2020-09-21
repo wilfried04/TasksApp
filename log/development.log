@@ -3247,3 +3247,164 @@ Processing by TasksController#index as HTML
 Completed 200 OK in 22ms (Views: 19.5ms | ActiveRecord: 0.6ms | Allocations: 13688)
 
 
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+Started GET "/tasks/8" for ::1 at 2020-09-20 22:05:15 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:44:in `set_task'
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.6ms | Allocations: 206)
+  Rendered tasks/show.html.erb within layouts/application (Duration: 3.7ms | Allocations: 824)
+Completed 200 OK in 239ms (Views: 213.8ms | ActiveRecord: 6.5ms | Allocations: 297099)
+
+
+Started GET "/tasks" for ::1 at 2020-09-20 22:05:18 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.4ms | Allocations: 71)
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:5
+  Rendered tasks/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1166)
+Completed 200 OK in 34ms (Views: 31.2ms | ActiveRecord: 0.5ms | Allocations: 13957)
+
+
+Started GET "/tasks/8" for ::1 at 2020-09-20 22:05:20 +0100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:44:in `set_task'
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.2ms | Allocations: 65)
+  Rendered tasks/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 244)
+Completed 200 OK in 32ms (Views: 28.0ms | ActiveRecord: 0.5ms | Allocations: 13459)
+
+
+Started DELETE "/tasks/8" for ::1 at 2020-09-20 22:05:22 +0100
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4PXi3zifGS2uResiouxeLwa2dL9TCefXHqZvbbF+VHwtQTvfIlQNP/C9h3zqWn9SS/Y8RfN9nVgOT95wJE1Dmw==", "id"=>"8"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:44:in `set_task'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tasks_controller.rb:35:in `destroy'
+  [1m[36mTask Destroy (0.4ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = $1[0m  [["id", 8]]
+  ↳ app/controllers/tasks_controller.rb:35:in `destroy'
+  [1m[35m (533.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tasks_controller.rb:35:in `destroy'
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 544ms (ActiveRecord: 534.4ms | Allocations: 3216)
+
+
+Started GET "/tasks" for ::1 at 2020-09-20 22:05:23 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.3ms | Allocations: 65)
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:5
+  Rendered tasks/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 929)
+Completed 200 OK in 28ms (Views: 26.3ms | ActiveRecord: 0.4ms | Allocations: 13618)
+
+
+Started GET "/tasks/12" for ::1 at 2020-09-20 22:05:25 +0100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:44:in `set_task'
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.4ms | Allocations: 65)
+  Rendered tasks/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 242)
+Completed 200 OK in 23ms (Views: 19.2ms | ActiveRecord: 0.5ms | Allocations: 13438)
+
+
+Started GET "/tasks" for ::1 at 2020-09-20 22:05:30 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.3ms | Allocations: 65)
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:5
+  Rendered tasks/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 928)
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.4ms | Allocations: 13567)
+
+
+Started GET "/tasks/12" for ::1 at 2020-09-20 22:05:31 +0100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:44:in `set_task'
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.3ms | Allocations: 65)
+  Rendered tasks/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 242)
+Completed 200 OK in 33ms (Views: 31.0ms | ActiveRecord: 0.4ms | Allocations: 13442)
+
+
+Started GET "/tasks" for ::1 at 2020-09-20 22:05:33 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.2ms | Allocations: 65)
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:5
+  Rendered tasks/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 938)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.5ms | Allocations: 13593)
+
+
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "detail", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "propre"], ["detail", "lavage"], ["created_at", "2020-09-21 11:43:37.616403"], ["updated_at", "2020-09-21 11:43:37.616403"]]
+  [1m[35m (374.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "detail", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "propre"], ["detail", "vidange"], ["created_at", "2020-09-21 11:45:07.212806"], ["updated_at", "2020-09-21 11:45:07.212806"]]
+  [1m[35m (29.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "detail", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "ange"], ["detail", "prince"], ["created_at", "2020-09-21 11:45:27.757244"], ["updated_at", "2020-09-21 11:45:27.757244"]]
+  [1m[35m (730.8ms)[0m  [1m[35mCOMMIT[0m
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "detail", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "fruits"], ["detail", "ornage"], ["created_at", "2020-09-21 12:00:35.423735"], ["updated_at", "2020-09-21 12:00:35.423735"]]
+  [1m[35m (14.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.7ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "detail", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "moteur"], ["detail", "moto"], ["created_at", "2020-09-21 12:00:53.658442"], ["updated_at", "2020-09-21 12:00:53.658442"]]
+  [1m[35m (521.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "detail", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "colier"], ["detail", "bijoux"], ["created_at", "2020-09-21 14:11:23.926250"], ["updated_at", "2020-09-21 14:11:23.926250"]]
+  [1m[35m (54.0ms)[0m  [1m[35mCOMMIT[0m
