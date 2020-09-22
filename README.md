@@ -1,41 +1,54 @@
 # App schema
-Model : Task
+### Model : Task
 "Task.new(task_name:string task_details:text task_statut:string task_priority:string)"
 
-belongs_to:user has_many:labels
+belongs_to:user
+has_many:labels
 
-Colums	Description
-task_name	string
-task_detail	string
-task_statut	string
-task_priority	string
+| Colums | Description |
+| --- | ----------- |
+| task_name | string |
+| task_detail | string |
+| task_statut | string |
+| task_priority | string |
 
-## Model User
-"User.new(name:string email:string password_digest:string image:text)" has_many:tasks
+### Model User
+"User.new(name:string email:string password_digest:string image:text)"
+has_many:tasks
+| Colums | Description |
+| --- | ----------- |
+| name | string |
+| email | string |
+| image | text |
+| password_digest | string |
 
-Colums	Description
-name	string
-email	string
-image	text
-password_digest	string
+### Model label
+"Label.new(label_name:string)"
+has_many:tasks
+| Colums | Description |
+| --- | ----------- |
+| name | string |
 
-## Model label
-"Label.new(label_name:string)" has_many:tasks
+# Heroku deployement 
+"loggin to heroku"
+<code> $ heroku login</code>
 
-Colums	Description
-name	string
+"conmpile the assets of projet, verify to be in the projet repositoring"
+<code>$ rails assets:precompile RAILS_ENV=production</code>
 
-# Heroku deployement
-"loggin to heroku" $ heroku login
+"push the projet in github, verify the repositoring exist on github"
+<code> $ git add -A</code>
+<code> $ git commit -m "projet commit"</code>
 
-"conmpile the assets of projet, verify to be in the projet repositoring" $ rails assets:precompile RAILS_ENV=production
+"create the application on heroku"
+<code>$ heroku create
+  
+"Add Heroku build pack"
+<code>$ heroku buildpacks:set heroku/ruby</code>
+<code> $ heroku buildpacks:add --index 1 heroku/nodejs</code>
 
-"push the projet in github, verify the repositoring exist on github" $ git add -A $ git commit -m "projet commit"
+"deply to heroku"
+<code>$ git push heroku master </code>
 
-"create the application on heroku" $ heroku create
-
-"Add Heroku build pack" $ heroku buildpacks:set heroku/ruby $ heroku buildpacks:add --index 1 heroku/nodejs
-
-"deply to heroku" $ git push heroku master
-
-"Migrate database" $ heroku run rails db:migrate
+"Migrate database"
+<code>$ heroku run rails db:migrate </code>
