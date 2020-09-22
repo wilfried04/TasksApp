@@ -1,6 +1,10 @@
 require_relative 'boot'
 
 require 'rails/all'
+#config.time_zone = 'Tokyo'
+#config.active_record.default_timezone = :local
+# Require the gems listed in Gemfile, including any gems
+# you've limited to :test, :development, or :production.
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -10,6 +14,9 @@ module TasksApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
+    config.time_zone = 'UTC'
+    config.active_record.default_timezone = :local
+
 
       config.generators do |g|
         g.test_framework :rspec,
