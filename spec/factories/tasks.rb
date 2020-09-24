@@ -3,8 +3,8 @@ FactoryBot.define do
     name { "MyString" }
     detail { "MyText" }
     end_time { "2020-09-24" }
-    create_at { "2020-09-24" }
-    update_at { "2020-09-24" }
+    create_at { "2020-09-24 16:27:47" }
+    update_at { "2020-09-24 16:27:47" }
     statut { 1 }
     priority { 1 }
   end
