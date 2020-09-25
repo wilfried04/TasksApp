@@ -1,11 +1,11 @@
 <div class="content">
-  <h3>THE TASKS</h3>
+  <h2>THE TASKS</h2>
   <div class="search">
     <%= form_with(url: tasks_path, method: :get, local: true) do |f| %>
-      <%= f.label(:name, 'name') %>
-      <%= f.text_field :name %>
+      <%= f.label(:name, 'Name:') %>
+      <%= f.text_field :Name %>
       <%= f.label:statut %>
-      <%= f.select :statut, [ ["not_started", 0 ], ["started", 1 ], ["completed", 2 ] ]%>
+      <%= f.select :statut, [ ["Started", 0 ], ["Not_started", 1 ], ["Completed", 2 ] ]%>
       <%= f.submit'search',:class=>"btn btn-dark" %>
     <% end %>
   </div>
