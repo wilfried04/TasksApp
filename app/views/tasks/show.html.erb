@@ -3,7 +3,7 @@
   <%=render 'layouts/task'%>
 <div class="show_detail">
   <h4><%=@task.name%></h4>
-  <p><%=@task.content%></p>
+  <p><%=@task.detail%></p>
 </div>
   <span class="btn btn-lignt"><%=link_to "edit task", edit_task_path(@task.id),data: { confirm: 'sure to edit task?'}%></span>
   <span class="btn btn-dark" ><%=link_to "delete task", task_path(@task.id), method: :delete, data: { confirm:'sure to delete task?'}%></span>
