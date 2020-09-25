@@ -10,48 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_24_152747) do
+ActiveRecord::Schema.define(version: 2020_09_25_141558) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "labelings", force: :cascade do |t|
-    t.bigint "task_id"
-    t.bigint "label_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["label_id"], name: "index_labelings_on_label_id"
-    t.index ["task_id"], name: "index_labelings_on_task_id"
-  end
-
-  create_table "labels", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "task", force: :cascade do |t|
-    t.string "name", null: false
-    t.text "detail", null: false
-    t.date "end_time", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "tasks", force: :cascade do |t|
-    t.string "title", null: false
-    t.text "content", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.datetime "time_limit", default: "2020-03-31 19:00:00", null: false
-    t.integer "completed"
+    t.string "name"
+    t.text "detail"
+    t.date "deadline"
+    t.integer "statut"
     t.integer "priority"
-
-  create_table "users", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "email", null: false
-    t.string "password_digest", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
+
 end
