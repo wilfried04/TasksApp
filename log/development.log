@@ -7375,3 +7375,96 @@ Processing by TasksController#index as HTML
 Completed 200 OK in 72ms (Views: 68.8ms | ActiveRecord: 1.5ms | Allocations: 31188)
 
 
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+Started GET "/" for ::1 at 2020-09-25 22:00:41 +0100
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#index as HTML
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:12
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:24
+  Rendered tasks/index.html.erb within layouts/application (Duration: 183.6ms | Allocations: 207760)
+  Rendered layouts/_header.html.erb (Duration: 3.6ms | Allocations: 2722)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 82)
+Completed 200 OK in 655ms (Views: 630.9ms | ActiveRecord: 7.3ms | Allocations: 532816)
+
+
+Started GET "/" for ::1 at 2020-09-25 22:02:00 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:12
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:24
+  Rendered tasks/index.html.erb within layouts/application (Duration: 15.5ms | Allocations: 4847)
+  Rendered layouts/_header.html.erb (Duration: 2.4ms | Allocations: 2341)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 77)
+Completed 200 OK in 51ms (Views: 48.5ms | ActiveRecord: 0.9ms | Allocations: 23699)
+
+
+Started GET "/" for ::1 at 2020-09-25 22:02:30 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:12
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:24
+  Rendered tasks/index.html.erb within layouts/application (Duration: 16.5ms | Allocations: 4826)
+  Rendered layouts/_header.html.erb (Duration: 5.2ms | Allocations: 2340)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 77)
+Completed 200 OK in 52ms (Views: 49.7ms | ActiveRecord: 0.7ms | Allocations: 23653)
+
+
+Started GET "/" for ::1 at 2020-09-25 22:06:37 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:12
+  Rendered tasks/index.html.erb within layouts/application (Duration: 19.9ms | Allocations: 6120)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.7ms | Allocations: 7886)
+
+
+  
+ActionView::Template::Error (undefined method `edit' for #<Task:0x00007fb515cedd40>):
+    16:       <td><%=task.deadline%></td>
+    17:       <td><%=task.statut%></td>
+    18:       <td><%=task.priority%></td>
+    19:       <td><%=task.edit%></td>
+    20:       <td><%=task.show%></td>
+    21:       <td><%=task.destroy%></td>
+    22:     </tr>
+  
+app/views/tasks/index.html.erb:19
+app/views/tasks/index.html.erb:12
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+Started GET "/" for ::1 at 2020-09-25 23:04:57 +0100
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:12
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:24
+  Rendered tasks/index.html.erb within layouts/application (Duration: 221.9ms | Allocations: 207632)
+  Rendered layouts/_header.html.erb (Duration: 2.5ms | Allocations: 2783)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 82)
+Completed 200 OK in 482ms (Views: 463.4ms | ActiveRecord: 7.9ms | Allocations: 521466)
+
+

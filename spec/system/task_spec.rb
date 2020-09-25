@@ -49,9 +49,9 @@ RSpec.describe 'Task Management Function', type: :system do
     context 'If you enter the end time and press the create button' do
       it 'Data is stored.' do
         visit new_task_path
-        select '2020', from: 'task_end_time_1i'
-        select '五月', from: 'task_end_time_2i'
-        select '1', from: 'task_end_time_3i'
+        select '2020', from: 'task_deadline_1i'
+        select '五月', from: 'task_deadline_2i'
+        select '1', from: 'task_deadline_3i'
         click_on 'commit'
         expect(page).to have_content '2020'
         expect(page).to have_content '五月'
@@ -59,7 +59,7 @@ RSpec.describe 'Task Management Function', type: :system do
       end
     end
     context 'If you click on Sort by end time' do
-      it 'Tasks are arranged in descending order by end time' do
+      it 'Tasks are arranged in descending order by deadline' do
         visit tasks_path
         click_on 'deadilne'
         task_list = all('.tbody tr')
@@ -67,7 +67,7 @@ RSpec.describe 'Task Management Function', type: :system do
         expect(page).to have_content 'Task1'
       end
     end
-    context 'When tasks are arranged in descending order of creation date and time' do
+    context 'When tasks are arranged in descending order of creation date deadline' do
       it 'New task is displayed at the top' do
         visit tasks_path
         task_list = all('.task_list')
@@ -98,7 +98,7 @@ RSpec.describe 'Task Management Function', type: :system do
       it 'Data is stored.' do
         visit new_task_path
         fill_in 'task_name', with: 'Task1'
-        fill_in 'task_content', with: 'content1'
+        fill_in 'task_detail', with: 'content1'
         select 'high', from: 'task_priority'
         select 'completed', from: 'task_statut'
         click_on 'commit'
@@ -113,7 +113,7 @@ RSpec.describe 'Task Management Function', type: :system do
         task = FactoryBot.create(:task)
         visit task_path(task.id)
         expect(page).to have_content 'Task1'
-        expect(page).to have_content 'content1'
+        expect(page).to have_content 'detail1'
       end
     end
   end
