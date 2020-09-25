@@ -1894,3 +1894,99 @@ ActionView::Template::Error (uninitialized constant Label):
   
 app/views/tasks/index.html.erb:11
 app/views/tasks/index.html.erb:5
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+Started GET "/" for ::1 at 2020-09-25 13:44:57 +0100
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered tasks/index.html.erb within layouts/application (Duration: 12.1ms | Allocations: 5473)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms | Allocations: 7525)
+
+
+  
+ActionView::Template::Error (uninitialized constant Label):
+     8:   <%= f.label(:completed, '状態') %>
+     9:   <%= f.select :completed, [ ["未着手", 0 ], ["着手中", 1 ], ["完了", 2 ] ] %>
+    10:   <%= f.label(:task_id, 'ラベル') %>
+    11:   <%= f.select :task_id, Label.pluck(:name, :id) %>
+    12:   <%= f.submit('検索') %>
+    13: <% end %>
+    14: 
+  
+app/views/tasks/index.html.erb:11
+app/views/tasks/index.html.erb:5
+Started GET "/" for ::1 at 2020-09-25 13:45:00 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered tasks/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 4185)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 5006)
+
+
+  
+ActionView::Template::Error (uninitialized constant Label):
+     8:   <%= f.label(:completed, '状態') %>
+     9:   <%= f.select :completed, [ ["未着手", 0 ], ["着手中", 1 ], ["完了", 2 ] ] %>
+    10:   <%= f.label(:task_id, 'ラベル') %>
+    11:   <%= f.select :task_id, Label.pluck(:name, :id) %>
+    12:   <%= f.submit('検索') %>
+    13: <% end %>
+    14: 
+  
+app/views/tasks/index.html.erb:11
+app/views/tasks/index.html.erb:5
+Started GET "/" for ::1 at 2020-09-25 13:45:00 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered tasks/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 4171)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 4984)
+
+
+  
+ActionView::Template::Error (uninitialized constant Label):
+     8:   <%= f.label(:completed, '状態') %>
+     9:   <%= f.select :completed, [ ["未着手", 0 ], ["着手中", 1 ], ["完了", 2 ] ] %>
+    10:   <%= f.label(:task_id, 'ラベル') %>
+    11:   <%= f.select :task_id, Label.pluck(:name, :id) %>
+    12:   <%= f.submit('検索') %>
+    13: <% end %>
+    14: 
+  
+app/views/tasks/index.html.erb:11
+app/views/tasks/index.html.erb:5
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+Started GET "/" for ::1 at 2020-09-25 13:45:53 +0100
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 2540.4ms | Allocations: 587503)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 2552.0ms | Allocations: 589723)
+Completed 500 Internal Server Error in 2568ms (ActiveRecord: 0.0ms | Allocations: 591772)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    12:     </tr>
+    13:   </thead>
+    14:   <tbody>
+    15:       <%@tasks.each do |task|%>
+    16:     <tr>
+    17:       <td><%=link_to "#{task.name}", task_path(task.id)%></td>
+    18:       <td><%=task.content%></td>
+  
+app/views/tasks/index.html.erb:15
