@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2020_09_25_141558) do
     t.integer "priority"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["name", "statut"], name: "index_tasks_on_name_and_statut"
   end
 
 end

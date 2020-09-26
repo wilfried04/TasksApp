@@ -6,6 +6,7 @@
       <th scope="col"> Deadilne</th>
       <th scope="col">Statuts</th>
       <th scope="col">Priority</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -16,7 +17,14 @@
       <td><%=task.deadline%></td>
       <td><%=task.statut%></td>
       <td><%=task.priority%></td>
+          <td>        <!--btn-sm réduit à la taille minmale le bouton-->
+            <%= link_to "See", task_path(task.id), :class => "btn btn-outline-success"%>  
+            <%= link_to "Edit", edit_task_path(task.id),  :class => "btn btn-outline-primary"%>
+            <%= link_to "Delete", task_path(task.id), method: :delete, data: {confirm: 'Are you sure?'},  :class => "btn btn-outline-danger"%> 
+          </td>
     </tr>
+      
+      
     <% end %>
   </tbody>
 </table>

@@ -110,7 +110,7 @@ RSpec.describe 'Task Management Function', type: :system do
   describe 'Task Details Screen' do
     context 'When you move to any task detail screen' do
       it 'You will be redirected to a page with the content of the relevant task.' do
-        task = FactoryBot.create(:task)
+        tasks = FactoryBot.create(:task)
         visit task_path(task.id)
         expect(page).to have_content 'Task1'
         expect(page).to have_content 'detail1'
