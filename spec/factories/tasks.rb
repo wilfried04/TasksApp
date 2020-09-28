@@ -1,29 +1,25 @@
-# The statement "Use FactoryBot
+# 「FactoryBotを使用します」という記述
 FactoryBot.define do
-  # Name the test data you are creating "task
-  # (You can name the test data to match the name of a real class and it will automatically create test data for that class.
+
+  # 作成するテストデータの名前を「task」とします
+  # （実際に存在するクラス名と一致するテストデータの名前をつければ、そのクラスのテストデータを自動で作成します）
   factory :task do
-    name { 'Default title 1 created in the Factory' }
-    detail { 'Default content 1 created by Factory' }
-    deadline {DateTime.now}
-    status {'completed'}
-    priority {'high'}
+    name { 'factory_name_1' }
+    content { 'factory_詳細1' }
+    priority { '低' }
   end
-  # Name the test data to be created as "second_task
-  # (To name a class name that does not exist, specify the option "Test data for this class")
+
+  # 作成するテストデータの名前を「second_task」とします
+  # （存在しないクラス名の名前をつける場合、オプションで「このクラスのテストデータにしてください」と指定します）
   factory :second_task, class: Task do
-    name { 'Default title 2 created in the Factory' }
-    detail { 'Default content 2 created by Factory' }
-    deadline {DateTime.tomorrow}
-    status {'not_yet'}
-    priority {'middle'}
+    name {'factory_name_2'}
+    content { 'factory_詳細2'}
+    priority { '中' }
   end
 
   factory :third_task, class: Task do
-    name { 'Default title 3 created in the Factory' }
-    detail { 'Default content 3 created by Factory' }
-    deadline {DateTime.now.since(5.days)}
-    status {'in_progress'}
-    priority {'low'}
+    name {'factory_name_3'}
+    content { 'factory_詳細3'}
+    priority { '高' }
   end
-end 
+end

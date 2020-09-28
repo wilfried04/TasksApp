@@ -1,120 +1,75 @@
-
 require 'rails_helper'
-RSpec.describe 'Task Management Function', type: :system do
-  before do
-    FactoryBot.create(:task)
-    FactoryBot.create(:second_task)
+
+# このRSpec.featureの右側に、「タスク管理機能」のように、テスト項目の名称を書きます（do ~ endでグループ化されています）
+RSpec.feature "タスク管理機能", type: :feature do
+  # scenario（itのalias）の中に、確認したい各項目のテストの処理を書きます。
+  background do
+  # あらかじめタスク一覧のテストで使用するためのタスクを二つ作成する
+  @task1=FactoryBot.create(:task)
+  @task2=FactoryBot.create(:second_task)
+  @task3=FactoryBot.create(:third_task)
   end
-  describe 'Reordering by Priority' do
-    context 'If you clicked on Sort by Priority' do
-      it 'They are listed in order of priority.' do
-        visit tasks_path
-        click_on 'priority'
-          task_list = all('.priority_high')
-          expect(page).to have_content 'high'
-          expect(page).to have_content 'medium'
-        end
-      end
-    end
-  describe 'search function' do
-    context 'If you search by name' do
-      it 'You can search by name.' do
-        visit tasks_path
-        fill_in "name", with: 'Task1'
-        select "completed", from: 'statut'
-        click_button 'search'
-        expect(page).to have_content 'Task1'
-      end
-    end
-    context 'If you search by statut' do
-      it 'You can search by statut.' do
-        visit tasks_path
-        select "completed", from: 'statut'
-        click_button 'search'
-        expect(page).to have_content 'completed'
-      end
-    end
-    context 'If you search by title and statut' do
-    it 'You can search by title and statut.' do
-        visit tasks_path
-        fill_in "name", with: 'Task1'
-        select "completed", from: 'statut'
-        click_button 'search'
-        expect(page).to have_content 'Task1'
-        expect(page).to have_content 'completed'
-      end
-    end
+
+  scenario "タスク一覧のテスト" do
+  # tasks_pathにvisitする（タスク一覧ページに遷移する）
+    visit tasks_path
+  # タスク一覧ページに、テストコードで作成したはずのデータ（記述）がhave_contentされているか（含まれているか）を確認（期待）するコードを書く
+    expect(page).to have_content 'factory_name_1'
+    expect(page).to have_content 'factory_詳細1'
   end
-  describe 'Reordering by End time' do
-    context 'If you enter the end time and press the create button' do
-      it 'Data is stored.' do
-        visit new_task_path
-        select '2020', from: 'task_deadline_1i'
-        select '五月', from: 'task_deadline_2i'
-        select '1', from: 'task_deadline_3i'
-        click_on 'commit'
-        expect(page).to have_content '2020'
-        expect(page).to have_content '五月'
-        expect(page).to have_content '1'
-      end
-    end
-    context 'If you click on Sort by end time' do
-      it 'Tasks are arranged in descending order by deadline' do
-        visit tasks_path
-        click_on 'deadilne'
-        task_list = all('.tbody tr')
-        expect(page).to have_content 'Task2'
-        expect(page).to have_content 'Task1'
-      end
-    end
-    context 'When tasks are arranged in descending order of creation date deadline' do
-      it 'New task is displayed at the top' do
-        visit tasks_path
-        task_list = all('.task_list')
-        expect(page).to have_content 'Task2'
-        expect(page).to have_content 'Task1'
-      
-      end
-   end
+
+  scenario "タスク作成のテスト" do
+  # new_task_pathにvisitする（タスク登録ページに遷移する）
+    visit new_task_path
+  # タスクのタイトルと内容をそれぞれfill_in（入力）する
+    fill_in 'タスク名',with:'factory_name_1'
+    fill_in '詳細',with:'factory_詳細1'
+
+  #「登録する」というvalue（表記文字）のあるボタンをclick_onする（クリックする）
+    click_on '登録する'
+  # clickで登録されたはずの情報が、タスク詳細ページに表示されているかを確認する
+  # タスク詳細ページに、テストコードで作成したはずのデータ（記述）がhave_contentされているか（含まれているか）を確認（期待）するコードを書く
+    expect(page).to have_content 'factory_name_1' 
+    expect(page).to have_content 'factory_詳細1'
   end
-  describe 'Task List screen' do
-    context 'If you create a task' do
-      it 'Displays the tasks you have already created'do
-        visit tasks_path
-        expect(page).to have_content 'Task1'
-      end
-    end
-    context 'If you create multiple tasks' do
-      it 'Tasks are arranged in descending order of creation date' do
-        visit tasks_path
-        task_list = all('.task_list')
-        expect(page).to have_content 'Task2'
-        expect(page).to have_content 'Task1'
-      end
-    end
+
+  scenario "タスク詳細のテスト" do
+  # タスク詳細ページに遷移
+    visit task_path(@task1)
+  # タスク詳細ページに、テストコードで作成したはずのデータ（記述）がhave_contentされているか（含まれているか）を確認（期待）するコードを書く
+    expect(page).to have_content 'factory_name_1'
+    expect(page).to have_content 'factory_詳細1'
   end
-  describe 'Task registration screen' do
-    context 'When you fill in the required fields and press the create button' do
-      it 'Data is stored.' do
-        visit new_task_path
-        fill_in 'task_name', with: 'Task1'
-        fill_in 'task_detail', with: 'content1'
-        select 'high', from: 'task_priority'
-        select 'completed', from: 'task_statut'
-        click_on 'commit'
-        expect(page).to have_content 'Task1'
-        expect(page).to have_content 'detail1'
-      end
-    end
+
+  scenario "タスクが作成日時の降順に並んでいるかのテスト" do
+  #タスクが作成日時の降順に並んでいる
+   expect(Task.order("updated_at DESC").map(&:id))
   end
-  describe 'Task Details Screen' do
-    context 'When you move to any task detail screen' do
-      it 'You will be redirected to a page with the content of the relevant task.' do
-        tasks = FactoryBot.create(:task)
-        visit task_path(task.id)
-        expect(page).to have_content 'Task1'
-        expect(page).to have_content 'detail1'
-      end
-    end
+
+  scenario "タスクが終了期限の降順に並んでいるかのテスト" do
+   visit tasks_path(sort_expired: "true")
+  #タスクが終了期限の降順に並んでいる
+   expect(Task.order("deadline DESC").map(&:id))
+  end
+
+  scenario "「タスク名」で検索のテスト" do
+    visit tasks_path
+    #「タスク名」に「fa」と入力
+    fill_in 'タスク名', with: 'fa'
+    #save_and_open_page
+    #タスク名で「fa」を含むタスクを検索
+    expect(page).to have_content 'factory_name_1'
+  end
+
+  scenario "タスクが優先順位の高い順に並んでいるかのテスト" do
+  #テストデータを3つ用意
+  #「優先順位が高い順に並べ替えをする」リンクへ
+    visit tasks_path(sort_priority: "true")
+    
+    #save_and_open_page
+  # 該当の詳細画面をクリック
+    all('table td')[6].click_link '詳細画面'
+  # 該当の文字列が含まれている
+    expect(page).to have_content 'factory_name_3'
   end
 end
