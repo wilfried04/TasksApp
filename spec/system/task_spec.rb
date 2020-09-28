@@ -75,13 +75,12 @@ RSpec.describe 'Task Management Function', type: :system do
     end
     context 'When tasks are arranged in descending order of creation date and time' do
       it 'New task is displayed at the top' do
-        #task = FactoryBot.create(:task, name:'title1', content:'content1')
-        #task = FactoryBot.create(:task, name:'title2', content:'content2')
+
         visit tasks_path
         task_list = all('.task_list')
         expect(page).to have_content 'Task2'
         expect(page).to have_content 'Task1'
-        #expect(page).to have_content 'task'
+        expect(page).to have_content 'task'
       end
    end
   end
@@ -103,27 +102,27 @@ RSpec.describe 'Task Management Function', type: :system do
       end
     end
   end
-  describe 'Task registration screen' do
+  describe 'Task registration screen' do  
     context 'When you fill in the required fields and press the create button' do
       it 'Data is stored.' do
         visit new_task_path
         fill_in 'task_name', with: 'Task1'
-        fill_in 'task_content', with: 'content1'
+        fill_in 'task_content', with: 'detail1'
         select 'high', from: 'task_priority'
         select 'completed', from: 'task_statut'
         click_on 'commit'
         expect(page).to have_content 'Task1'
-        expect(page).to have_content 'content1'
+        expect(page).to have_content 'detail1'
       end
     end
   end
   describe 'Task Details Screen' do
     context 'When you move to any task detail screen' do
-      it 'You will be redirected to a page with the content of the relevant task.' do
+      it 'You will be redirected to a page with the detail of the relevant task.' do
         task = FactoryBot.create(:task)
         visit task_path(task.id)
         expect(page).to have_content 'Task1'
-        expect(page).to have_content 'content1'
+        expect(page).to have_content 'detail1'
       end
     end
   end

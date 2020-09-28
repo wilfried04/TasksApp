@@ -8497,3 +8497,155 @@ To:
  (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
 An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
 Creating scope :not_started. Overwriting existing method Task.not_started.
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+Started GET "/tasks/new" for ::1 at 2020-09-28 12:44:36 +0100
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (Duration: 227.5ms | Allocations: 201675)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 229.0ms | Allocations: 202082)
+  Rendered layouts/_header.html.erb (Duration: 3.0ms | Allocations: 2325)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 82)
+Completed 200 OK in 481ms (Views: 451.4ms | ActiveRecord: 6.0ms | Allocations: 519343)
+
+
+Started GET "/tasks" for ::1 at 2020-09-28 12:44:42 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:13
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:32
+  Rendered tasks/index.html.erb within layouts/application (Duration: 12.9ms | Allocations: 3360)
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 2099)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 38ms (Views: 33.0ms | ActiveRecord: 2.0ms | Allocations: 20798)
+
+
+Started GET "/tasks/new" for ::1 at 2020-09-28 12:44:44 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (Duration: 6.9ms | Allocations: 2361)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 7.3ms | Allocations: 2423)
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 2092)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 41ms (Views: 39.8ms | ActiveRecord: 0.0ms | Allocations: 19479)
+
+
+Started GET "/tasks?utf8=%E2%9C%93&Name=rose&statut=0&commit=search" for ::1 at 2020-09-28 12:44:49 +0100
+Processing by TasksController#index as HTML
+  Parameters: {"utf8"=>"✓", "Name"=>"rose", "statut"=>"0", "commit"=>"search"}
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."statut" = $1 LIMIT $2 OFFSET $3[0m  [["statut", "0"], ["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:13
+  Rendered tasks/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1569)
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 2093)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.3ms | Allocations: 18750)
+
+
+Started DELETE "/tasks/14" for ::1 at 2020-09-28 12:44:55 +0100
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"AaPcfLKRhFNXKrL2BWC4qA1FcO484hj2V+FxhVdefzLMFwV8qFqQQQnS3qhN1pnVQAU4FJyWYnlHCMCYwm1o1Q==", "id"=>"14"}
+  [1m[36mTask Load (1.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:56:in `set_task'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tasks_controller.rb:47:in `destroy'
+  [1m[36mTask Destroy (18.3ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = $1[0m  [["id", 14]]
+  ↳ app/controllers/tasks_controller.rb:47:in `destroy'
+  [1m[35m (23.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tasks_controller.rb:47:in `destroy'
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 54ms (ActiveRecord: 43.2ms | Allocations: 3314)
+
+
+Started GET "/tasks" for ::1 at 2020-09-28 12:44:55 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:13
+  Rendered tasks/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1302)
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 2092)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 53ms (Views: 50.7ms | ActiveRecord: 0.5ms | Allocations: 18505)
+
+
+Started DELETE "/tasks/16" for ::1 at 2020-09-28 12:44:59 +0100
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"E5x2iXyrjYCBxFJ53GjibyjrT+CmME4VC1RZ2wT+S0PeKK+JZmCZkt88PieU3sMSZasHGgZENJobvejGkc1cpA==", "id"=>"16"}
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:56:in `set_task'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tasks_controller.rb:47:in `destroy'
+  [1m[36mTask Destroy (0.4ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = $1[0m  [["id", 16]]
+  ↳ app/controllers/tasks_controller.rb:47:in `destroy'
+  [1m[35m (198.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tasks_controller.rb:47:in `destroy'
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 206ms (ActiveRecord: 199.2ms | Allocations: 3150)
+
+
+Started GET "/tasks" for ::1 at 2020-09-28 12:45:00 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:13
+  Rendered tasks/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1127)
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 2093)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 32ms (Views: 30.4ms | ActiveRecord: 0.5ms | Allocations: 18323)
+
+
+Started GET "/tasks/new" for ::1 at 2020-09-28 12:45:05 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (Duration: 5.3ms | Allocations: 2359)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2420)
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 2091)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.0ms | Allocations: 19449)
+
+
+Started POST "/tasks" for ::1 at 2020-09-28 12:45:17 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"41ILUntH6kuW1lcwTUHi883hDqePVOOPwmX+dn5pa6ahhB7M3uiVR8urMWNb+Pn5L2GN+cvrZBGMg/DmpPZNdA==", "task"=>{"name"=>"toto", "detail"=>"toto", "deadline(1i)"=>"2020", "deadline(2i)"=>"9", "deadline(3i)"=>"28", "statut"=>"not_started", "priority"=>"low"}, "commit"=>"Create Task"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tasks_controller.rb:25:in `create'
+  [1m[36mTask Create (1.0ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "detail", "deadline", "statut", "priority", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "toto"], ["detail", "toto"], ["deadline", "2020-09-28"], ["statut", 0], ["priority", 0], ["created_at", "2020-09-28 12:45:17.303687"], ["updated_at", "2020-09-28 12:45:17.303687"]]
+  ↳ app/controllers/tasks_controller.rb:25:in `create'
+  [1m[35m (33.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tasks_controller.rb:25:in `create'
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 44ms (ActiveRecord: 35.0ms | Allocations: 3602)
+
+
+Started GET "/tasks" for ::1 at 2020-09-28 12:45:17 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:13
+  Rendered tasks/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1302)
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 2092)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 27ms (Views: 24.8ms | ActiveRecord: 0.5ms | Allocations: 18498)
+
+
+Started GET "/tasks" for ::1 at 2020-09-28 12:45:23 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:13
+  Rendered tasks/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1302)
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 2092)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 35ms (Views: 32.8ms | ActiveRecord: 0.4ms | Allocations: 18443)
+
+
