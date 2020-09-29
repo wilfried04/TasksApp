@@ -216,4 +216,8 @@ fr:
       default: "%d %B %Y %Hh %Mmin %Ss"
       long: "%A %d %B %Y %Hh%M"
       short: "%d %b %Hh%M"
+<<<<<<< HEAD
     pm: pm
+=======
+    pm: pm
+>>>>>>> 18124f75395e77796c072933e49e41a3ddf8c649

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -32,3 +33,15 @@
   <%= paginate @tasks %>
 </div>
 
+=======
+
+<%=render 'layouts/task'%>
+<div class="container">
+<h3>Tasks_List</h3>
+  <%@tasks.each do |task|%>
+    <div class="task_list">
+      <%=link_to " #{task.name}", task_path(task.id),:class=>"fas fa-folder-open"%>
+    </div>
+  <% end %>
+</div>
+>>>>>>> 18124f75395e77796c072933e49e41a3ddf8c649

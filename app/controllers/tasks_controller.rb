@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
     before_action :set_task, only: [:show, :edit, :update, :destroy]
+<<<<<<< HEAD
     PER = 4
     def index
   
@@ -16,12 +17,21 @@ class TasksController < ApplicationController
         @tasks=Task.all.order(created_at: :desc).page(params[:page]).per(4)
       end
   
+=======
+  
+    def index
+      @tasks = Task.all.order(created_at: :desc)
+>>>>>>> 18124f75395e77796c072933e49e41a3ddf8c649
     end
     def new
       @task = Task.new
     end
     def create
+<<<<<<< HEAD
       @task = Task.new(task_params)
+=======
+      @task = Task.new (task_params)
+>>>>>>> 18124f75395e77796c072933e49e41a3ddf8c649
       if @task.save
         flash[:success] = 'Task successfully create !'
         redirect_to tasks_path
@@ -36,9 +46,16 @@ class TasksController < ApplicationController
   
     end
     def update
+<<<<<<< HEAD
       if @task.update(task_params)
         flash[:success] = 'Task successfully update !'
         redirect_to tasks_path
+=======
+        if @task.update(task_params)
+            flash[:success] = 'Task successfully update !'
+            #redirect_to task_path(@task.id)
+            redirect_to tasks_path
+>>>>>>> 18124f75395e77796c072933e49e41a3ddf8c649
       else
         render :edit
       end
@@ -50,9 +67,18 @@ class TasksController < ApplicationController
     end
   private
     def task_params
+<<<<<<< HEAD
       params.require(:task).permit(:name,:detail,:deadline,:statut, :priority)
+=======
+      params.require(:task).permit(:name,:detail)
+>>>>>>> 18124f75395e77796c072933e49e41a3ddf8c649
     end
     def set_task
       @task = Task.find(params[:id])
     end
+<<<<<<< HEAD
   end
+=======
+  end
+  
+>>>>>>> 18124f75395e77796c072933e49e41a3ddf8c649

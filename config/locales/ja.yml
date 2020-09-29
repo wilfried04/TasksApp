@@ -203,4 +203,8 @@ ja:
       default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
+<<<<<<< HEAD
     pm: 午後
+=======
+    pm: 午後
+>>>>>>> 18124f75395e77796c072933e49e41a3ddf8c649

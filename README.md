@@ -20,6 +20,7 @@ has_many:tasks
 | name | string |
 | email | string |
 | image | text |
+| password_digest | string |
 
 ### Model label
 "Label.new(label_name:string)"
