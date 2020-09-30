@@ -6,11 +6,7 @@ fr:
  attributes:
  blog:
  title: titre
-<<<<<<< HEAD
- detail: détail
-=======
- content: détail
->>>>>>> 18124f75395e77796c072933e49e41a3ddf8c649
+ content: content
  user:
  title: titre
  name: nom

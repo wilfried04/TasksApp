@@ -1,47 +1,29 @@
-<<<<<<< HEAD
+<%=render 'layouts/top'%>
+
+
 <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col" >Tasks_Name</th>
-      <th scope="col" >Tasks_Details</th>
-      <th scope="col"> Deadilne</th>
-      <th scope="col">Statuts</th>
-      <th scope="col">Priority</th>
-      <th scope="col">Action</th>
+      <th scope="col" >Task name</th>
+      <th scope="col" >Task content</th>
+      <th scope="col"><%=link_to "deadilne", tasks_path(sort_expired: "true"), :class=>"fas fa-sort-down"%></th>
+      <th scope="col">Statut</th>
+      <th scope="col"><%=link_to "priority", tasks_path(sort_priority: "true"),:class=>"fas fa-sort-down"%></th>
     </tr>
   </thead>
   <tbody>
       <%@tasks.each do |task|%>
     <tr>
       <td><%=link_to "#{task.name}", task_path(task.id)%></td>
-      <td><%=task.detail%></td>
-      <td><%=task.deadline%></td>
+      <td><%=task.content%></td>
+      <td><%=task.end_time%></td>
       <td><%=task.statut%></td>
       <td><%=task.priority%></td>
-          <td>        <!--btn-sm réduit à la taille minmale le bouton-->
-            <%= link_to "See", task_path(task.id), :class => "btn btn-outline-success"%>  
-            <%= link_to "Edit", edit_task_path(task.id),  :class => "btn btn-outline-primary"%>
-            <%= link_to "Delete", task_path(task.id), method: :delete, data: {confirm: 'Are you sure?'},  :class => "btn btn-outline-danger"%> 
-          </td>
     </tr>
-      
-      
     <% end %>
   </tbody>
 </table>
 <div class="page">
   <%= paginate @tasks %>
 </div>
-
-=======
-
-<%=render 'layouts/task'%>
-<div class="container">
-<h3>Tasks_List</h3>
-  <%@tasks.each do |task|%>
-    <div class="task_list">
-      <%=link_to " #{task.name}", task_path(task.id),:class=>"fas fa-folder-open"%>
-    </div>
-  <% end %>
-</div>
->>>>>>> 18124f75395e77796c072933e49e41a3ddf8c649
+<%=render 'layouts/footer'%>
