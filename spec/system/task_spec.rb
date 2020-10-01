@@ -1,10 +1,11 @@
 require 'rails_helper'
-<<<<<<< HEAD
+
 RSpec.describe 'Task Management Function', type: :system do
   before do
     FactoryBot.create(:task)
     FactoryBot.create(:second_task)
   end
+
   describe 'Reordering by Priority' do
     context 'If you clicked on Sort by Priority' do
       it 'They are listed in order of priority.' do
@@ -72,30 +73,17 @@ RSpec.describe 'Task Management Function', type: :system do
         task_list = all('.tbody tr')
         expect(page).to have_content 'Task2'
         expect(page).to have_content 'Task1'
-=======
-#bundle exec rspec spec/system/task_spec.rb
-
-RSpec.describe 'Task management function', type: :system do
-  describe 'New creation function' do
-    context 'When creating a new task' do
-      it 'The created task is displayed' do
-        #creer un enregistrement avec factory
-        task = FactoryBot.create(:task, name:'task', detail:'content')
-        #après la création rediriger vers l'index
-        visit tasks_path
-        expect(page).to have_content 'task'
->>>>>>> 18124f75395e77796c072933e49e41a3ddf8c649
       end
     end
     context 'When tasks are arranged in descending order of creation date and time' do
       it 'New task is displayed at the top' do
-<<<<<<< HEAD
-
+        #task = FactoryBot.create(:task, name:'title1', content:'content1')
+        #task = FactoryBot.create(:task, name:'title2', content:'content2')
         visit tasks_path
         task_list = all('.task_list')
         expect(page).to have_content 'Task2'
         expect(page).to have_content 'Task1'
-        expect(page).to have_content 'task'
+        #expect(page).to have_content 'task'
       end
    end
   end
@@ -117,64 +105,28 @@ RSpec.describe 'Task management function', type: :system do
       end
     end
   end
-  describe 'Task registration screen' do  
+  describe 'Task registration screen' do
     context 'When you fill in the required fields and press the create button' do
       it 'Data is stored.' do
         visit new_task_path
         fill_in 'task_name', with: 'Task1'
-        fill_in 'task_content', with: 'detail1'
+        fill_in 'task_content', with: 'content1'
         select 'high', from: 'task_priority'
         select 'completed', from: 'task_statut'
         click_on 'commit'
         expect(page).to have_content 'Task1'
-        expect(page).to have_content 'detail1'
+        expect(page).to have_content 'content1'
       end
     end
   end
   describe 'Task Details Screen' do
     context 'When you move to any task detail screen' do
-      it 'You will be redirected to a page with the detail of the relevant task.' do
+      it 'You will be redirected to a page with the content of the relevant task.' do
         task = FactoryBot.create(:task)
         visit task_path(task.id)
         expect(page).to have_content 'Task1'
-        expect(page).to have_content 'detail1'
+        expect(page).to have_content 'content1'
       end
     end
   end
 end
-=======
-        task = FactoryBot.create(:task, name:'title1', detail:'content1')
-        task = FactoryBot.create(:task, name:'title2', detail:'content2')
-        visit tasks_path
-        task_list = all('.task_list')
-        expect(task_list[0]).to have_content 'title2'
-        expect(task_list[1]).to have_content 'title1'
-        #expect(page).to have_content 'task'
-      end
-   end
-  end
-  describe 'List display function' do
-    context 'When transitioning to the list screen' do
-      it 'The created task list is displayed' do
-        task = FactoryBot.create(:task, name:'task', detail:'content')
-        #après la création rediriger vers l'index
-        visit tasks_path
-        #binding.irb
-        current_path
-        Task.count
-        page.html
-        expect(page).to have_content 'task'
-      end
-    end
-  end
-  describe 'Detailed display function' do
-     context 'When transitioned to any task details screen' do
-       it 'The content of the relevant task is displayed' do
-         visit tasks_path
-         click_on 'task'
-         expect(page).to have_content 'task'
-       end
-     end
-  end
-end
->>>>>>> 18124f75395e77796c072933e49e41a3ddf8c649

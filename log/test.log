@@ -2844,3 +2844,277 @@ Processing by TasksController#new as HTML
 Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 2670)
   [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
 >>>>>>> 18124f75395e77796c072933e49e41a3ddf8c649
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+  [1m[35m (355.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "TasksApp_test"[0m
+  [1m[35m (1400.3ms)[0m  [1m[35mCREATE DATABASE "TasksApp_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "tasks" CASCADE[0m
+  [1m[35m (111.3ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" bigserial primary key, "name" character varying NOT NULL, "content" text NOT NULL, "end_time" date NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "statut" integer, "priority" integer)[0m
+  [1m[35m (63.5ms)[0m  [1m[35mCREATE  INDEX  "index_tasks_on_name_and_statut" ON "tasks"  ("name", "statut")[0m
+  [1m[35m (97.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (5.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200915104929)[0m
+  [1m[35m (11.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200909145834),
+(20200915093425),
+(20200915104106);
+
+[0m
+  [1m[35m (97.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2020-10-01 09:18:21.414936"], ["updated_at", "2020-10-01 09:18:21.414936"]]
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "775c520ebe949c02c425cd54a1ccda30a5f5cfbc"], ["created_at", "2020-10-01 09:18:21.424553"], ["updated_at", "2020-10-01 09:18:21.424553"]]
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (1.7ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Task1"], ["content", "content1"], ["end_time", "2020-05-01"], ["created_at", "2020-10-01 09:18:25.214261"], ["updated_at", "2020-10-01 09:18:25.214261"], ["statut", 2], ["priority", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.8ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Task2"], ["content", "content2"], ["end_time", "2020-05-02"], ["created_at", "2020-10-01 09:18:25.221057"], ["updated_at", "2020-10-01 09:18:25.221057"], ["statut", 2], ["priority", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/tasks" for 127.0.0.1 at 2020-10-01 09:18:29 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 2.4ms | Allocations: 1188)
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 82)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 3259)
+Completed 200 OK in 20ms (Views: 12.2ms | ActiveRecord: 0.7ms | Allocations: 5823)
+Started GET "/tasks?sort_priority=true" for 127.0.0.1 at 2020-10-01 09:18:31 +0100
+Processing by TasksController#index as HTML
+  Parameters: {"sort_priority"=>"true"}
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 1.8ms | Allocations: 441)
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."priority" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 1434)
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 0.4ms | Allocations: 2211)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Task1"], ["content", "content1"], ["end_time", "2020-05-01"], ["created_at", "2020-10-01 09:18:34.620920"], ["updated_at", "2020-10-01 09:18:34.620920"], ["statut", 2], ["priority", 2]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Task2"], ["content", "content2"], ["end_time", "2020-05-02"], ["created_at", "2020-10-01 09:18:34.623769"], ["updated_at", "2020-10-01 09:18:34.623769"], ["statut", 2], ["priority", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/tasks" for 127.0.0.1 at 2020-10-01 09:18:34 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 1.8ms | Allocations: 436)
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1003)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.4ms | Allocations: 1612)
+Started GET "/tasks?utf8=%E2%9C%93&name=Task1&statut=2&commit=search" for 127.0.0.1 at 2020-10-01 09:18:34 +0100
+Processing by TasksController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Task1", "statut"=>"2", "commit"=>"search"}
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 1.0ms | Allocations: 435)
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."name" = $1 AND "tasks"."statut" = $2 LIMIT $3 OFFSET $4[0m  [["name", "Task1"], ["statut", "2"], ["LIMIT", 4], ["OFFSET", 0]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1207)
+Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 0.8ms | Allocations: 1881)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Task1"], ["content", "content1"], ["end_time", "2020-05-01"], ["created_at", "2020-10-01 09:18:35.125225"], ["updated_at", "2020-10-01 09:18:35.125225"], ["statut", 2], ["priority", 2]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Task2"], ["content", "content2"], ["end_time", "2020-05-02"], ["created_at", "2020-10-01 09:18:35.127988"], ["updated_at", "2020-10-01 09:18:35.127988"], ["statut", 2], ["priority", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/tasks" for 127.0.0.1 at 2020-10-01 09:18:35 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 0.7ms | Allocations: 435)
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1002)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.3ms | Allocations: 1610)
+Started GET "/tasks?utf8=%E2%9C%93&name=&statut=2&commit=search" for 127.0.0.1 at 2020-10-01 09:18:35 +0100
+Processing by TasksController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"", "statut"=>"2", "commit"=>"search"}
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 0.9ms | Allocations: 435)
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."statut" = $1 LIMIT $2 OFFSET $3[0m  [["statut", "2"], ["LIMIT", 4], ["OFFSET", 0]]
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1019)
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.3ms | Allocations: 1641)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Task1"], ["content", "content1"], ["end_time", "2020-05-01"], ["created_at", "2020-10-01 09:18:36.285174"], ["updated_at", "2020-10-01 09:18:36.285174"], ["statut", 2], ["priority", 2]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Task2"], ["content", "content2"], ["end_time", "2020-05-02"], ["created_at", "2020-10-01 09:18:36.287376"], ["updated_at", "2020-10-01 09:18:36.287376"], ["statut", 2], ["priority", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/tasks" for 127.0.0.1 at 2020-10-01 09:18:36 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 1.2ms | Allocations: 435)
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1002)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.6ms | Allocations: 1610)
+Started GET "/tasks?utf8=%E2%9C%93&name=Task1&statut=2&commit=search" for 127.0.0.1 at 2020-10-01 09:18:36 +0100
+Processing by TasksController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Task1", "statut"=>"2", "commit"=>"search"}
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 1.5ms | Allocations: 435)
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."name" = $1 AND "tasks"."statut" = $2 LIMIT $3 OFFSET $4[0m  [["name", "Task1"], ["statut", "2"], ["LIMIT", 4], ["OFFSET", 0]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 969)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.7ms | Allocations: 1629)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Task1"], ["content", "content1"], ["end_time", "2020-05-01"], ["created_at", "2020-10-01 09:18:37.511303"], ["updated_at", "2020-10-01 09:18:37.511303"], ["statut", 2], ["priority", 2]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Task2"], ["content", "content2"], ["end_time", "2020-05-02"], ["created_at", "2020-10-01 09:18:37.514094"], ["updated_at", "2020-10-01 09:18:37.514094"], ["statut", 2], ["priority", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/tasks/new" for 127.0.0.1 at 2020-10-01 09:18:37 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 2.2ms | Allocations: 183)
+  Rendered tasks/_form.html.erb (Duration: 4.5ms | Allocations: 3106)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 8.6ms | Allocations: 3780)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.0ms | Allocations: 4431)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Task1"], ["content", "content1"], ["end_time", "2020-05-01"], ["created_at", "2020-10-01 09:18:40.259753"], ["updated_at", "2020-10-01 09:18:40.259753"], ["statut", 2], ["priority", 2]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Task2"], ["content", "content2"], ["end_time", "2020-05-02"], ["created_at", "2020-10-01 09:18:40.262040"], ["updated_at", "2020-10-01 09:18:40.262040"], ["statut", 2], ["priority", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/tasks" for 127.0.0.1 at 2020-10-01 09:18:40 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 1.0ms | Allocations: 439)
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1007)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.4ms | Allocations: 1618)
+Started GET "/tasks?sort_expired=true" for 127.0.0.1 at 2020-10-01 09:18:40 +0100
+Processing by TasksController#index as HTML
+  Parameters: {"sort_expired"=>"true"}
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 1.1ms | Allocations: 435)
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."end_time" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1005)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.5ms | Allocations: 1600)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Task1"], ["content", "content1"], ["end_time", "2020-05-01"], ["created_at", "2020-10-01 09:18:42.617674"], ["updated_at", "2020-10-01 09:18:42.617674"], ["statut", 2], ["priority", 2]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Task2"], ["content", "content2"], ["end_time", "2020-05-02"], ["created_at", "2020-10-01 09:18:42.619867"], ["updated_at", "2020-10-01 09:18:42.619867"], ["statut", 2], ["priority", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/tasks" for 127.0.0.1 at 2020-10-01 09:18:42 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 1.2ms | Allocations: 436)
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1003)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.6ms | Allocations: 1611)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.6ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Task1"], ["content", "content1"], ["end_time", "2020-05-01"], ["created_at", "2020-10-01 09:18:44.886754"], ["updated_at", "2020-10-01 09:18:44.886754"], ["statut", 2], ["priority", 2]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Task2"], ["content", "content2"], ["end_time", "2020-05-02"], ["created_at", "2020-10-01 09:18:44.889981"], ["updated_at", "2020-10-01 09:18:44.889981"], ["statut", 2], ["priority", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/tasks" for 127.0.0.1 at 2020-10-01 09:18:44 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 0.8ms | Allocations: 436)
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1003)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.4ms | Allocations: 1612)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Task1"], ["content", "content1"], ["end_time", "2020-05-01"], ["created_at", "2020-10-01 09:18:45.103397"], ["updated_at", "2020-10-01 09:18:45.103397"], ["statut", 2], ["priority", 2]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Task2"], ["content", "content2"], ["end_time", "2020-05-02"], ["created_at", "2020-10-01 09:18:45.106165"], ["updated_at", "2020-10-01 09:18:45.106165"], ["statut", 2], ["priority", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/tasks" for 127.0.0.1 at 2020-10-01 09:18:45 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 1.0ms | Allocations: 435)
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1002)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.3ms | Allocations: 1610)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Task1"], ["content", "content1"], ["end_time", "2020-05-01"], ["created_at", "2020-10-01 09:18:47.358297"], ["updated_at", "2020-10-01 09:18:47.358297"], ["statut", 2], ["priority", 2]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Task2"], ["content", "content2"], ["end_time", "2020-05-02"], ["created_at", "2020-10-01 09:18:47.361091"], ["updated_at", "2020-10-01 09:18:47.361091"], ["statut", 2], ["priority", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/tasks/new" for 127.0.0.1 at 2020-10-01 09:18:47 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.2ms | Allocations: 65)
+  Rendered tasks/_form.html.erb (Duration: 3.1ms | Allocations: 2290)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2449)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 2962)
+Started POST "/tasks" for 127.0.0.1 at 2020-10-01 09:18:47 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "task"=>{"name"=>"Task1", "content"=>"content1", "end_time(1i)"=>"2020", "end_time(2i)"=>"10", "end_time(3i)"=>"1", "statut"=>"completed", "priority"=>"high"}, "commit"=>"登録する"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Task1"], ["content", "content1"], ["end_time", "2020-10-01"], ["created_at", "2020-10-01 09:18:47.803709"], ["updated_at", "2020-10-01 09:18:47.803709"], ["statut", 2], ["priority", 2]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://127.0.0.1:33499/tasks
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms | Allocations: 907)
+Started GET "/tasks" for 127.0.0.1 at 2020-10-01 09:18:47 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 1.7ms | Allocations: 437)
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1061)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.4ms | Allocations: 1830)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Task1"], ["content", "content1"], ["end_time", "2020-05-01"], ["created_at", "2020-10-01 09:18:48.616361"], ["updated_at", "2020-10-01 09:18:48.616361"], ["statut", 2], ["priority", 2]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Task2"], ["content", "content2"], ["end_time", "2020-05-02"], ["created_at", "2020-10-01 09:18:48.618568"], ["updated_at", "2020-10-01 09:18:48.618568"], ["statut", 2], ["priority", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Task1"], ["content", "content1"], ["end_time", "2020-05-01"], ["created_at", "2020-10-01 09:18:48.620527"], ["updated_at", "2020-10-01 09:18:48.620527"], ["statut", 2], ["priority", 2]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/tasks/24" for 127.0.0.1 at 2020-10-01 09:18:48 +0100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.5ms | Allocations: 71)
+  Rendered tasks/show.html.erb within layouts/application (Duration: 14.4ms | Allocations: 390)
+Completed 200 OK in 18ms (Views: 15.5ms | ActiveRecord: 0.3ms | Allocations: 1261)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
