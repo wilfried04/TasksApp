@@ -7467,3 +7467,5 @@ Processing by TasksController#show as HTML
   Rendered tasks/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 390)
 Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 0.3ms | Allocations: 1261)
   [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
