@@ -56,11 +56,11 @@ RSpec.describe 'Task Management Function', type: :system do
       it 'Data is stored.' do
         visit new_task_path
         select '2020', from: 'task_end_time_1i'
-        select 'May', from: 'task_end_time_2i'
+        select '5', from: 'task_end_time_2i'
         select '1', from: 'task_end_time_3i'
         click_on 'commit'
         expect(page).to have_content '2020'
-        expect(page).to have_content 'May'
+        expect(page).to have_content '5'
         expect(page).to have_content '1'
       end
     end
