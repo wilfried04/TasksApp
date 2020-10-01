@@ -6,7 +6,7 @@ ja:
  attributes:
  blog:
  title: titre
- content: contenu
+ detail: contenu
  user:
  title: titre
  name: nom
