@@ -15351,3 +15351,240 @@ Processing by TasksController#index as HTML
 Completed 200 OK in 61ms (Views: 59.0ms | ActiveRecord: 0.9ms | Allocations: 26589)
 
 
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+Started GET "/tasks" for ::1 at 2020-09-30 23:05:26 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#index as HTML
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 50.7ms | Allocations: 186709)
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:15
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:27
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 82)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 78.4ms | Allocations: 198034)
+Completed 200 OK in 359ms (Views: 337.7ms | ActiveRecord: 9.0ms | Allocations: 515524)
+
+
+Started GET "/images/apps.jpg" for ::1 at 2020-09-30 23:05:26 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/apps.jpg"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/tasks/new" for ::1 at 2020-09-30 23:05:28 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.8ms | Allocations: 183)
+  Rendered tasks/_form.html.erb (Duration: 7.8ms | Allocations: 3319)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 10.6ms | Allocations: 4020)
+Completed 200 OK in 34ms (Views: 32.2ms | ActiveRecord: 0.0ms | Allocations: 22887)
+
+
+Started GET "/tasks/new" for ::1 at 2020-09-30 23:05:34 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.3ms | Allocations: 67)
+  Rendered tasks/_form.html.erb (Duration: 4.6ms | Allocations: 2344)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 2534)
+Completed 200 OK in 28ms (Views: 26.7ms | ActiveRecord: 0.0ms | Allocations: 21222)
+
+
+Started GET "/tasks" for ::1 at 2020-09-30 23:05:35 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 2.0ms | Allocations: 2199)
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:15
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:27
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 13.8ms | Allocations: 6307)
+Completed 200 OK in 38ms (Views: 35.3ms | ActiveRecord: 1.6ms | Allocations: 25118)
+
+
+Started GET "/tasks/new" for ::1 at 2020-09-30 23:05:37 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.2ms | Allocations: 65)
+  Rendered tasks/_form.html.erb (Duration: 5.0ms | Allocations: 2345)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2533)
+Completed 200 OK in 28ms (Views: 27.4ms | ActiveRecord: 0.0ms | Allocations: 21215)
+
+
+Started POST "/tasks" for ::1 at 2020-09-30 23:05:46 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I8mtk/BBe4UqSTAti2v4Env3W7GUH/kDdAf0Kxb7ZKZhH7gNVe4EiXc0Vn6d0uMYmXfY79Cgfp064fq7zGRCdA==", "task"=>{"name"=>"", "content"=>"", "end_time(1i)"=>"2020", "end_time(2i)"=>"1", "end_time(3i)"=>"1", "statut"=>"not_started", "priority"=>"low"}, "commit"=>"登録する"}
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.3ms | Allocations: 61)
+  Rendered tasks/_form.html.erb (Duration: 5.4ms | Allocations: 2635)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 6.4ms | Allocations: 2818)
+Completed 200 OK in 36ms (Views: 31.4ms | ActiveRecord: 0.0ms | Allocations: 23060)
+
+
+Started POST "/tasks" for ::1 at 2020-09-30 23:06:00 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BmP2Gtkyu0Cc5oGcQWStAqyvSuMaRTCp3riyrqV1soDL1y8aw/mvUsIe7cIJ0ox/4e8CGboxSibOUQOzMEalZw==", "task"=>{"name"=>"bjr", "content"=>"ok", "end_time(1i)"=>"2020", "end_time(2i)"=>"1", "end_time(3i)"=>"1", "statut"=>"not_started", "priority"=>"low"}, "commit"=>"登録する"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tasks_controller.rb:25:in `create'
+  [1m[36mTask Create (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "bjr"], ["content", "ok"], ["end_time", "2020-01-01"], ["created_at", "2020-09-30 23:06:00.006646"], ["updated_at", "2020-09-30 23:06:00.006646"], ["statut", 0], ["priority", 0]]
+  ↳ app/controllers/tasks_controller.rb:25:in `create'
+  [1m[35m (45.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tasks_controller.rb:25:in `create'
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 53ms (ActiveRecord: 45.8ms | Allocations: 3403)
+
+
+Started GET "/tasks" for ::1 at 2020-09-30 23:06:00 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 1.1ms | Allocations: 2198)
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:15
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:27
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 6278)
+Completed 200 OK in 31ms (Views: 28.9ms | ActiveRecord: 0.6ms | Allocations: 25112)
+
+
+Started GET "/images/apps.jpg" for ::1 at 2020-09-30 23:06:00 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/apps.jpg"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/tasks?sort_expired=true" for ::1 at 2020-09-30 23:06:13 +0100
+Processing by TasksController#index as HTML
+  Parameters: {"sort_expired"=>"true"}
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 1.7ms | Allocations: 2197)
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."end_time" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:15
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:27
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 10.7ms | Allocations: 6343)
+Completed 200 OK in 38ms (Views: 36.2ms | ActiveRecord: 0.6ms | Allocations: 25136)
+
+
+Started GET "/tasks?sort_priority=true" for ::1 at 2020-09-30 23:06:30 +0100
+Processing by TasksController#index as HTML
+  Parameters: {"sort_priority"=>"true"}
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 1.8ms | Allocations: 2197)
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."priority" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:15
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks"[0m
+  ↳ app/views/tasks/index.html.erb:27
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 12.2ms | Allocations: 6354)
+Completed 200 OK in 44ms (Views: 39.7ms | ActiveRecord: 0.7ms | Allocations: 25123)
+
+
+Started GET "/tasks?utf8=%E2%9C%93&name=&statut=0&commit=search" for ::1 at 2020-09-30 23:06:33 +0100
+Processing by TasksController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"", "statut"=>"0", "commit"=>"search"}
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 2.1ms | Allocations: 2197)
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."statut" = $1 LIMIT $2 OFFSET $3[0m  [["statut", "0"], ["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:15
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."statut" = $1[0m  [["statut", "0"]]
+  ↳ app/views/tasks/index.html.erb:27
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 32.0ms | Allocations: 8660)
+Completed 200 OK in 55ms (Views: 51.6ms | ActiveRecord: 0.6ms | Allocations: 27466)
+
+
+Started GET "/images/apps.jpg" for ::1 at 2020-09-30 23:06:33 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/apps.jpg"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
