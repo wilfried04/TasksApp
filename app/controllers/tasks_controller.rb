@@ -3,7 +3,6 @@ class TasksController < ApplicationController
   PER = 4
   def index
 
-    #@statut = params[:statu].to_i
     if params[:sort_expired]
       @tasks=Task.all.order(end_time: :desc).page(params[:page]).per(4)
     elsif params[:sort_priority]
@@ -17,9 +16,11 @@ class TasksController < ApplicationController
     end
 
   end
+  #new task.....
   def new
     @task = Task.new
   end
+  #task create...
   def create
     @task = Task.new(task_params)
     if @task.save
@@ -35,6 +36,7 @@ class TasksController < ApplicationController
   def edit
 
   end
+  #task update...
   def update
     if @task.update(task_params)
       flash[:success] = 'Task successfully update !'
@@ -43,11 +45,13 @@ class TasksController < ApplicationController
       render :edit
     end
   end
+  #destroy task ....
   def destroy
     @task.destroy
     flash[:success] = 'Task successfully destroy !'
     redirect_to tasks_path
   end
+  #task params ...
 private
   def task_params
     params.require(:task).permit(:name,:content,:end_time,:statut, :priority)

@@ -6,7 +6,7 @@ fr:
  attributes:
  blog:
  title: titre
- content: content
+ content: detail
  user:
  title: titre
  name: nom

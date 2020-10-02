@@ -17,7 +17,7 @@ RSpec.describe 'Task model function', type: :model do
   end
   context "if the task details are empty" do
     it 'validation is caught' do
-      task =Task.new(name:'tast', content:'content', end_time:'2020-01-14')
+      task =Task.new(name:'tast', content:'content', end_time:'2020-09-27')
       expect(task).to be_valid
     end
   end
