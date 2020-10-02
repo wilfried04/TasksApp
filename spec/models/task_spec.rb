@@ -4,7 +4,7 @@ RSpec.describe 'Task model function', type: :model do
   describe 'Validation test' do
     context 'If the task title is empty' do
       it 'It is hard to Validation' do
-        task = Task.new(detail: 'Failure test')
+        task = Task.new(content: 'Failure test')
         expect(task).not_to be_valid
       end
     end
@@ -17,7 +17,7 @@ RSpec.describe 'Task model function', type: :model do
   end
   context "if the task details are empty" do
     it 'validation is caught' do
-      task =Task.new(name:'tast', detail:'detail', deadline:'2020-09-26')
+      task =Task.new(name:'tast', content:'content', end_time:'2020-01-14')
       expect(task).to be_valid
     end
   end
