@@ -43,6 +43,7 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'faker'
   gem 'launchy'
+  gem 'database_cleaner'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -64,6 +65,7 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   #gem 'chromedriver-helper'
 end
+gem "kaminari"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

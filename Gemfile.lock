@@ -81,6 +81,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.7)
     crass (1.0.6)
+    database_cleaner (1.8.5)
     diff-lcs (1.4.4)
     erubi (1.9.0)
     execjs (2.7.0)
@@ -98,6 +99,18 @@ GEM
       concurrent-ruby (~> 1.0)
     jbuilder (2.10.1)
       activesupport (>= 5.0.0)
+    kaminari (1.2.1)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.1)
+      kaminari-activerecord (= 1.2.1)
+      kaminari-core (= 1.2.1)
+    kaminari-actionview (1.2.1)
+      actionview
+      kaminari-core (= 1.2.1)
+    kaminari-activerecord (1.2.1)
+      activerecord
+      kaminari-core (= 1.2.1)
+    kaminari-core (1.2.1)
     launchy (2.5.0)
       addressable (~> 2.7)
     listen (3.2.1)
@@ -155,7 +168,7 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    regexp_parser (1.7.1)
+    regexp_parser (1.8.0)
     rspec-core (3.9.2)
       rspec-support (~> 3.9.3)
     rspec-expectations (3.9.2)
@@ -235,9 +248,11 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15, < 4.0)
   coffee-rails (~> 4.2)
+  database_cleaner
   factory_bot_rails
   faker
   jbuilder (~> 2.5)
+  kaminari
   launchy
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
