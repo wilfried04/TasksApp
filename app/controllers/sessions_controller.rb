@@ -21,6 +21,6 @@ class SessionsController < ApplicationController
 
 
   def session_check
-    redirect_to user_path(current_user.id), notice:('you are already logged') if logged_in?
+    #redirect_to user_path(current_user.id), notice:('you are already logged') if logged_in?
   end
 end
