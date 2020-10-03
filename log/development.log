@@ -16173,3 +16173,20 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 500ms (Views: 489.8ms | ActiveRecord: 0.0ms | Allocations: 317541)
 
 
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+Started GET "/users" for ::1 at 2020-10-03 16:53:11 +0100
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 183)
+Completed 200 OK in 355ms (Views: 345.1ms | ActiveRecord: 0.0ms | Allocations: 317490)
+
+
