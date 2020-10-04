@@ -11,14 +11,14 @@ class UsersController < ApplicationController
   def create
     @user=User.new(user_params)
     if @user.save
-      #if logged_in?
+      if logged_in?
         redirect_to admin_users_path
         flash[:success]="account created successfull"
-      #else
+      else
       session[:user_id] = @user.id
       redirect_to users_path
       flash[:success]="account created successfull"
-    #end
+    end
     else
       flash[:danger]="something is wrong !"
       render :new
@@ -51,11 +51,5 @@ class UsersController < ApplicationController
   def set_user
     @user=User.find(params[:id])
   end
-  def user_check
-    #redirect_to user_path(current_user.id), notice:('access deny') unless current_user == @user || current_user.admin?
-  end
 
-  def login_check
-    #redirect_to user_path(current_user.id), notice:('you are already logged') if logged_in?
-  end
 end

@@ -61,7 +61,7 @@ private
 def check_admin
   if logged_in?
     redirect_to (root_path) unless current_user.admin?
-  else
+ else
     redirect_to(new_session_path)
   end
 end
