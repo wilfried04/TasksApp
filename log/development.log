@@ -16190,3 +16190,526 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 355ms (Views: 345.1ms | ActiveRecord: 0.0ms | Allocations: 317490)
 
 
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+Started GET "/" for ::1 at 2020-10-03 17:30:20 +0100
+  [1m[35m (40.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1197.2ms | Allocations: 200010)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 87)
+  Rendered users/new.html.erb within layouts/application (Duration: 1201.1ms | Allocations: 200775)
+Completed 200 OK in 1649ms (Views: 1509.1ms | ActiveRecord: 86.0ms | Allocations: 524815)
+
+
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+Started GET "/sessions/new" for ::1 at 2020-10-03 17:32:54 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 88)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 92.3ms | Allocations: 199468)
+Completed 200 OK in 305ms (Views: 295.8ms | ActiveRecord: 0.0ms | Allocations: 517030)
+
+
+Started POST "/sessions" for ::1 at 2020-10-03 17:33:14 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ygzXlZdBwUBim1U2aVSSZCCn+QXK7q0Z7rnW0HykYWtZDprrDsS2dStaOL2WnXOMbv4KiWfwrDnOowUbNEZyMQ==", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (32.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 50ms (ActiveRecord: 34.1ms | Allocations: 2301)
+
+
+Started GET "/sessions/new" for ::1 at 2020-10-03 17:33:14 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 507)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.0ms | Allocations: 19888)
+
+
+Started POST "/sessions" for ::1 at 2020-10-03 17:33:24 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XO66wQ9RtrSxNexZJ7kk0gL895ow+l4XU9qpqS0finnP7Pe/ltTBgfj0gdLYcMU6TKUEFp3kXzdzwHpiZf2ZIw==", "session"=>{"email"=>"ada@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ada@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms | Allocations: 1318)
+
+
+Started GET "/sessions/new" for ::1 at 2020-10-03 17:33:24 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 501)
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.0ms | Allocations: 19854)
+
+
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+Started GET "/sessions/new" for ::1 at 2020-10-03 18:24:17 +0100
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 90)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 179.1ms | Allocations: 199470)
+Completed 200 OK in 346ms (Views: 337.3ms | ActiveRecord: 0.0ms | Allocations: 517032)
+
+
+Started GET "/users/new" for ::1 at 2020-10-03 18:24:22 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 6.8ms | Allocations: 1646)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 5)
+  Rendered users/new.html.erb within layouts/application (Duration: 11.6ms | Allocations: 2073)
+Completed 200 OK in 60ms (Views: 36.0ms | ActiveRecord: 7.8ms | Allocations: 26222)
+
+
+Started POST "/users" for ::1 at 2020-10-03 18:24:47 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EE9zyERGw9yJ81vjd6EqOh4cRr90cIvRKucGu0ViWub79n7swrlspVDM8w9UevHutOym86BnoecDMdKkHt71fQ==", "user"=>{"name"=>"didi", "email"=>"didi@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "didi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Create (79.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "didi"], ["email", "didi@gmail.com"], ["password_digest", "$2a$12$uLJNBYbtD.Jn4GjOYk3ZN.xnp5r1nKsV4qHOS45w49efuv9EMnE8i"], ["created_at", "2020-10-03 18:24:48.164062"], ["updated_at", "2020-10-03 18:24:48.164062"]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[35m (26.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+Redirected to http://localhost:3000/admin/users
+Redirected to 
+Completed 500 Internal Server Error in 396ms (ActiveRecord: 106.9ms | Allocations: 5633)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/users_controller.rb:19:in `create'
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+Started POST "/users" for ::1 at 2020-10-03 22:29:31 +0100
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EE9zyERGw9yJ81vjd6EqOh4cRr90cIvRKucGu0ViWub79n7swrlspVDM8w9UevHutOym86BnoecDMdKkHt71fQ==", "user"=>{"name"=>"didi", "email"=>"didi@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "didi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 14.9ms | Allocations: 2185)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 82)
+  Rendered users/new.html.erb within layouts/application (Duration: 22.4ms | Allocations: 2945)
+Completed 200 OK in 754ms (Views: 238.1ms | ActiveRecord: 8.3ms | Allocations: 526790)
+
+
+Started POST "/users" for ::1 at 2020-10-03 22:34:15 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QEbUnjvi43h03gGs7iJrzccoXr072XTMedbudDcIT83TRJngomeUTT0fbCcR64oliXGtMZbHdexZzD2/f+pclw==", "user"=>{"name"=>"didi", "email"=>"didi@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "didi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.8ms | Allocations: 1695)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 77)
+  Rendered users/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 2325)
+Completed 200 OK in 51ms (Views: 37.4ms | ActiveRecord: 2.0ms | Allocations: 26547)
+
+
+Started POST "/users" for ::1 at 2020-10-03 22:34:18 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U4BiDR8oHlaIruAE2c4/KM3GyvEu97zR0tiLoGwWHh3Agi9zhq1pY8FvjY8mB97Ag585fYPpvfHywlhrJPQNRw==", "user"=>{"name"=>"didi", "email"=>"didi@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "didi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.0ms | Allocations: 1284)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1435)
+Completed 200 OK in 38ms (Views: 28.2ms | ActiveRecord: 0.9ms | Allocations: 24561)
+
+
+Started POST "/users" for ::1 at 2020-10-03 22:34:18 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iZu0jfiTXWkvw5DseXjR8gpbz2vUksJpjjzRbGCUCc8amfnzYRYqXGYC/WeGsTAaRAI853mMw0muJgKnKHYalQ==", "user"=>{"name"=>"didi", "email"=>"didi@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "didi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.1ms | Allocations: 1278)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1427)
+Completed 200 OK in 57ms (Views: 45.7ms | ActiveRecord: 1.3ms | Allocations: 24565)
+
+
+Started POST "/users" for ::1 at 2020-10-03 22:34:18 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y34hw0XIwvJTMVkhOp39A7E35TCZmafiLPevoGgg3nPwfGy93E21xxrwNKrFVBzr/24WvDSHpsIM7XxrIMLNKQ==", "user"=>{"name"=>"didi", "email"=>"didi@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "didi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[35m (1.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 5.7ms | Allocations: 1278)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered users/new.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1427)
+Completed 200 OK in 59ms (Views: 45.8ms | ActiveRecord: 2.2ms | Allocations: 24582)
+
+
+Started POST "/users" for ::1 at 2020-10-03 22:34:19 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CMtGlVbqGy51FKYVt4d6jl8IPzjSqys3N87MFXSUnHibyQvrz29sGzzVy55ITptmEVHMtH+1KhcX1B/ePHaPIg==", "user"=>{"name"=>"didi", "email"=>"didi@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "didi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.2ms | Allocations: 1278)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1427)
+Completed 200 OK in 52ms (Views: 38.5ms | ActiveRecord: 1.4ms | Allocations: 24550)
+
+
+Started POST "/users" for ::1 at 2020-10-03 22:34:19 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YWPDERKGDydtGNgg3PF71nj8Z5felgL606uHk3M2xEryYY5viwN4EiTZtasjOJo+NqWUG3OIA9rzsVRYO9TXEA==", "user"=>{"name"=>"didi", "email"=>"didi@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "didi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 5.1ms | Allocations: 1278)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered users/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1426)
+Completed 200 OK in 56ms (Views: 43.2ms | ActiveRecord: 1.9ms | Allocations: 24517)
+
+
+Started POST "/users" for ::1 at 2020-10-03 22:34:19 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ARxO/tlrIgPu74r2HUp9gahq4+gRmcKdfBjZe8vJuq6SHgOAQO5VNqcu533ig5xp5jMQZLyHw71cAgqwgyup9A==", "user"=>{"name"=>"didi", "email"=>"didi@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "didi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 6.0ms | Allocations: 1278)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered users/new.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1426)
+Completed 200 OK in 48ms (Views: 34.4ms | ActiveRecord: 1.1ms | Allocations: 24521)
+
+
+Started POST "/users" for ::1 at 2020-10-03 22:34:19 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"izSRY3w+2+ngRGHCu/kjkKXb6jaqpXaHteOZ4spbBGsYNtwd5bus3KmFDElEMMJ464IZuge7d6eV+UopgrkXMQ==", "user"=>{"name"=>"didi", "email"=>"didi@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "didi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 5.0ms | Allocations: 1278)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered users/new.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1426)
+Completed 200 OK in 55ms (Views: 44.1ms | ActiveRecord: 1.0ms | Allocations: 24514)
+
+
+Started POST "/users" for ::1 at 2020-10-03 22:34:19 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lAyIVpVihpXWPMo73p/XSyXlV8rSMJ0j4HPINkC40GgHDsUoDOfxoJ/9p7AhVjaja7ykRn8unAPAaRv9CFrDMg==", "user"=>{"name"=>"didi", "email"=>"didi@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "didi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.2ms | Allocations: 1278)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1426)
+Completed 200 OK in 46ms (Views: 36.2ms | ActiveRecord: 1.1ms | Allocations: 24514)
+
+
+Started POST "/users" for ::1 at 2020-10-03 22:34:20 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dEmj8iT7BLj0pOUyqs4sh9UcIrtjEljdPBiwriiKGFznS+6MvX5zjb1liLlVB81vm0XRN84MWf0cAmNlYGgLBg==", "user"=>{"name"=>"didi", "email"=>"didi@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "didi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.9ms | Allocations: 1278)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1426)
+Completed 200 OK in 45ms (Views: 35.2ms | ActiveRecord: 0.9ms | Allocations: 24551)
+
+
+Started POST "/users" for ::1 at 2020-10-03 22:34:20 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HOep3b9hqaqb0dpyc4r+n5BzjhIsrPGjhFvAM9gegwyP5eSjJuTen9IQt/mMQx933ip9noGy8IOkQRP4kPyQVg==", "user"=>{"name"=>"didi", "email"=>"didi@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "didi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[35m (2.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.8ms | Allocations: 1278)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1426)
+Completed 200 OK in 48ms (Views: 37.0ms | ActiveRecord: 2.7ms | Allocations: 24548)
+
+
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+Started GET "/" for ::1 at 2020-10-04 10:32:11 +0100
+  [1m[35m (40.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1157.3ms | Allocations: 199995)
+  Rendered layouts/_footer.html.erb (Duration: 5.5ms | Allocations: 87)
+  Rendered users/new.html.erb within layouts/application (Duration: 1176.8ms | Allocations: 200760)
+Completed 200 OK in 1646ms (Views: 1510.8ms | ActiveRecord: 83.1ms | Allocations: 522528)
+
+
+Started GET "/" for ::1 at 2020-10-04 10:36:16 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.0ms | Allocations: 998)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1149)
+Completed 200 OK in 214ms (Views: 211.8ms | ActiveRecord: 0.0ms | Allocations: 30910)
+
+
+Started GET "/" for ::1 at 2020-10-04 10:36:33 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.1ms | Allocations: 992)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1141)
+Completed 200 OK in 69ms (Views: 67.9ms | ActiveRecord: 0.0ms | Allocations: 30088)
+
+
+Started GET "/" for ::1 at 2020-10-04 10:36:36 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.1ms | Allocations: 992)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1140)
+Completed 200 OK in 35ms (Views: 33.9ms | ActiveRecord: 0.0ms | Allocations: 20538)
+
+
+Started GET "/" for ::1 at 2020-10-04 10:37:09 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.9ms | Allocations: 992)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1140)
+Completed 200 OK in 56ms (Views: 54.7ms | ActiveRecord: 0.0ms | Allocations: 31024)
+
+
+Started GET "/" for ::1 at 2020-10-04 10:37:10 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.6ms | Allocations: 992)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1140)
+Completed 200 OK in 37ms (Views: 35.8ms | ActiveRecord: 0.0ms | Allocations: 20551)
+
+
+Started GET "/" for ::1 at 2020-10-04 10:37:30 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.0ms | Allocations: 992)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1140)
+Completed 200 OK in 56ms (Views: 55.0ms | ActiveRecord: 0.0ms | Allocations: 31041)
+
+
+Started GET "/" for ::1 at 2020-10-04 10:37:54 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.7ms | Allocations: 992)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1140)
+Completed 200 OK in 32ms (Views: 30.5ms | ActiveRecord: 0.0ms | Allocations: 20535)
+
+
+Started GET "/" for ::1 at 2020-10-04 10:41:40 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.3ms | Allocations: 992)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1141)
+Completed 200 OK in 127ms (Views: 126.3ms | ActiveRecord: 0.0ms | Allocations: 48579)
+
+
+Started POST "/users" for ::1 at 2020-10-04 10:41:48 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hpmqzBdtBlKZC5vTwhivWtRcQMnHB8omSWCmjUP9LRcVm+eyjuhxZ9DK9lg90U6ymgWzRWoZywZpenVGCx8+TQ==", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (47.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.5ms | Allocations: 1540)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 5)
+  Rendered users/new.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1689)
+Completed 200 OK in 123ms (Views: 37.8ms | ActiveRecord: 48.3ms | Allocations: 26344)
+
+
+Started POST "/users" for ::1 at 2020-10-04 10:41:52 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LYQPdN/mEaiQ/gdkxk4bUuuqboewymDyGOux5P73Sbi+hkIKRmNmndk/au85h/q6pfOdCx3UYdI48WIvthVa4g==", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 5.9ms | Allocations: 1524)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered users/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1672)
+Completed 200 OK in 54ms (Views: 39.7ms | ActiveRecord: 2.4ms | Allocations: 25476)
+
+
+Started GET "/users" for ::1 at 2020-10-04 10:42:05 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 201.8ms | Allocations: 79)
+Completed 200 OK in 229ms (Views: 227.9ms | ActiveRecord: 0.0ms | Allocations: 19728)
+
+
+Started GET "/sessions/new" for ::1 at 2020-10-04 10:43:04 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 16.2ms | Allocations: 775)
+Completed 200 OK in 45ms (Views: 43.0ms | ActiveRecord: 0.0ms | Allocations: 20938)
+
+
+Started GET "/users/new" for ::1 at 2020-10-04 10:43:11 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.0ms | Allocations: 1000)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1150)
+Completed 200 OK in 31ms (Views: 29.2ms | ActiveRecord: 0.0ms | Allocations: 20620)
+
+
+Started GET "/sessions/new" for ::1 at 2020-10-04 10:43:13 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 500)
+Completed 200 OK in 32ms (Views: 31.1ms | ActiveRecord: 0.0ms | Allocations: 19951)
+
+
+Started GET "/users/new" for ::1 at 2020-10-04 10:43:24 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.0ms | Allocations: 992)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1140)
+Completed 200 OK in 51ms (Views: 50.0ms | ActiveRecord: 0.0ms | Allocations: 20675)
+
+
+Started GET "/users/new" for ::1 at 2020-10-04 10:45:26 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.6ms | Allocations: 992)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1140)
+Completed 200 OK in 115ms (Views: 113.1ms | ActiveRecord: 0.0ms | Allocations: 49022)
+
+
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+Started GET "/users/new" for ::1 at 2020-10-04 11:04:11 +0100
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 163.5ms | Allocations: 199994)
+  Rendered layouts/_footer.html.erb (Duration: 6.3ms | Allocations: 87)
+  Rendered users/new.html.erb within layouts/application (Duration: 172.5ms | Allocations: 200760)
+Completed 200 OK in 419ms (Views: 393.5ms | ActiveRecord: 8.1ms | Allocations: 526857)
+
+
+Started GET "/" for ::1 at 2020-10-04 11:04:19 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.0ms | Allocations: 998)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 5)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1149)
+Completed 200 OK in 43ms (Views: 41.2ms | ActiveRecord: 0.0ms | Allocations: 20641)
+
+

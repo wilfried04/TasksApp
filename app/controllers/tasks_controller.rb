@@ -55,10 +55,5 @@ private
   def set_task
     @task = Task.find(params[:id])
   end
-  def user_check
-    redirect_to tasks_path, notice:('access deny') unless current_user.id == @task.user_id || current_user.admin?
-  end
-  def login_check
-    redirect_to new_session_path, notice:('you are not login, please login or create new accompt') unless logged_in?
-  end
+  
 end
