@@ -1,3 +1,4 @@
+
 require 'rails_helper'
 #bundle exec rspec spec/models/task_spec.rb
 RSpec.describe 'Task model function', type: :model do
