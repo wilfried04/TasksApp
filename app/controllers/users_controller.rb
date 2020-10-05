@@ -52,6 +52,12 @@ class UsersController < ApplicationController
       @user=User.find(params[:id])
     end
 
-
+    def user_check
+      redirect_to user_path(current_user.id), notice:('access deny') unless current_user == @user || current_user.admin?
+    end
+    
+    def login_check
+      redirect_to user_path(current_user.id), notice:('you are already logged') if logged_in?
+    end
     
 end
