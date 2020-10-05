@@ -16337,3 +16337,116 @@ Processing by TasksController#new as HTML
 Completed 200 OK in 60ms (Views: 42.1ms | ActiveRecord: 2.9ms | Allocations: 28445)
 
 
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+Started GET "/" for ::1 at 2020-10-05 18:28:43 +0100
+  [1m[35m (47.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 2145.6ms | Allocations: 186767)
+  [1m[36mTask Load (38.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:15
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 82)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 2230.9ms | Allocations: 189281)
+Completed 200 OK in 3180ms (Views: 3005.3ms | ActiveRecord: 118.1ms | Allocations: 506342)
+
+
+Started GET "/tasks/new" for ::1 at 2020-10-05 18:28:52 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.6ms | Allocations: 183)
+  Rendered tasks/_form.html.erb (Duration: 26.5ms | Allocations: 3316)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 39.5ms | Allocations: 4024)
+Completed 200 OK in 106ms (Views: 60.4ms | ActiveRecord: 29.3ms | Allocations: 28415)
+
+
+Started POST "/tasks" for ::1 at 2020-10-05 18:29:09 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xV8mvaoN/Mf2nyH3pVkP2roOwXbj47kwgwP+ZgFbRMYw5bwYSqjtNvheVeB9XZkrHIBh5nsGk5LHuAHMCWADzA==", "task"=>{"name"=>"ok", "content"=>"okokokokkokokoko", "end_time(1i)"=>"2020", "end_time(2i)"=>"10", "end_time(3i)"=>"6", "statut"=>"not_started", "priority"=>"low"}, "commit"=>"登録する"}
+Completed 500 Internal Server Error in 217ms (ActiveRecord: 0.0ms | Allocations: 5303)
+
+
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/user.rb:10:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/tasks_controller.rb:25:in `create'
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+Started POST "/tasks" for ::1 at 2020-10-05 18:32:18 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xV8mvaoN/Mf2nyH3pVkP2roOwXbj47kwgwP+ZgFbRMYw5bwYSqjtNvheVeB9XZkrHIBh5nsGk5LHuAHMCWADzA==", "task"=>{"name"=>"ok", "content"=>"okokokokkokokoko", "end_time(1i)"=>"2020", "end_time(2i)"=>"10", "end_time(3i)"=>"6", "statut"=>"not_started", "priority"=>"low"}, "commit"=>"登録する"}
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 4.1ms | Allocations: 9795)
+
+
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/user.rb:10:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/tasks_controller.rb:25:in `create'
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+Started POST "/tasks" for ::1 at 2020-10-05 18:35:54 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xV8mvaoN/Mf2nyH3pVkP2roOwXbj47kwgwP+ZgFbRMYw5bwYSqjtNvheVeB9XZkrHIBh5nsGk5LHuAHMCWADzA==", "task"=>{"name"=>"ok", "content"=>"okokokokkokokoko", "end_time(1i)"=>"2020", "end_time(2i)"=>"10", "end_time(3i)"=>"6", "statut"=>"not_started", "priority"=>"low"}, "commit"=>"登録する"}
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.4ms | Allocations: 194)
+  Rendered tasks/_form.html.erb (Duration: 4.8ms | Allocations: 3820)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 4645)
+Completed 200 OK in 480ms (Views: 251.2ms | ActiveRecord: 5.7ms | Allocations: 515040)
+
+
+Started POST "/tasks" for ::1 at 2020-10-05 18:36:07 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+fyX1HtTx/XuoV9quXJh59j0wjGRTVQXHMr7eFzdLXjkxtgCLp8bp6pS9lmT1X+P29+WPETvf4uSiyZh1u+j4Q==", "task"=>{"name"=>"ok", "content"=>"okokokokkokokoko", "end_time(1i)"=>"2020", "end_time(2i)"=>"10", "end_time(3i)"=>"6", "statut"=>"not_started", "priority"=>"low"}, "commit"=>"登録する"}
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.5ms | Allocations: 173)
+  Rendered tasks/_form.html.erb (Duration: 4.4ms | Allocations: 2899)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 7.0ms | Allocations: 3591)
+Completed 200 OK in 35ms (Views: 32.2ms | ActiveRecord: 0.0ms | Allocations: 25313)
+
+
+Started GET "/tasks/new" for ::1 at 2020-10-05 18:36:10 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.2ms | Allocations: 71)
+  Rendered tasks/_form.html.erb (Duration: 4.8ms | Allocations: 2354)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 2548)
+Completed 200 OK in 25ms (Views: 23.9ms | ActiveRecord: 0.0ms | Allocations: 22150)
+
+
+Started POST "/tasks" for ::1 at 2020-10-05 18:36:18 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oF+9lD+b6FfN8OE5ySnR+UeZg0MeqUT5TtKOIv8z6qxV5Scx3z75psMxlS4RLUcI4Rcj04ZMblsKaXGI9witpg==", "task"=>{"name"=>"ok ", "content"=>"okokokokookok", "end_time(1i)"=>"2020", "end_time(2i)"=>"10", "end_time(3i)"=>"6", "statut"=>"not_started", "priority"=>"low"}, "commit"=>"登録する"}
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.2ms | Allocations: 61)
+  Rendered tasks/_form.html.erb (Duration: 3.0ms | Allocations: 2463)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2647)
+Completed 200 OK in 31ms (Views: 28.1ms | ActiveRecord: 0.0ms | Allocations: 23313)
+
+
