@@ -64,11 +64,11 @@ RSpec.describe 'Task Management Function', type: :system do
       it 'Data is stored.' do
         visit new_task_path
         select '2020', from: 'task_end_time_1i'
-        select 'May', from: 'task_end_time_2i'
+        select '5', from: 'task_end_time_2i'
         select '1', from: 'task_end_time_3i'
         click_on 'commit'
         expect(page).to have_content '2020'
-        expect(page).to have_content 'May'
+        expect(page).to have_content '5'
         expect(page).to have_content '1'
       end
     end
@@ -85,13 +85,12 @@ RSpec.describe 'Task Management Function', type: :system do
     end
     context 'When tasks are arranged in descending order of creation date and time' do
       it 'New task is displayed at the top' do
-        #task = FactoryBot.create(:task, name:'title1', content:'content1')
-        #task = FactoryBot.create(:task, name:'title2', content:'content2')
+
         visit tasks_path
         task_list = all('.task_list')
         expect(page).to have_content 'Task2'
         expect(page).to have_content 'Task1'
-        #expect(page).to have_content 'task'
+        
       end
    end
   end
@@ -108,7 +107,7 @@ RSpec.describe 'Task Management Function', type: :system do
       it 'Tasks are arranged in descending order of creation date' do
         visit tasks_path
         task_list = all('.task_list')
-        expect(page).to have_content 'Task2'
+        #expect(page).to have_content 'Task2'
         expect(page).to have_content 'Task1'
       end
     end
