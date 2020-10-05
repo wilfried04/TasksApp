@@ -16450,3 +16450,294 @@ Processing by TasksController#create as HTML
 Completed 200 OK in 31ms (Views: 28.1ms | ActiveRecord: 0.0ms | Allocations: 23313)
 
 
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+Started GET "/tasks" for ::1 at 2020-10-05 18:39:00 +0100
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 46.2ms | Allocations: 186764)
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:15
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 82)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 571.1ms | Allocations: 189274)
+Completed 200 OK in 803ms (Views: 789.8ms | ActiveRecord: 3.2ms | Allocations: 506333)
+
+
+Started GET "/images/apps.jpg" for ::1 at 2020-10-05 18:39:01 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/apps.jpg"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/tasks/new" for ::1 at 2020-10-05 18:39:05 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.5ms | Allocations: 183)
+  Rendered tasks/_form.html.erb (Duration: 7.2ms | Allocations: 3331)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 9.4ms | Allocations: 4032)
+Completed 200 OK in 45ms (Views: 30.2ms | ActiveRecord: 3.5ms | Allocations: 28451)
+
+
+Started POST "/tasks" for ::1 at 2020-10-05 18:39:15 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U3Cl0yiNRRpqCQjlcBC0/vF7cT5GRmNjRWZRqMNoMQqmyj92yChU62TIfPKoFCIPV/XRrt6jScEB3a4Cy1N2AA==", "task"=>{"name"=>"toi", "content"=>"toitoitoit", "end_time(1i)"=>"2020", "end_time(2i)"=>"10", "end_time(3i)"=>"6", "statut"=>"not_started", "priority"=>"low"}, "commit"=>"登録する"}
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.6ms | Allocations: 63)
+  Rendered tasks/_form.html.erb (Duration: 5.3ms | Allocations: 2479)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 2665)
+Completed 200 OK in 37ms (Views: 28.5ms | ActiveRecord: 0.0ms | Allocations: 27355)
+
+
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+Started GET "/" for ::1 at 2020-10-05 19:12:25 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 43.3ms | Allocations: 186764)
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:15
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 82)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 51.3ms | Allocations: 189273)
+Completed 200 OK in 303ms (Views: 293.4ms | ActiveRecord: 2.4ms | Allocations: 506364)
+
+
+Started GET "/images/apps.jpg" for ::1 at 2020-10-05 19:12:26 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/apps.jpg"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/tasks/new" for ::1 at 2020-10-05 19:12:30 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.5ms | Allocations: 183)
+  Rendered tasks/_form.html.erb (Duration: 4.9ms | Allocations: 3331)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 4032)
+Completed 200 OK in 44ms (Views: 30.2ms | ActiveRecord: 2.9ms | Allocations: 28471)
+
+
+Started POST "/tasks" for ::1 at 2020-10-05 19:12:38 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VTJB2rSfEjspuNv6fptrQM9vZS6E+16RWDun6qSt01CgiNt/VDoDyid5r+2mn/2xaeHFvhwedDMcgFhArJaUWg==", "task"=>{"name"=>"bjr", "content"=>"jiyuigmyymuih", "end_time(1i)"=>"2020", "end_time(2i)"=>"10", "end_time(3i)"=>"6", "statut"=>"not_started", "priority"=>"low"}, "commit"=>"登録する"}
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.2ms | Allocations: 63)
+  Rendered tasks/_form.html.erb (Duration: 4.8ms | Allocations: 2479)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2665)
+Completed 200 OK in 35ms (Views: 27.2ms | ActiveRecord: 0.0ms | Allocations: 27351)
+
+
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+Started GET "/tasks" for ::1 at 2020-10-05 19:16:32 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 48.1ms | Allocations: 186764)
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:15
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 82)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 55.4ms | Allocations: 189273)
+Completed 200 OK in 336ms (Views: 324.5ms | ActiveRecord: 2.5ms | Allocations: 506342)
+
+
+Started GET "/tasks/new" for ::1 at 2020-10-05 19:16:35 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.4ms | Allocations: 183)
+  Rendered tasks/_form.html.erb (Duration: 4.2ms | Allocations: 3316)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 4023)
+Completed 200 OK in 705ms (Views: 689.2ms | ActiveRecord: 3.7ms | Allocations: 28410)
+
+
+Started POST "/tasks" for ::1 at 2020-10-05 19:16:44 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dyPW0ma8Qhcqv50/34fq8mM1XIUQ6d1u8PS4arIuWluCmUx3hhlT5iR+6SgHg3wDxbv8FYgM98y0T0fAuhUdUQ==", "task"=>{"name"=>"ok", "content"=>"okokok", "end_time(1i)"=>"2020", "end_time(2i)"=>"10", "end_time(3i)"=>"6", "statut"=>"not_started", "priority"=>"low"}, "commit"=>"登録する"}
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.3ms | Allocations: 63)
+  Rendered tasks/_form.html.erb (Duration: 4.5ms | Allocations: 2479)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 2665)
+Completed 200 OK in 39ms (Views: 27.5ms | ActiveRecord: 0.0ms | Allocations: 27286)
+
+
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+Started GET "/tasks" for ::1 at 2020-10-05 19:20:17 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 45.1ms | Allocations: 186764)
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:15
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 82)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 53.3ms | Allocations: 189273)
+Completed 200 OK in 317ms (Views: 307.5ms | ActiveRecord: 2.6ms | Allocations: 506352)
+
+
+Started GET "/images/apps.jpg" for ::1 at 2020-10-05 19:20:18 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/apps.jpg"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/tasks/new" for ::1 at 2020-10-05 19:20:19 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.6ms | Allocations: 183)
+  Rendered tasks/_form.html.erb (Duration: 4.8ms | Allocations: 3331)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 4032)
+Completed 200 OK in 38ms (Views: 24.5ms | ActiveRecord: 2.5ms | Allocations: 28467)
+
+
+Started POST "/tasks" for ::1 at 2020-10-05 19:20:25 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K4hLVs0Z7t8aKaKTwQaKwGA9PK7aLQK3I/nDqmAto3PeMtHzLbz/LhTo1oQZAhwxxrOcPkLIKBVnQjwAaBbkeQ==", "task"=>{"name"=>"test1", "content"=>"jefjfklqdjfklj", "end_time(1i)"=>"2020", "end_time(2i)"=>"10", "end_time(3i)"=>"6", "statut"=>"not_started", "priority"=>"low"}, "commit"=>"登録する"}
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 1.0ms | Allocations: 63)
+  Rendered tasks/_form.html.erb (Duration: 5.5ms | Allocations: 2479)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 7.6ms | Allocations: 2665)
+Completed 200 OK in 36ms (Views: 27.2ms | ActiveRecord: 0.0ms | Allocations: 27353)
+
+
+Started GET "/tasks" for ::1 at 2020-10-05 19:20:38 +0100
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 1.8ms | Allocations: 2199)
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:15
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 3218)
+Completed 200 OK in 28ms (Views: 25.0ms | ActiveRecord: 1.0ms | Allocations: 22952)
+
+
+Started GET "/tasks?sort_expired=true" for ::1 at 2020-10-05 19:22:12 +0100
+Processing by TasksController#index as HTML
+  Parameters: {"sort_expired"=>"true"}
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 3.5ms | Allocations: 2443)
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."end_time" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:15
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 77)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 11.2ms | Allocations: 4646)
+Completed 200 OK in 32ms (Views: 29.4ms | ActiveRecord: 0.8ms | Allocations: 25402)
+
+
+Started GET "/tasks?sort_expired=true" for ::1 at 2020-10-05 19:22:14 +0100
+Processing by TasksController#index as HTML
+  Parameters: {"sort_expired"=>"true"}
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 1.8ms | Allocations: 2203)
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY "tasks"."end_time" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:15
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 3206)
+Completed 200 OK in 29ms (Views: 26.9ms | ActiveRecord: 0.7ms | Allocations: 22887)
+
+
