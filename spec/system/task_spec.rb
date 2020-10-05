@@ -1,19 +1,9 @@
-#bundle exec rspec spec/system/task_spec.rb
-
 require 'rails_helper'
-require 'selenium-webdriver'
+
 RSpec.describe 'Task Management Function', type: :system do
   before do
-    @user =FactoryBot.create(:user)
-    @admin_user = FactoryBot.create(:admin_user)
-
-    @task1 = FactoryBot.create(:task, user:@user)
-    @task2 = FactoryBot.create(:second_task, user:@user)
-
-    visit new_session_path
-    fill_in 'session[email]', with: @user.email
-    fill_in 'session[password]', with: @user.password
-    click_button 'Log in'
+    FactoryBot.create(:task)
+    FactoryBot.create(:second_task)
   end
 
   describe 'Reordering by Priority' do
@@ -66,11 +56,11 @@ RSpec.describe 'Task Management Function', type: :system do
       it 'Data is stored.' do
         visit new_task_path
         select '2020', from: 'task_end_time_1i'
-        select 'May', from: 'task_end_time_2i'
+        select '5', from: 'task_end_time_2i'
         select '1', from: 'task_end_time_3i'
         click_on 'commit'
         expect(page).to have_content '2020'
-        expect(page).to have_content 'May'
+        expect(page).to have_content '5'
         expect(page).to have_content '1'
       end
     end
@@ -79,7 +69,7 @@ RSpec.describe 'Task Management Function', type: :system do
       it 'Tasks are arranged in descending order by end time' do
 
         visit tasks_path
-        click_on 'deadline'
+        click_on 'deadilne'
         task_list = all('.tbody tr')
         expect(page).to have_content 'Task2'
         expect(page).to have_content 'Task1'
@@ -132,8 +122,8 @@ RSpec.describe 'Task Management Function', type: :system do
   describe 'Task Details Screen' do
     context 'When you move to any task detail screen' do
       it 'You will be redirected to a page with the content of the relevant task.' do
-        @task1 = FactoryBot.create(:task, user:@user)
-        visit task_path(@task1.id)
+        task = FactoryBot.create(:task)
+        visit task_path(task.id)
         expect(page).to have_content 'Task1'
         expect(page).to have_content 'content1'
       end
