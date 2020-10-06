@@ -13574,3 +13574,1492 @@ Creating scope :not_started. Overwriting existing method Task.not_started.
   [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "user"], ["email", "user@gmail.com"], ["password_digest", "$2a$04$gBRGSO7iieheINFXiBoTLu/xN3hhPoOVGCvWzJLaJfQp0qy2.JtwG"], ["created_at", "2020-10-06 13:02:09.113707"], ["updated_at", "2020-10-06 13:02:09.113707"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "admin"], ["email", "admin@gmail.com"], ["password_digest", "$2a$04$1cUex2VDYVyhmdz5tHzmsuEf/WBS2ERwIOB2cCcwTgd.eEo/tWI5m"], ["created_at", "2020-10-06 13:02:09.119275"], ["updated_at", "2020-10-06 13:02:09.119275"], ["admin", true]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.9ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Task1"], ["content", "content1"], ["end_time", "2020-05-01"], ["created_at", "2020-10-06 13:02:09.121862"], ["updated_at", "2020-10-06 13:02:09.121862"], ["statut", 2], ["priority", 2], ["user_id", 209]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Task2"], ["content", "content2"], ["end_time", "2020-05-02"], ["created_at", "2020-10-06 13:02:09.125224"], ["updated_at", "2020-10-06 13:02:09.125224"], ["statut", 2], ["priority", 1], ["user_id", 209]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2020-10-06 13:02:11 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 83)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1524)
+Completed 200 OK in 16ms (Views: 8.2ms | ActiveRecord: 0.4ms | Allocations: 4155)
+Started POST "/sessions" for 127.0.0.1 at 2020-10-06 13:02:12 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"user@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/admin/users
+Completed 302 Found in 7ms (ActiveRecord: 0.3ms | Allocations: 547)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:12 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 209], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/
+Filter chain halted as :check_admin rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 1.2ms | Allocations: 596)
+Started GET "/" for 127.0.0.1 at 2020-10-06 13:02:12 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 209], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/users/209
+Filter chain halted as :login_check rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms | Allocations: 517)
+Started GET "/users/209" for 127.0.0.1 at 2020-10-06 13:02:12 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"209"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 209], ["LIMIT", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 209], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_search.html.erb (Duration: 2.4ms | Allocations: 1351)
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 209]]
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 5)
+  Rendered users/show.html.erb within layouts/application (Duration: 10.7ms | Allocations: 3919)
+Completed 200 OK in 19ms (Views: 12.2ms | ActiveRecord: 2.2ms | Allocations: 5592)
+Started GET "/tasks" for 127.0.0.1 at 2020-10-06 13:02:13 +0100
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 209], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 1.9ms | Allocations: 689)
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 209], ["LIMIT", 4], ["OFFSET", 0]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 10.4ms | Allocations: 2323)
+Completed 200 OK in 18ms (Views: 13.0ms | ActiveRecord: 1.0ms | Allocations: 4144)
+Started GET "/tasks?sort_priority=true" for 127.0.0.1 at 2020-10-06 13:02:13 +0100
+Processing by TasksController#index as HTML
+  Parameters: {"sort_priority"=>"true"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 209], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 2.7ms | Allocations: 441)
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."priority" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 209], ["LIMIT", 4], ["OFFSET", 0]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1039)
+Completed 200 OK in 12ms (Views: 8.2ms | ActiveRecord: 1.1ms | Allocations: 2026)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "user"], ["email", "user@gmail.com"], ["password_digest", "$2a$04$8PDc7hToQEk9YjtbygD45.4tvCtUd6KVVul.WNKEhkCHsxAQ8ok7i"], ["created_at", "2020-10-06 13:02:16.509896"], ["updated_at", "2020-10-06 13:02:16.509896"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "admin"], ["email", "admin@gmail.com"], ["password_digest", "$2a$04$tt1HbyJhkHyTWfgYxgn5NOxPcUbJt3amt2y4UyQjdQbEFghM4XIe2"], ["created_at", "2020-10-06 13:02:16.516729"], ["updated_at", "2020-10-06 13:02:16.516729"], ["admin", true]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.8ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Task1"], ["content", "content1"], ["end_time", "2020-05-01"], ["created_at", "2020-10-06 13:02:16.519963"], ["updated_at", "2020-10-06 13:02:16.519963"], ["statut", 2], ["priority", 2], ["user_id", 211]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Task2"], ["content", "content2"], ["end_time", "2020-05-02"], ["created_at", "2020-10-06 13:02:16.523092"], ["updated_at", "2020-10-06 13:02:16.523092"], ["statut", 2], ["priority", 1], ["user_id", 211]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2020-10-06 13:02:16 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 438)
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 0.5ms | Allocations: 1132)
+Started POST "/sessions" for 127.0.0.1 at 2020-10-06 13:02:16 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"user@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/admin/users
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms | Allocations: 381)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:16 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 211], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/
+Filter chain halted as :check_admin rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms | Allocations: 395)
+Started GET "/" for 127.0.0.1 at 2020-10-06 13:02:16 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 211], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/users/211
+Filter chain halted as :login_check rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 432)
+Started GET "/users/211" for 127.0.0.1 at 2020-10-06 13:02:16 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"211"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 211], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 211], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_search.html.erb (Duration: 1.9ms | Allocations: 700)
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 211]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered users/show.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1383)
+Completed 200 OK in 11ms (Views: 5.8ms | ActiveRecord: 1.0ms | Allocations: 2294)
+Started GET "/tasks" for 127.0.0.1 at 2020-10-06 13:02:16 +0100
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 211], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 1.3ms | Allocations: 435)
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 211], ["LIMIT", 4], ["OFFSET", 0]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1028)
+Completed 200 OK in 9ms (Views: 5.2ms | ActiveRecord: 1.1ms | Allocations: 2011)
+Started GET "/tasks?utf8=%E2%9C%93&name=Task1&statut=2&commit=search" for 127.0.0.1 at 2020-10-06 13:02:17 +0100
+Processing by TasksController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Task1", "statut"=>"2", "commit"=>"search"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 211], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 1.1ms | Allocations: 435)
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."name" = $2 AND "tasks"."statut" = $3 LIMIT $4 OFFSET $5[0m  [["user_id", 211], ["name", "Task1"], ["statut", "2"], ["LIMIT", 4], ["OFFSET", 0]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 987)
+Completed 200 OK in 11ms (Views: 5.2ms | ActiveRecord: 0.8ms | Allocations: 2012)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "user"], ["email", "user@gmail.com"], ["password_digest", "$2a$04$KoND8tzT0Q0jhre30Pfqa.B9kpfMxXgvMaRfoP2qG2qzaSxDIvZa6"], ["created_at", "2020-10-06 13:02:17.584253"], ["updated_at", "2020-10-06 13:02:17.584253"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "admin"], ["email", "admin@gmail.com"], ["password_digest", "$2a$04$T8nfcfcLGTU0FtxlCDique4bE6bKf/y0LwCQJYZc48jDhnACz9Mjy"], ["created_at", "2020-10-06 13:02:17.590165"], ["updated_at", "2020-10-06 13:02:17.590165"], ["admin", true]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Task1"], ["content", "content1"], ["end_time", "2020-05-01"], ["created_at", "2020-10-06 13:02:17.594199"], ["updated_at", "2020-10-06 13:02:17.594199"], ["statut", 2], ["priority", 2], ["user_id", 213]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Task2"], ["content", "content2"], ["end_time", "2020-05-02"], ["created_at", "2020-10-06 13:02:17.598454"], ["updated_at", "2020-10-06 13:02:17.598454"], ["statut", 2], ["priority", 1], ["user_id", 213]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2020-10-06 13:02:17 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 431)
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 0.5ms | Allocations: 1123)
+Started POST "/sessions" for 127.0.0.1 at 2020-10-06 13:02:17 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"user@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/admin/users
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms | Allocations: 381)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:17 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 213], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/
+Filter chain halted as :check_admin rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms | Allocations: 399)
+Started GET "/" for 127.0.0.1 at 2020-10-06 13:02:17 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 213], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/users/213
+Filter chain halted as :login_check rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms | Allocations: 426)
+Started GET "/users/213" for 127.0.0.1 at 2020-10-06 13:02:17 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"213"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 213], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 213], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_search.html.erb (Duration: 1.5ms | Allocations: 689)
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 213]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered users/show.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1368)
+Completed 200 OK in 9ms (Views: 5.8ms | ActiveRecord: 1.0ms | Allocations: 2268)
+Started GET "/tasks" for 127.0.0.1 at 2020-10-06 13:02:17 +0100
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 213], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 1.3ms | Allocations: 436)
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 213], ["LIMIT", 4], ["OFFSET", 0]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1029)
+Completed 200 OK in 10ms (Views: 6.3ms | ActiveRecord: 0.7ms | Allocations: 2016)
+Started GET "/tasks?utf8=%E2%9C%93&name=&statut=2&commit=search" for 127.0.0.1 at 2020-10-06 13:02:18 +0100
+Processing by TasksController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"", "statut"=>"2", "commit"=>"search"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 213], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 10.1ms | Allocations: 435)
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."statut" = $2 LIMIT $3 OFFSET $4[0m  [["user_id", 213], ["statut", "2"], ["LIMIT", 4], ["OFFSET", 0]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 13.6ms | Allocations: 1039)
+Completed 200 OK in 20ms (Views: 15.5ms | ActiveRecord: 0.8ms | Allocations: 2034)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "user"], ["email", "user@gmail.com"], ["password_digest", "$2a$04$5LCfHExEJC7y9BVQPgFZw.KUllG1UbEjMTAfTax5P37cVM.izLoBm"], ["created_at", "2020-10-06 13:02:18.479149"], ["updated_at", "2020-10-06 13:02:18.479149"]]
+  [1m[35m (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "admin"], ["email", "admin@gmail.com"], ["password_digest", "$2a$04$2tH1Dpv2l7d6CBYRxTT6E.8ZVTSc29N8j2O0TpBkIxTwCRP2Wu/Sq"], ["created_at", "2020-10-06 13:02:18.487681"], ["updated_at", "2020-10-06 13:02:18.487681"], ["admin", true]]
+  [1m[35m (1.9ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Task1"], ["content", "content1"], ["end_time", "2020-05-01"], ["created_at", "2020-10-06 13:02:18.493051"], ["updated_at", "2020-10-06 13:02:18.493051"], ["statut", 2], ["priority", 2], ["user_id", 215]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.8ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Task2"], ["content", "content2"], ["end_time", "2020-05-02"], ["created_at", "2020-10-06 13:02:18.496555"], ["updated_at", "2020-10-06 13:02:18.496555"], ["statut", 2], ["priority", 1], ["user_id", 215]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2020-10-06 13:02:18 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 431)
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 1122)
+Started POST "/sessions" for 127.0.0.1 at 2020-10-06 13:02:18 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"user@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/admin/users
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms | Allocations: 381)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:18 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 215], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/
+Filter chain halted as :check_admin rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms | Allocations: 403)
+Started GET "/" for 127.0.0.1 at 2020-10-06 13:02:18 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 215], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/users/215
+Filter chain halted as :login_check rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 434)
+Started GET "/users/215" for 127.0.0.1 at 2020-10-06 13:02:18 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"215"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 215], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 215], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_search.html.erb (Duration: 1.3ms | Allocations: 689)
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 215]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered users/show.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1368)
+Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 0.8ms | Allocations: 2274)
+Started GET "/tasks" for 127.0.0.1 at 2020-10-06 13:02:18 +0100
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 215], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 0.9ms | Allocations: 435)
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 215], ["LIMIT", 4], ["OFFSET", 0]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1028)
+Completed 200 OK in 7ms (Views: 3.8ms | ActiveRecord: 0.7ms | Allocations: 2013)
+Started GET "/tasks?utf8=%E2%9C%93&name=Task1&statut=2&commit=search" for 127.0.0.1 at 2020-10-06 13:02:19 +0100
+Processing by TasksController#index as HTML
+  Parameters: {"utf8"=>"✓", "name"=>"Task1", "statut"=>"2", "commit"=>"search"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 215], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 5.0ms | Allocations: 435)
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 AND "tasks"."name" = $2 AND "tasks"."statut" = $3 LIMIT $4 OFFSET $5[0m  [["user_id", 215], ["name", "Task1"], ["statut", "2"], ["LIMIT", 4], ["OFFSET", 0]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 9.3ms | Allocations: 984)
+Completed 200 OK in 14ms (Views: 10.6ms | ActiveRecord: 1.0ms | Allocations: 2015)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "user"], ["email", "user@gmail.com"], ["password_digest", "$2a$04$ZCPu9JeOnyn0ukubIYYbuOx97MGScL1n42WXDyHEUnp9fLPduWlGq"], ["created_at", "2020-10-06 13:02:19.854061"], ["updated_at", "2020-10-06 13:02:19.854061"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "admin"], ["email", "admin@gmail.com"], ["password_digest", "$2a$04$4HkML7qecFXCCBYlAI7LXOeSnNaa1en9wckTJ8bI9fS2/kJXgeMR."], ["created_at", "2020-10-06 13:02:19.861664"], ["updated_at", "2020-10-06 13:02:19.861664"], ["admin", true]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Task1"], ["content", "content1"], ["end_time", "2020-05-01"], ["created_at", "2020-10-06 13:02:19.865789"], ["updated_at", "2020-10-06 13:02:19.865789"], ["statut", 2], ["priority", 2], ["user_id", 217]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.7ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Task2"], ["content", "content2"], ["end_time", "2020-05-02"], ["created_at", "2020-10-06 13:02:19.869516"], ["updated_at", "2020-10-06 13:02:19.869516"], ["statut", 2], ["priority", 1], ["user_id", 217]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2020-10-06 13:02:19 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 431)
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 1122)
+Started POST "/sessions" for 127.0.0.1 at 2020-10-06 13:02:20 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"user@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/admin/users
+Completed 302 Found in 5ms (ActiveRecord: 1.6ms | Allocations: 383)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:20 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 217], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/
+Filter chain halted as :check_admin rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 397)
+Started GET "/" for 127.0.0.1 at 2020-10-06 13:02:20 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 217], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/users/217
+Filter chain halted as :login_check rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms | Allocations: 428)
+Started GET "/users/217" for 127.0.0.1 at 2020-10-06 13:02:20 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"217"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 217], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 217], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_search.html.erb (Duration: 1.5ms | Allocations: 690)
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 217]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered users/show.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1369)
+Completed 200 OK in 9ms (Views: 5.2ms | ActiveRecord: 1.2ms | Allocations: 2276)
+Started GET "/tasks/new" for 127.0.0.1 at 2020-10-06 13:02:20 +0100
+Processing by TasksController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 217], ["LIMIT", 1]]
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.8ms | Allocations: 182)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tasks/_form.html.erb (Duration: 10.7ms | Allocations: 3154)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 13.5ms | Allocations: 3889)
+Completed 200 OK in 18ms (Views: 15.0ms | ActiveRecord: 0.3ms | Allocations: 4772)
+Started POST "/tasks" for 127.0.0.1 at 2020-10-06 13:02:20 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "task"=>{"name"=>"", "content"=>"", "end_time(1i)"=>"2020", "end_time(2i)"=>"5", "end_time(3i)"=>"1", "statut"=>"not_started", "priority"=>"low"}, "commit"=>"登録する"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 217], ["LIMIT", 1]]
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.3ms | Allocations: 67)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/_form.html.erb (Duration: 4.5ms | Allocations: 2622)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 2835)
+Completed 200 OK in 14ms (Views: 7.8ms | ActiveRecord: 0.3ms | Allocations: 4731)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "user"], ["email", "user@gmail.com"], ["password_digest", "$2a$04$XGM9CbF8CJgalU99gMDHn.trWbokz/yye7WtSYpFKsnEnfGxmeaii"], ["created_at", "2020-10-06 13:02:21.100326"], ["updated_at", "2020-10-06 13:02:21.100326"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "admin"], ["email", "admin@gmail.com"], ["password_digest", "$2a$04$eTqAGTROKccpKz98i4JO4upht0ZxRhRHAHGsc28hdFE/pO.dU/cUu"], ["created_at", "2020-10-06 13:02:21.106079"], ["updated_at", "2020-10-06 13:02:21.106079"], ["admin", true]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Task1"], ["content", "content1"], ["end_time", "2020-05-01"], ["created_at", "2020-10-06 13:02:21.109211"], ["updated_at", "2020-10-06 13:02:21.109211"], ["statut", 2], ["priority", 2], ["user_id", 219]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Task2"], ["content", "content2"], ["end_time", "2020-05-02"], ["created_at", "2020-10-06 13:02:21.112516"], ["updated_at", "2020-10-06 13:02:21.112516"], ["statut", 2], ["priority", 1], ["user_id", 219]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2020-10-06 13:02:21 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 438)
+Completed 200 OK in 7ms (Views: 4.1ms | ActiveRecord: 0.3ms | Allocations: 1132)
+Started POST "/sessions" for 127.0.0.1 at 2020-10-06 13:02:21 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"user@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/admin/users
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms | Allocations: 382)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:21 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 219], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/
+Filter chain halted as :check_admin rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 402)
+Started GET "/" for 127.0.0.1 at 2020-10-06 13:02:21 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 219], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/users/219
+Filter chain halted as :login_check rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms | Allocations: 431)
+Started GET "/users/219" for 127.0.0.1 at 2020-10-06 13:02:21 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"219"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 219], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 219], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_search.html.erb (Duration: 1.2ms | Allocations: 701)
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 219]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered users/show.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1384)
+Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 0.8ms | Allocations: 2289)
+Started GET "/tasks" for 127.0.0.1 at 2020-10-06 13:02:21 +0100
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 219], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 1.0ms | Allocations: 435)
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 219], ["LIMIT", 4], ["OFFSET", 0]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1029)
+Completed 200 OK in 8ms (Views: 4.6ms | ActiveRecord: 0.6ms | Allocations: 2026)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "user"], ["email", "user@gmail.com"], ["password_digest", "$2a$04$7pPIzeLUP6qLh9jTabOUYef9kcjL2QEHrcOd6pL7LpYR946p.6Bh."], ["created_at", "2020-10-06 13:02:23.829245"], ["updated_at", "2020-10-06 13:02:23.829245"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (2.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "admin"], ["email", "admin@gmail.com"], ["password_digest", "$2a$04$cNel0jAGN4NxlnaDOEfCN.FUpCTkAqfy48IN8Ij8uKje4zvYxxzKq"], ["created_at", "2020-10-06 13:02:23.840567"], ["updated_at", "2020-10-06 13:02:23.840567"], ["admin", true]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Task1"], ["content", "content1"], ["end_time", "2020-05-01"], ["created_at", "2020-10-06 13:02:23.843806"], ["updated_at", "2020-10-06 13:02:23.843806"], ["statut", 2], ["priority", 2], ["user_id", 221]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Task2"], ["content", "content2"], ["end_time", "2020-05-02"], ["created_at", "2020-10-06 13:02:23.846873"], ["updated_at", "2020-10-06 13:02:23.846873"], ["statut", 2], ["priority", 1], ["user_id", 221]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2020-10-06 13:02:23 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 431)
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.2ms | Allocations: 1123)
+Started POST "/sessions" for 127.0.0.1 at 2020-10-06 13:02:24 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"user@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/admin/users
+Completed 302 Found in 7ms (ActiveRecord: 0.3ms | Allocations: 381)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:24 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 221], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/
+Filter chain halted as :check_admin rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms | Allocations: 403)
+Started GET "/" for 127.0.0.1 at 2020-10-06 13:02:24 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 221], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/users/221
+Filter chain halted as :login_check rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.8ms | Allocations: 424)
+Started GET "/users/221" for 127.0.0.1 at 2020-10-06 13:02:24 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"221"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 221], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 221], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_search.html.erb (Duration: 1.2ms | Allocations: 690)
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 221]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered users/show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1369)
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 0.7ms | Allocations: 2269)
+Started GET "/tasks" for 127.0.0.1 at 2020-10-06 13:02:24 +0100
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 221], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 1.3ms | Allocations: 435)
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 221], ["LIMIT", 4], ["OFFSET", 0]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1028)
+Completed 200 OK in 12ms (Views: 6.3ms | ActiveRecord: 1.3ms | Allocations: 2015)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "user"], ["email", "user@gmail.com"], ["password_digest", "$2a$04$lvX.VqpPZ9rUalXl02zUTOzaf/B2DvlChe5E/Nuc9PRYDLe1Mplli"], ["created_at", "2020-10-06 13:02:27.345249"], ["updated_at", "2020-10-06 13:02:27.345249"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "admin"], ["email", "admin@gmail.com"], ["password_digest", "$2a$04$m.wiz9tiiPqj456YXxfNWuYaUYzh.V6D8cQPn.gR2WEKqHBzRwPt2"], ["created_at", "2020-10-06 13:02:27.351439"], ["updated_at", "2020-10-06 13:02:27.351439"], ["admin", true]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.7ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Task1"], ["content", "content1"], ["end_time", "2020-05-01"], ["created_at", "2020-10-06 13:02:27.355945"], ["updated_at", "2020-10-06 13:02:27.355945"], ["statut", 2], ["priority", 2], ["user_id", 223]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.6ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Task2"], ["content", "content2"], ["end_time", "2020-05-02"], ["created_at", "2020-10-06 13:02:27.359697"], ["updated_at", "2020-10-06 13:02:27.359697"], ["statut", 2], ["priority", 1], ["user_id", 223]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2020-10-06 13:02:27 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 431)
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 1123)
+Started POST "/sessions" for 127.0.0.1 at 2020-10-06 13:02:27 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"user@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/admin/users
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 381)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:27 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 223], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/
+Filter chain halted as :check_admin rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms | Allocations: 399)
+Started GET "/" for 127.0.0.1 at 2020-10-06 13:02:27 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 223], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/users/223
+Filter chain halted as :login_check rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 434)
+Started GET "/users/223" for 127.0.0.1 at 2020-10-06 13:02:27 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"223"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 223], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 223], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_search.html.erb (Duration: 1.4ms | Allocations: 690)
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 223]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered users/show.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1369)
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 0.8ms | Allocations: 2275)
+Started GET "/tasks" for 127.0.0.1 at 2020-10-06 13:02:27 +0100
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 223], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 1.0ms | Allocations: 435)
+  [1m[36mTask Load (3.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 223], ["LIMIT", 4], ["OFFSET", 0]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1028)
+Completed 200 OK in 12ms (Views: 5.4ms | ActiveRecord: 3.5ms | Allocations: 2023)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "user"], ["email", "user@gmail.com"], ["password_digest", "$2a$04$OS2nOhh0sX69B0JTQ057PuAnxG8J562D6G2Xyct554/nz/YDx3nO2"], ["created_at", "2020-10-06 13:02:28.513207"], ["updated_at", "2020-10-06 13:02:28.513207"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "admin"], ["email", "admin@gmail.com"], ["password_digest", "$2a$04$aBJb.kIbocfQqvIumNdQOecl4HEKSvQZ6AlC3Xwb9RgFYTpjK45wG"], ["created_at", "2020-10-06 13:02:28.518977"], ["updated_at", "2020-10-06 13:02:28.518977"], ["admin", true]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Task1"], ["content", "content1"], ["end_time", "2020-05-01"], ["created_at", "2020-10-06 13:02:28.522008"], ["updated_at", "2020-10-06 13:02:28.522008"], ["statut", 2], ["priority", 2], ["user_id", 225]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Task2"], ["content", "content2"], ["end_time", "2020-05-02"], ["created_at", "2020-10-06 13:02:28.525616"], ["updated_at", "2020-10-06 13:02:28.525616"], ["statut", 2], ["priority", 1], ["user_id", 225]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2020-10-06 13:02:28 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 431)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 1122)
+Started POST "/sessions" for 127.0.0.1 at 2020-10-06 13:02:28 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"user@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/admin/users
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms | Allocations: 381)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:28 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 225], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/
+Filter chain halted as :check_admin rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms | Allocations: 397)
+Started GET "/" for 127.0.0.1 at 2020-10-06 13:02:28 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 225], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/users/225
+Filter chain halted as :login_check rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 438)
+Started GET "/users/225" for 127.0.0.1 at 2020-10-06 13:02:28 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"225"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 225], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 225], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_search.html.erb (Duration: 1.7ms | Allocations: 689)
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 225]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered users/show.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1368)
+Completed 200 OK in 10ms (Views: 5.4ms | ActiveRecord: 1.6ms | Allocations: 2272)
+Started GET "/tasks" for 127.0.0.1 at 2020-10-06 13:02:28 +0100
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 225], ["LIMIT", 1]]
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 1.0ms | Allocations: 435)
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 225], ["LIMIT", 4], ["OFFSET", 0]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1028)
+Completed 200 OK in 8ms (Views: 4.5ms | ActiveRecord: 0.7ms | Allocations: 2023)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "user"], ["email", "user@gmail.com"], ["password_digest", "$2a$04$D3JW9.mGL6Zr.Myjx0lOm.ntuqrMYjNAxJJkhPwLCVb9VbENbA.rq"], ["created_at", "2020-10-06 13:02:31.150178"], ["updated_at", "2020-10-06 13:02:31.150178"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "admin"], ["email", "admin@gmail.com"], ["password_digest", "$2a$04$CQipV0R1zihodMMKwj/r5upb9DjXl67mFC0qn5J2fBrGUxnBtZyaq"], ["created_at", "2020-10-06 13:02:31.155510"], ["updated_at", "2020-10-06 13:02:31.155510"], ["admin", true]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Task1"], ["content", "content1"], ["end_time", "2020-05-01"], ["created_at", "2020-10-06 13:02:31.158409"], ["updated_at", "2020-10-06 13:02:31.158409"], ["statut", 2], ["priority", 2], ["user_id", 227]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (3.1ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Task2"], ["content", "content2"], ["end_time", "2020-05-02"], ["created_at", "2020-10-06 13:02:31.161506"], ["updated_at", "2020-10-06 13:02:31.161506"], ["statut", 2], ["priority", 1], ["user_id", 227]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2020-10-06 13:02:31 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 431)
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 1123)
+Started POST "/sessions" for 127.0.0.1 at 2020-10-06 13:02:31 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"user@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/admin/users
+Completed 302 Found in 5ms (ActiveRecord: 1.0ms | Allocations: 381)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:31 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 227], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/
+Filter chain halted as :check_admin rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms | Allocations: 403)
+Started GET "/" for 127.0.0.1 at 2020-10-06 13:02:31 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 227], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/users/227
+Filter chain halted as :login_check rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms | Allocations: 426)
+Started GET "/users/227" for 127.0.0.1 at 2020-10-06 13:02:31 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"227"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 227], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 227], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_search.html.erb (Duration: 2.0ms | Allocations: 690)
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 227]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered users/show.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1369)
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 1.4ms | Allocations: 2265)
+Started GET "/tasks/new" for 127.0.0.1 at 2020-10-06 13:02:31 +0100
+Processing by TasksController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 227], ["LIMIT", 1]]
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.2ms | Allocations: 65)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tasks/_form.html.erb (Duration: 3.8ms | Allocations: 2342)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2553)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.3ms | Allocations: 3306)
+Started POST "/tasks" for 127.0.0.1 at 2020-10-06 13:02:32 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "task"=>{"name"=>"Task1", "content"=>"content1", "end_time(1i)"=>"2020", "end_time(2i)"=>"10", "end_time(3i)"=>"6", "statut"=>"completed", "priority"=>"high"}, "commit"=>"登録する"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 227], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Task1"], ["content", "content1"], ["end_time", "2020-10-06"], ["created_at", "2020-10-06 13:02:32.078566"], ["updated_at", "2020-10-06 13:02:32.078566"], ["statut", 2], ["priority", 2], ["user_id", 227]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://127.0.0.1:40069/users/227
+Completed 302 Found in 12ms (ActiveRecord: 1.2ms | Allocations: 1330)
+Started GET "/users/227" for 127.0.0.1 at 2020-10-06 13:02:32 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"227"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 227], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 227], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_search.html.erb (Duration: 1.8ms | Allocations: 691)
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 227]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered users/show.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1524)
+Completed 200 OK in 9ms (Views: 6.2ms | ActiveRecord: 0.6ms | Allocations: 2432)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "user"], ["email", "user@gmail.com"], ["password_digest", "$2a$04$NxmXQPmJooeRDomPszNweOix3jk8vrk6.jSWd6nijhQJfBVruYNKm"], ["created_at", "2020-10-06 13:02:32.835520"], ["updated_at", "2020-10-06 13:02:32.835520"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "admin"], ["email", "admin@gmail.com"], ["password_digest", "$2a$04$8qV7rHcdQzrESYPL1Ca2SuPSPdypmhLloCgif3YWhqOooW479okr2"], ["created_at", "2020-10-06 13:02:32.842174"], ["updated_at", "2020-10-06 13:02:32.842174"], ["admin", true]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Task1"], ["content", "content1"], ["end_time", "2020-05-01"], ["created_at", "2020-10-06 13:02:32.845293"], ["updated_at", "2020-10-06 13:02:32.845293"], ["statut", 2], ["priority", 2], ["user_id", 229]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.6ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Task2"], ["content", "content2"], ["end_time", "2020-05-02"], ["created_at", "2020-10-06 13:02:32.848680"], ["updated_at", "2020-10-06 13:02:32.848680"], ["statut", 2], ["priority", 1], ["user_id", 229]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2020-10-06 13:02:32 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 431)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.3ms | Allocations: 1122)
+Started POST "/sessions" for 127.0.0.1 at 2020-10-06 13:02:33 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"user@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/admin/users
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 381)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:33 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 229], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/
+Filter chain halted as :check_admin rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 407)
+Started GET "/" for 127.0.0.1 at 2020-10-06 13:02:33 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 229], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/users/229
+Filter chain halted as :login_check rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms | Allocations: 430)
+Started GET "/users/229" for 127.0.0.1 at 2020-10-06 13:02:33 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"229"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 229], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 229], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_search.html.erb (Duration: 2.0ms | Allocations: 689)
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 229]]
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered users/show.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1368)
+Completed 200 OK in 10ms (Views: 6.1ms | ActiveRecord: 0.8ms | Allocations: 2268)
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTask Create (0.7ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Task1"], ["content", "content1"], ["end_time", "2020-05-01"], ["created_at", "2020-10-06 13:02:33.219921"], ["updated_at", "2020-10-06 13:02:33.219921"], ["statut", 2], ["priority", 2], ["user_id", 229]]
+  [1m[35m (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/tasks/116" for 127.0.0.1 at 2020-10-06 13:02:33 +0100
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"116"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 116], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 229], ["LIMIT", 1]]
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.3ms | Allocations: 71)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 448)
+Completed 200 OK in 7ms (Views: 2.6ms | ActiveRecord: 0.5ms | Allocations: 1561)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "user"], ["email", "user@gmail.com"], ["password_digest", "$2a$04$qb.aLIut3nXgfY7PMPqOk.YvQRpumtrJ/1Hh9oLNsiOZgwb1pNqYy"], ["created_at", "2020-10-06 13:02:33.513141"], ["updated_at", "2020-10-06 13:02:33.513141"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "admin"], ["email", "admin@gmail.com"], ["password_digest", "$2a$04$EvTxVyimlW3429VIGmaR9u5A7M9C9E1sdFl7JJqhaZ1UT4povjG3W"], ["created_at", "2020-10-06 13:02:33.518788"], ["updated_at", "2020-10-06 13:02:33.518788"], ["admin", true]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/new" for 127.0.0.1 at 2020-10-06 13:02:33 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering users/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered users/_form.html.erb (Duration: 5.7ms | Allocations: 1574)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered users/new.html.erb within layouts/application (Duration: 7.3ms | Allocations: 1960)
+Completed 200 OK in 11ms (Views: 8.5ms | ActiveRecord: 0.3ms | Allocations: 2808)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "user"], ["email", "user@gmail.com"], ["password_digest", "$2a$04$G0xIinrMgnn9xruXID/gOeRDq2uBVS8NHgmmZXD21erivUXSDw782"], ["created_at", "2020-10-06 13:02:36.184574"], ["updated_at", "2020-10-06 13:02:36.184574"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (3.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "admin"], ["email", "admin@gmail.com"], ["password_digest", "$2a$04$uc4K1xC8.Y1f/LVlcWKkHewkD0Q4sk2SOAEFhCJwxvjfKrEVF7PZy"], ["created_at", "2020-10-06 13:02:36.193497"], ["updated_at", "2020-10-06 13:02:36.193497"], ["admin", true]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/tasks" for 127.0.0.1 at 2020-10-06 13:02:36 +0100
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/sessions/new
+Filter chain halted as :login_check rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 388)
+Started GET "/sessions/new" for 127.0.0.1 at 2020-10-06 13:02:36 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 438)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.2ms | Allocations: 1298)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "user"], ["email", "user@gmail.com"], ["password_digest", "$2a$04$fAeDNx.Kn6q84PKgHehLLuwXB8pJ40dAT8sAkKvB9PQabKaLISYj."], ["created_at", "2020-10-06 13:02:37.174831"], ["updated_at", "2020-10-06 13:02:37.174831"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "admin"], ["email", "admin@gmail.com"], ["password_digest", "$2a$04$8Kf0WN8Cq7WXB62thlKf7.c8X8qla5nm7CHIt1biduH3OdsogXWkC"], ["created_at", "2020-10-06 13:02:37.180293"], ["updated_at", "2020-10-06 13:02:37.180293"], ["admin", true]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2020-10-06 13:02:37 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 431)
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 1123)
+Started POST "/sessions" for 127.0.0.1 at 2020-10-06 13:02:37 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"user@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/admin/users
+Completed 302 Found in 7ms (ActiveRecord: 0.4ms | Allocations: 382)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:37 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 235], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/
+Filter chain halted as :check_admin rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 408)
+Started GET "/" for 127.0.0.1 at 2020-10-06 13:02:37 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 235], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/users/235
+Filter chain halted as :login_check rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms | Allocations: 429)
+Started GET "/users/235" for 127.0.0.1 at 2020-10-06 13:02:37 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"235"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 235], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 235], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_search.html.erb (Duration: 1.2ms | Allocations: 697)
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 235]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered users/show.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1069)
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 0.6ms | Allocations: 1971)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "user"], ["email", "user@gmail.com"], ["password_digest", "$2a$04$xJV05xXBegI9xeZjodvf1OtbYGBF/c3B/MXL7iEkUlw2mLn1aSVOC"], ["created_at", "2020-10-06 13:02:38.400334"], ["updated_at", "2020-10-06 13:02:38.400334"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "admin"], ["email", "admin@gmail.com"], ["password_digest", "$2a$04$6X9ye0rKeJMSBmJESg/M/eiREmAcn64DyrceN09hOSFrCqZYE/ea."], ["created_at", "2020-10-06 13:02:38.406630"], ["updated_at", "2020-10-06 13:02:38.406630"], ["admin", true]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2020-10-06 13:02:38 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 431)
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.8ms | Allocations: 1122)
+Started POST "/sessions" for 127.0.0.1 at 2020-10-06 13:02:38 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"user@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/admin/users
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 382)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:38 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 237], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/
+Filter chain halted as :check_admin rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms | Allocations: 397)
+Started GET "/" for 127.0.0.1 at 2020-10-06 13:02:38 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 237], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/users/237
+Filter chain halted as :login_check rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 426)
+Started GET "/users/237" for 127.0.0.1 at 2020-10-06 13:02:38 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"237"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 237], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 237], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_search.html.erb (Duration: 1.5ms | Allocations: 690)
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 237]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered users/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1061)
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.7ms | Allocations: 1961)
+Started GET "/users/new" for 127.0.0.1 at 2020-10-06 13:02:38 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 237], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/users/237
+Filter chain halted as :login_check rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 436)
+Started GET "/users/237" for 127.0.0.1 at 2020-10-06 13:02:38 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"237"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 237], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 237], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_search.html.erb (Duration: 1.7ms | Allocations: 689)
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 237]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered users/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1060)
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 1.0ms | Allocations: 1960)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "user"], ["email", "user@gmail.com"], ["password_digest", "$2a$04$MI5/MRFWYQ10s1nq9eFan.D4gZK693rwB0GmwVy8kcFYDydBUvZGu"], ["created_at", "2020-10-06 13:02:39.625936"], ["updated_at", "2020-10-06 13:02:39.625936"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "admin"], ["email", "admin@gmail.com"], ["password_digest", "$2a$04$YGeT/oIWHoy3XapJgR3hgeSD515fiLWJuljZKJ68wu9.xSYaE7NpG"], ["created_at", "2020-10-06 13:02:39.632172"], ["updated_at", "2020-10-06 13:02:39.632172"], ["admin", true]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2020-10-06 13:02:39 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 431)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.3ms | Allocations: 1122)
+Started POST "/sessions" for 127.0.0.1 at 2020-10-06 13:02:39 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"user@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/admin/users
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 381)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:39 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 239], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/
+Filter chain halted as :check_admin rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 407)
+Started GET "/" for 127.0.0.1 at 2020-10-06 13:02:39 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 239], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/users/239
+Filter chain halted as :login_check rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 432)
+Started GET "/users/239" for 127.0.0.1 at 2020-10-06 13:02:39 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"239"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 239], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 239], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_search.html.erb (Duration: 1.3ms | Allocations: 689)
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 239]]
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered users/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1060)
+Completed 200 OK in 7ms (Views: 3.7ms | ActiveRecord: 0.7ms | Allocations: 1958)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:40 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 239], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/
+Filter chain halted as :check_admin rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 397)
+Started GET "/" for 127.0.0.1 at 2020-10-06 13:02:40 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 239], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/users/239
+Filter chain halted as :login_check rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms | Allocations: 426)
+Started GET "/users/239" for 127.0.0.1 at 2020-10-06 13:02:40 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"239"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 239], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 239], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_search.html.erb (Duration: 2.3ms | Allocations: 689)
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 239]]
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered users/show.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1060)
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.6ms | Allocations: 1962)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "user"], ["email", "user@gmail.com"], ["password_digest", "$2a$04$284xsvQaPxKJxWUzrLNpQ.TF3yEBSoWoOxybW6y/MPUKt4Px9gs/e"], ["created_at", "2020-10-06 13:02:40.848700"], ["updated_at", "2020-10-06 13:02:40.848700"]]
+  [1m[35m (1.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "admin"], ["email", "admin@gmail.com"], ["password_digest", "$2a$04$K.nZWmZMK23exNX7UIjMpu.DtKH75YKMDAOpoYCL24wBrNjlQ06ei"], ["created_at", "2020-10-06 13:02:40.856360"], ["updated_at", "2020-10-06 13:02:40.856360"], ["admin", true]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2020-10-06 13:02:40 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 431)
+Completed 200 OK in 6ms (Views: 2.5ms | ActiveRecord: 0.8ms | Allocations: 1122)
+Started POST "/sessions" for 127.0.0.1 at 2020-10-06 13:02:41 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"user@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/admin/users
+Completed 302 Found in 9ms (ActiveRecord: 0.7ms | Allocations: 381)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:41 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 241], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/
+Filter chain halted as :check_admin rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms | Allocations: 399)
+Started GET "/" for 127.0.0.1 at 2020-10-06 13:02:41 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 241], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/users/241
+Filter chain halted as :login_check rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 436)
+Started GET "/users/241" for 127.0.0.1 at 2020-10-06 13:02:41 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"241"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 241], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 241], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_search.html.erb (Duration: 1.7ms | Allocations: 689)
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 241]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered users/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1060)
+Completed 200 OK in 9ms (Views: 4.6ms | ActiveRecord: 0.8ms | Allocations: 1960)
+Started DELETE "/sessions/241" for 127.0.0.1 at 2020-10-06 13:02:41 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"id"=>"241"}
+Redirected to http://127.0.0.1:40069/sessions/new
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 296)
+Started GET "/sessions/new" for 127.0.0.1 at 2020-10-06 13:02:41 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 431)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.2ms | Allocations: 1269)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "user"], ["email", "user@gmail.com"], ["password_digest", "$2a$04$nXL.Gp7nV0FUpDDApazaOugK6.W/6AUu9Yy26FWzqv4UN.NgpdOWu"], ["created_at", "2020-10-06 13:02:42.151751"], ["updated_at", "2020-10-06 13:02:42.151751"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "admin"], ["email", "admin@gmail.com"], ["password_digest", "$2a$04$ezDXEcz18aBo3iztNJ8JweHX.lXWViilqJhTnhlcE9fRJ7tPD2zpy"], ["created_at", "2020-10-06 13:02:42.157086"], ["updated_at", "2020-10-06 13:02:42.157086"], ["admin", true]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2020-10-06 13:02:42 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 431)
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.4ms | Allocations: 1122)
+Started POST "/sessions" for 127.0.0.1 at 2020-10-06 13:02:42 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/admin/users
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms | Allocations: 381)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:42 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 244], ["LIMIT", 1]]
+  Rendering admin/users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY created_at DESC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 244]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 243]]
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered admin/users/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 1757)
+Completed 200 OK in 13ms (Views: 9.5ms | ActiveRecord: 1.5ms | Allocations: 3152)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:42 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 244], ["LIMIT", 1]]
+  Rendering admin/users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY created_at DESC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 244]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 243]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered admin/users/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1232)
+Completed 200 OK in 10ms (Views: 6.4ms | ActiveRecord: 1.7ms | Allocations: 1991)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "user"], ["email", "user@gmail.com"], ["password_digest", "$2a$04$AeWoV5xcEduxVBsKXwJiiOtIQq.fyBajPmwknyun09m2ESoG3gnKa"], ["created_at", "2020-10-06 13:02:43.342768"], ["updated_at", "2020-10-06 13:02:43.342768"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "admin"], ["email", "admin@gmail.com"], ["password_digest", "$2a$04$X153sVSL44s5ZmWmTZL2P.BiSOhD1uYJML7W6vb35ts/VUetuXwBm"], ["created_at", "2020-10-06 13:02:43.348355"], ["updated_at", "2020-10-06 13:02:43.348355"], ["admin", true]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2020-10-06 13:02:43 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 438)
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 1131)
+Started POST "/sessions" for 127.0.0.1 at 2020-10-06 13:02:43 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"user@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/admin/users
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms | Allocations: 381)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:43 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 245], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/
+Filter chain halted as :check_admin rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms | Allocations: 399)
+Started GET "/" for 127.0.0.1 at 2020-10-06 13:02:43 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 245], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/users/245
+Filter chain halted as :login_check rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 424)
+Started GET "/users/245" for 127.0.0.1 at 2020-10-06 13:02:43 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"245"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 245], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 245], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_search.html.erb (Duration: 1.2ms | Allocations: 699)
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 245]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered users/show.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1071)
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 0.6ms | Allocations: 1982)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:43 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 245], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/
+Filter chain halted as :check_admin rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 397)
+Started GET "/" for 127.0.0.1 at 2020-10-06 13:02:43 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 245], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/users/245
+Filter chain halted as :login_check rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms | Allocations: 426)
+Started GET "/users/245" for 127.0.0.1 at 2020-10-06 13:02:43 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"245"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 245], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 245], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_search.html.erb (Duration: 1.2ms | Allocations: 689)
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 245]]
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered users/show.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1060)
+Completed 200 OK in 8ms (Views: 4.0ms | ActiveRecord: 0.7ms | Allocations: 1964)
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "user"], ["email", "user@gmail.com"], ["password_digest", "$2a$04$HY3AylcoQTxSLV08ietNvOpdubcU13QALTgK2GtpuDP.Ua8OkOO9G"], ["created_at", "2020-10-06 13:02:44.505633"], ["updated_at", "2020-10-06 13:02:44.505633"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "admin"], ["email", "admin@gmail.com"], ["password_digest", "$2a$04$sCQi3erxtwRbuiiIDGv09uUMausiqv4HMTMQIdNSZLcrsfXRHS6O6"], ["created_at", "2020-10-06 13:02:44.512000"], ["updated_at", "2020-10-06 13:02:44.512000"], ["admin", true]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2020-10-06 13:02:44 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 431)
+Completed 200 OK in 9ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 1123)
+Started POST "/sessions" for 127.0.0.1 at 2020-10-06 13:02:44 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/admin/users
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms | Allocations: 382)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:44 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 248], ["LIMIT", 1]]
+  Rendering admin/users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY created_at DESC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 248]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 247]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered admin/users/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1232)
+Completed 200 OK in 12ms (Views: 5.3ms | ActiveRecord: 1.7ms | Allocations: 1992)
+Started GET "/admin/users/new" for 127.0.0.1 at 2020-10-06 13:02:44 +0100
+Processing by Admin::UsersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 248], ["LIMIT", 1]]
+  Rendering admin/users/new.html.erb within layouts/application
+  Rendered admin/users/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1004)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms | Allocations: 1686)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "user"], ["email", "user@gmail.com"], ["password_digest", "$2a$04$CbgHIJHzJjHNOJYB3XeSN.w9PkdNqkRZor/SjdIGiQeYUGiIEbDzq"], ["created_at", "2020-10-06 13:02:45.816094"], ["updated_at", "2020-10-06 13:02:45.816094"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "admin"], ["email", "admin@gmail.com"], ["password_digest", "$2a$04$49Uqhb2mWumzlzkTT.yWKO4MW363iXz5q7t1MNv/GMSTLq6xWQQVa"], ["created_at", "2020-10-06 13:02:45.821197"], ["updated_at", "2020-10-06 13:02:45.821197"], ["admin", true]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2020-10-06 13:02:45 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 438)
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 1131)
+Started POST "/sessions" for 127.0.0.1 at 2020-10-06 13:02:46 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/admin/users
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 381)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:46 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 250], ["LIMIT", 1]]
+  Rendering admin/users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY created_at DESC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 250]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 249]]
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered admin/users/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1246)
+Completed 200 OK in 9ms (Views: 5.5ms | ActiveRecord: 1.5ms | Allocations: 2009)
+Started GET "/admin/users/new" for 127.0.0.1 at 2020-10-06 13:02:46 +0100
+Processing by Admin::UsersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 250], ["LIMIT", 1]]
+  Rendering admin/users/new.html.erb within layouts/application
+  Rendered admin/users/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 200)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms | Allocations: 744)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "user"], ["email", "user@gmail.com"], ["password_digest", "$2a$04$r0MC.D.mn6ZJwGjXlKpvleTLeNOYCS9WwSoJxONEKhS9qjmyfT7hC"], ["created_at", "2020-10-06 13:02:47.014122"], ["updated_at", "2020-10-06 13:02:47.014122"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "admin"], ["email", "admin@gmail.com"], ["password_digest", "$2a$04$xTzV3QdAYZ2qt7slbilwn.Yw6Yy8FA0m2oRyqWfAYIFhbs.fa3N.W"], ["created_at", "2020-10-06 13:02:47.021618"], ["updated_at", "2020-10-06 13:02:47.021618"], ["admin", true]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2020-10-06 13:02:47 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 431)
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.2ms | Allocations: 1122)
+Started POST "/sessions" for 127.0.0.1 at 2020-10-06 13:02:47 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/admin/users
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms | Allocations: 381)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:47 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 252], ["LIMIT", 1]]
+  Rendering admin/users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY created_at DESC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 252]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 251]]
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered admin/users/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1232)
+Completed 200 OK in 9ms (Views: 5.2ms | ActiveRecord: 1.5ms | Allocations: 1994)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:47 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 252], ["LIMIT", 1]]
+  Rendering admin/users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY created_at DESC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 252]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 251]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered admin/users/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1232)
+Completed 200 OK in 8ms (Views: 5.3ms | ActiveRecord: 1.2ms | Allocations: 1994)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "user"], ["email", "user@gmail.com"], ["password_digest", "$2a$04$VR2U4WeZHmCAQfGJrrtcn.G8ULGThsEUCL8wwQkm7DErljH4Wq.iW"], ["created_at", "2020-10-06 13:02:48.379611"], ["updated_at", "2020-10-06 13:02:48.379611"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "admin"], ["email", "admin@gmail.com"], ["password_digest", "$2a$04$CdzOtfkX7O0rCYgLC.m22uR75krqN12CUc6jhiI.Vtrs/SDl5gzOq"], ["created_at", "2020-10-06 13:02:48.384434"], ["updated_at", "2020-10-06 13:02:48.384434"], ["admin", true]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2020-10-06 13:02:48 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 431)
+Completed 200 OK in 7ms (Views: 2.9ms | ActiveRecord: 2.9ms | Allocations: 1122)
+Started POST "/sessions" for 127.0.0.1 at 2020-10-06 13:02:48 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/admin/users
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 381)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:48 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 254], ["LIMIT", 1]]
+  Rendering admin/users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY created_at DESC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 254]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 253]]
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered admin/users/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1232)
+Completed 200 OK in 10ms (Views: 6.0ms | ActiveRecord: 1.6ms | Allocations: 1996)
+Started GET "/admin/users/253/edit" for 127.0.0.1 at 2020-10-06 13:02:48 +0100
+Processing by Admin::UsersController#edit as HTML
+  Parameters: {"id"=>"253"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 254], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 253], ["LIMIT", 1]]
+  Rendering admin/users/edit.html.erb within layouts/application
+  Rendered admin/users/edit.html.erb within layouts/application (Duration: 2.0ms | Allocations: 622)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.5ms | Allocations: 1423)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "user"], ["email", "user@gmail.com"], ["password_digest", "$2a$04$60owl0fKLlJzYn1TT0hF8eEmX3Aj/H9OiP65ABckroPO0sCF886ba"], ["created_at", "2020-10-06 13:02:50.030237"], ["updated_at", "2020-10-06 13:02:50.030237"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "admin"], ["email", "admin@gmail.com"], ["password_digest", "$2a$04$XbsfmAYvFLjSwliYtEdhIuqBsBZOrV9UAcZgnxvmkl8FqE/n29Iim"], ["created_at", "2020-10-06 13:02:50.037077"], ["updated_at", "2020-10-06 13:02:50.037077"], ["admin", true]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2020-10-06 13:02:50 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 438)
+Completed 200 OK in 10ms (Views: 5.7ms | ActiveRecord: 1.7ms | Allocations: 1131)
+Started POST "/sessions" for 127.0.0.1 at 2020-10-06 13:02:50 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/admin/users
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 381)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:50 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 256], ["LIMIT", 1]]
+  Rendering admin/users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY created_at DESC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 256]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 255]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered admin/users/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1245)
+Completed 200 OK in 8ms (Views: 4.7ms | ActiveRecord: 1.4ms | Allocations: 2007)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:50 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 256], ["LIMIT", 1]]
+  Rendering admin/users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY created_at DESC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 256]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 255]]
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered admin/users/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1232)
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 1.5ms | Allocations: 1992)
+Started DELETE "/admin/users/256" for 127.0.0.1 at 2020-10-06 13:02:50 +0100
+Processing by Admin::UsersController#destroy as HTML
+  Parameters: {"id"=>"256"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 256], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 256], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."admin" = $1[0m  [["admin", true]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."admin" = $1[0m  [["admin", true]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://127.0.0.1:40069/admin/users
+Completed 302 Found in 8ms (ActiveRecord: 1.9ms | Allocations: 1135)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:50 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 256], ["LIMIT", 1]]
+  Rendering admin/users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY created_at DESC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 256]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 255]]
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered admin/users/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1232)
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 1.4ms | Allocations: 2048)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "user"], ["email", "user@gmail.com"], ["password_digest", "$2a$04$je6YbpiecMn6j4bunUHFRun3zohOFMJoyl9ekM4jfwhwpb3ftzBMy"], ["created_at", "2020-10-06 13:02:51.195502"], ["updated_at", "2020-10-06 13:02:51.195502"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (3.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "admin"], ["email", "admin@gmail.com"], ["password_digest", "$2a$04$l0eDqS4aCh.YvGuiyiO4e.1W9KDmgkA0oocSGy7lCE80KBo5XoU/W"], ["created_at", "2020-10-06 13:02:51.204531"], ["updated_at", "2020-10-06 13:02:51.204531"], ["admin", true]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2020-10-06 13:02:51 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 431)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1122)
+Started POST "/sessions" for 127.0.0.1 at 2020-10-06 13:02:51 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/admin/users
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 382)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:51 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 258], ["LIMIT", 1]]
+  Rendering admin/users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY created_at DESC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 258]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 257]]
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered admin/users/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1232)
+Completed 200 OK in 9ms (Views: 5.1ms | ActiveRecord: 2.0ms | Allocations: 1999)
+Started GET "/admin/users/258/edit" for 127.0.0.1 at 2020-10-06 13:02:51 +0100
+Processing by Admin::UsersController#edit as HTML
+  Parameters: {"id"=>"258"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 258], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 258], ["LIMIT", 1]]
+  Rendering admin/users/edit.html.erb within layouts/application
+  Rendered admin/users/edit.html.erb within layouts/application (Duration: 0.5ms | Allocations: 200)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.4ms | Allocations: 860)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "user"], ["email", "user@gmail.com"], ["password_digest", "$2a$04$tznC.Kc6QaMSWIFXxP5MauB4oF1sk5B5heZ8JhJqJpQCt4lPupDGS"], ["created_at", "2020-10-06 13:02:52.574939"], ["updated_at", "2020-10-06 13:02:52.574939"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "admin"], ["email", "admin@gmail.com"], ["password_digest", "$2a$04$HmddhueF4hqIAM8uPh.JwuttAOZpjjV/xaJfIi2PuyIUyNVxoPNuC"], ["created_at", "2020-10-06 13:02:52.580987"], ["updated_at", "2020-10-06 13:02:52.580987"], ["admin", true]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2020-10-06 13:02:52 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 431)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.2ms | Allocations: 1122)
+Started POST "/sessions" for 127.0.0.1 at 2020-10-06 13:02:52 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:40069/admin/users
+Completed 302 Found in 6ms (ActiveRecord: 2.7ms | Allocations: 397)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:52 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 260], ["LIMIT", 1]]
+  Rendering admin/users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY created_at DESC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 260]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 259]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered admin/users/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1234)
+Completed 200 OK in 7ms (Views: 4.1ms | ActiveRecord: 1.4ms | Allocations: 1995)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:52 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 260], ["LIMIT", 1]]
+  Rendering admin/users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY created_at DESC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 260]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 259]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered admin/users/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1232)
+Completed 200 OK in 8ms (Views: 4.8ms | ActiveRecord: 1.5ms | Allocations: 1992)
+Started DELETE "/admin/users/260" for 127.0.0.1 at 2020-10-06 13:02:53 +0100
+Processing by Admin::UsersController#destroy as HTML
+  Parameters: {"id"=>"260"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 260], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 260], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."admin" = $1[0m  [["admin", true]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."admin" = $1[0m  [["admin", true]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://127.0.0.1:40069/admin/users
+Completed 302 Found in 8ms (ActiveRecord: 2.2ms | Allocations: 1096)
+Started GET "/admin/users" for 127.0.0.1 at 2020-10-06 13:02:53 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 260], ["LIMIT", 1]]
+  Rendering admin/users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY created_at DESC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 260]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 259]]
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered admin/users/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1232)
+Completed 200 OK in 10ms (Views: 5.6ms | ActiveRecord: 1.6ms | Allocations: 2054)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
