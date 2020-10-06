@@ -38,7 +38,7 @@ class Admin::UsersController < ApplicationController
         flash[:danger] = 'you are currently the only administrator. Please choose another administrator before'
         render :new
       else
-        flash[:danger] = 'oO something wrong'
+        flash[:danger] = 'something wrong'
         render :new
       end
     end
@@ -52,7 +52,7 @@ class Admin::UsersController < ApplicationController
         flash[:danger] = 'you are currently the only administrator. Please choose another administrator before'
         redirect_to admin_users_path
       else
-        flash[:danger] = 'oO something wrong'
+        flash[:danger] = 'something wrong'
         redirect_to admin_users_path
       end
     end

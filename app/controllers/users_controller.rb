@@ -3,6 +3,10 @@ class UsersController < ApplicationController
     before_action :user_check, only: [:index,:show,:edit, :update, :destroy]
     before_action :login_check, only:[:new, :index]
   
+    def admin_user
+      redirect_to(root_url) unless current_user && current_user.admin?
+    end
+
     def index
     end
     def new

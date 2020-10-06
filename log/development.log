@@ -18553,3 +18553,159 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 29ms (Views: 25.8ms | ActiveRecord: 0.3ms | Allocations: 20683)
 
 
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+Started GET "/" for ::1 at 2020-10-06 06:28:20 +0100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 55.4ms | Allocations: 185948)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 87)
+  Rendered users/new.html.erb within layouts/application (Duration: 57.8ms | Allocations: 186713)
+Completed 200 OK in 315ms (Views: 292.7ms | ActiveRecord: 4.8ms | Allocations: 508107)
+
+
+Started POST "/users" for ::1 at 2020-10-06 06:29:16 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"W3VDJBeVf7ctTw1LmtZrJjXsCeoxyrXU1CWOgBqgLBVGTwzyQlmj5Wm8pHiwcXVONsdd5+RonkhaZFOZkJKijA==", "user"=>{"name"=>"pipi", "email"=>"pipi@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録する"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "pipi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "pipi"], ["email", "pipi@gmail.com"], ["password_digest", "$2a$12$8ukF/grxAI1OmU9G2OQqve9CEghynzdEj0xiXo3HQg1QBJadkdaZC"], ["created_at", "2020-10-06 06:29:16.459870"], ["updated_at", "2020-10-06 06:29:16.459870"]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[35m (66.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+Redirected to http://localhost:3000/users
+Completed 302 Found in 385ms (ActiveRecord: 68.7ms | Allocations: 5601)
+
+
+Started GET "/users" for ::1 at 2020-10-06 06:29:16 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+Redirected to http://localhost:3000/users/4
+Filter chain halted as :user_check rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms | Allocations: 1376)
+
+
+Started GET "/users/4" for ::1 at 2020-10-06 06:29:16 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:56:in `set_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_search.html.erb (Duration: 2.9ms | Allocations: 3506)
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered users/show.html.erb within layouts/application (Duration: 13.6ms | Allocations: 9240)
+Completed 200 OK in 36ms (Views: 29.0ms | ActiveRecord: 2.9ms | Allocations: 30275)
+
+
+Started GET "/users/4/edit" for ::1 at 2020-10-06 06:30:17 +0100
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:56:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 12.0ms | Allocations: 3548)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.7ms | Allocations: 5715)
+
+
+  
+ActionView::Template::Error (Missing partial layouts/_user_top with {:locale=>[:ja], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/wilromeo/Bureau/TasksApp/app/views"
+  * "/home/wilromeo/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/kaminari-core-1.2.1/app/views"
+  * "/home/wilromeo/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/actiontext-6.0.3.3/app/views"
+  * "/home/wilromeo/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/actionmailbox-6.0.3.3/app/views"
+):
+    1: <%= render 'layouts/user_top' %>
+    2: <div class="container">
+    3:   <div class="container loggin_form">
+    4:     <h2>edit user</h2>
+  
+app/views/users/edit.html.erb:1
+Started GET "/users/4/edit" for ::1 at 2020-10-06 06:31:08 +0100
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:56:in `set_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.5ms | Allocations: 1489)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 77)
+  Rendered users/edit.html.erb within layouts/application (Duration: 6.4ms | Allocations: 2076)
+Completed 200 OK in 45ms (Views: 39.3ms | ActiveRecord: 0.5ms | Allocations: 24016)
+
+
+Started PATCH "/users/4" for ::1 at 2020-10-06 06:31:45 +0100
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cmknsconoaN+MBse6/9orD7JupBJDyTlOzWfMav2K35vU2hnn+t98TrDsi3BWHbEPeLunZytD3m1dEIoIcSl5w==", "user"=>{"name"=>"pipo", "email"=>"pipo@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"更新する", "id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:56:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:23:in `update_admin'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."admin" = $1[0m  [["admin", true]]
+  ↳ app/models/user.rb:23:in `update_admin'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "name" = $1, "email" = $2, "password_digest" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["name", "pipo"], ["email", "pipo@gmail.com"], ["password_digest", "$2a$12$NJL8NyF/f3yJTwl5HdsGBefeTSz5CkFRVR86nWBoj/JJ.ZPaLXtyy"], ["updated_at", "2020-10-06 06:31:45.713352"], ["id", 4]]
+  ↳ app/controllers/users_controller.rb:36:in `update'
+  [1m[35m (22.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:36:in `update'
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 337ms (ActiveRecord: 24.4ms | Allocations: 5208)
+
+
+Started GET "/users/4" for ::1 at 2020-10-06 06:31:45 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:56:in `set_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_search.html.erb (Duration: 3.4ms | Allocations: 3320)
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered users/show.html.erb within layouts/application (Duration: 9.3ms | Allocations: 4666)
+Completed 200 OK in 40ms (Views: 31.9ms | ActiveRecord: 1.5ms | Allocations: 25603)
+
+
+Started GET "/tasks/new" for ::1 at 2020-10-06 06:32:01 +0100
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.6ms | Allocations: 183)
+  Rendered tasks/_form.html.erb (Duration: 6.7ms | Allocations: 3262)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 3956)
+Completed 200 OK in 53ms (Views: 35.8ms | ActiveRecord: 3.1ms | Allocations: 28750)
+
+
+Started POST "/tasks" for ::1 at 2020-10-06 06:32:11 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qjJ5qKBmhslGWx5P+30fHJRmtwTIJQIZaq1Qrv+AcvhfiOMNQMOXOEiaalgjeYntMugXlFDAKLsuFq8E97s18g==", "task"=>{"name"=>"ok ", "content"=>"ok ", "end_time(1i)"=>"2020", "end_time(2i)"=>"10", "end_time(3i)"=>"6", "statut"=>"not_started", "priority"=>"low"}, "commit"=>"登録する"}
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 0.4ms | Allocations: 63)
+  Rendered tasks/_form.html.erb (Duration: 7.6ms | Allocations: 2478)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 2663)
+Completed 200 OK in 41ms (Views: 37.1ms | ActiveRecord: 0.0ms | Allocations: 24784)
+
+
