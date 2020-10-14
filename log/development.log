@@ -21218,3 +21218,903 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 3292ms (Views: 3242.4ms | ActiveRecord: 6.5ms | Allocations: 510186)
 
 
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+Started GET "/" for ::1 at 2020-10-14 10:50:01 +0100
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.3.3) lib/active_record/migration.rb:586:in `check_pending!'
+activerecord (6.0.3.3) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8729435605278092565)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20201005114610)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (110.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201005114610"]]
+  [1m[35m (13.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddIndexToUsersEmail (20201005121517)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (69.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201005121517"]]
+  [1m[35m (20.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUserRefToTasks (20201005121738)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "tasks" ADD "user_id" bigint[0m
+  [1m[35m (50.1ms)[0m  [1m[35mCREATE  INDEX  "index_tasks_on_user_id" ON "tasks"  ("user_id")[0m
+  [1m[35m (3.1ms)[0m  [1m[35mALTER TABLE "tasks" ADD CONSTRAINT "fk_rails_4d2a9e4d7e"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201005121738"]]
+  [1m[35m (12.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAdminToUsers (20201005122302)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (197.5ms)[0m  [1m[35mALTER TABLE "users" ADD "admin" boolean DEFAULT FALSE[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201005122302"]]
+  [1m[35m (11.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8729435605278092565)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+Started GET "/" for ::1 at 2020-10-14 10:50:29 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering users/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered users/_form.html.erb (Duration: 59.4ms | Allocations: 186260)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered users/new.html.erb within layouts/application (Duration: 885.4ms | Allocations: 186809)
+Completed 200 OK in 1143ms (Views: 1111.5ms | ActiveRecord: 8.0ms | Allocations: 508278)
+
+
+Started GET "/sessions/new" for ::1 at 2020-10-14 10:50:35 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 21.1ms | Allocations: 783)
+Completed 200 OK in 59ms (Views: 54.3ms | ActiveRecord: 0.3ms | Allocations: 21740)
+
+
+Started POST "/sessions" for ::1 at 2020-10-14 10:50:49 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Tg3X5/kzYO+qDhYzz9BNIbHlzGNtaOoxn+gYywCOFg7ijVQ8IwbavXhW9gsVgwHfZJIGk0YFS3oiB9VnyW53mQ==", "session"=>{"email"=>"kpondehou@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kpondehou@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 8ms (ActiveRecord: 0.7ms | Allocations: 1614)
+
+
+Started GET "/users/new" for ::1 at 2020-10-14 10:51:25 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering users/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered users/_form.html.erb (Duration: 3.3ms | Allocations: 1056)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1207)
+Completed 200 OK in 36ms (Views: 31.5ms | ActiveRecord: 0.4ms | Allocations: 21527)
+
+
+Started GET "/sessions/new" for ::1 at 2020-10-14 10:51:28 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 500)
+Completed 200 OK in 39ms (Views: 35.0ms | ActiveRecord: 0.5ms | Allocations: 20718)
+
+
+Started POST "/sessions" for ::1 at 2020-10-14 10:51:30 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n2agz13NDW3TD1LcT1tyIFpFJPWh8zzfTy41RpccZgYz5iMUh/i3PwFXsuSVCD7ejzLuBYqenZTywfjqXvwHkQ==", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 1453)
+
+
+Started GET "/sessions/new" for ::1 at 2020-10-14 10:51:30 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 501)
+Completed 200 OK in 26ms (Views: 21.1ms | ActiveRecord: 2.0ms | Allocations: 20771)
+
+
+Started GET "/users/new" for ::1 at 2020-10-14 10:51:31 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering users/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered users/_form.html.erb (Duration: 2.3ms | Allocations: 1048)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1197)
+Completed 200 OK in 36ms (Views: 33.3ms | ActiveRecord: 0.4ms | Allocations: 21460)
+
+
+Started POST "/users" for ::1 at 2020-10-14 10:51:58 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BmgKEJqbbT3Baiaq5duYdGhvL0NR9jmHuM5HYllGup+OG73RLXozQWffTvo19CX/0qRRN3cjH8aVRNcwVPy/AA==", "user"=>{"name"=>"Kpondehou ", "email"=>"kpondehou@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録する"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kpondehou@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kpondehou "], ["email", "kpondehou@gmail.com"], ["password_digest", "$2a$12$Em6k0RLSXvhR3j2js1ApmehZWmqeBIbRvaNd14pNMekWk7lqX68rS"], ["created_at", "2020-10-14 10:51:58.998267"], ["updated_at", "2020-10-14 10:51:58.998267"]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[35m (85.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+Redirected to http://localhost:3000/admin/users
+Completed 302 Found in 381ms (ActiveRecord: 86.7ms | Allocations: 5686)
+
+
+Started GET "/admin/users" for ::1 at 2020-10-14 10:51:59 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+Redirected to http://localhost:3000/
+Filter chain halted as :check_admin rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms | Allocations: 1490)
+
+
+Started GET "/" for ::1 at 2020-10-14 10:51:59 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+Redirected to http://localhost:3000/users/1
+Filter chain halted as :login_check rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 1445)
+
+
+Started GET "/users/1" for ::1 at 2020-10-14 10:51:59 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:56:in `set_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_search.html.erb (Duration: 4.2ms | Allocations: 3505)
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered users/show.html.erb within layouts/application (Duration: 17.4ms | Allocations: 8074)
+Completed 200 OK in 54ms (Views: 44.5ms | ActiveRecord: 2.5ms | Allocations: 29190)
+
+
+Started DELETE "/sessions/1" for ::1 at 2020-10-14 10:52:06 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YepK34nNEBno6ArtZqDEV7Klq7tElM9t6jqFTO9hodx80AUJ3AHMS6wbo95MB9o/sY7/tpE25PFke1hVZVMvRQ==", "id"=>"1"}
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 855)
+
+
+Started GET "/sessions/new" for ::1 at 2020-10-14 10:52:06 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 508)
+Completed 200 OK in 45ms (Views: 41.5ms | ActiveRecord: 0.3ms | Allocations: 20932)
+
+
+Started POST "/sessions" for ::1 at 2020-10-14 10:52:18 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E847tmHpFsUA8gvGi0tKF2lb/A81jEWJAag6NULhpS8O9HRgNCXKl0QBovWh7FR/anCoAuAubhWP6ecsyNMrtg==", "session"=>{"email"=>"kpondehou@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kpondehou@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/admin/users
+Completed 302 Found in 287ms (ActiveRecord: 0.4ms | Allocations: 1467)
+
+
+Started GET "/admin/users" for ::1 at 2020-10-14 10:52:18 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+Redirected to http://localhost:3000/
+Filter chain halted as :check_admin rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 1382)
+
+
+Started GET "/" for ::1 at 2020-10-14 10:52:18 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+Redirected to http://localhost:3000/users/1
+Filter chain halted as :login_check rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 1415)
+
+
+Started GET "/users/1" for ::1 at 2020-10-14 10:52:18 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:56:in `set_user'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_search.html.erb (Duration: 2.1ms | Allocations: 2854)
+  [1m[36mTask Load (2.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered users/show.html.erb within layouts/application (Duration: 7.1ms | Allocations: 3769)
+Completed 200 OK in 40ms (Views: 33.0ms | ActiveRecord: 3.1ms | Allocations: 24630)
+
+
+Started GET "/tasks/new" for ::1 at 2020-10-14 10:52:35 +0100
+Processing by TasksController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered layouts/_task.html.erb (Duration: 11.7ms | Allocations: 183)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered tasks/_form.html.erb (Duration: 61.3ms | Allocations: 3331)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 94.8ms | Allocations: 4103)
+Completed 200 OK in 156ms (Views: 129.4ms | ActiveRecord: 3.0ms | Allocations: 29602)
+
+
+Started POST "/tasks" for ::1 at 2020-10-14 10:52:41 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XIwqFFowr/yV+kjEdMKWJSH2YKjsfB8eqi3zOebOm0upNrCxupW+DZs7PNOsxgDUh3jAOHSZNbzulgyT7vXcQQ==", "task"=>{"name"=>"ok", "content"=>"ookokkokl", "end_time(1i)"=>"2020", "end_time(2i)"=>"10", "end_time(3i)"=>"14", "statut"=>"not_started", "priority"=>"low"}, "commit"=>"登録する"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tasks_controller.rb:26:in `create'
+  [1m[36mTask Create (1.1ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "content", "end_time", "created_at", "updated_at", "statut", "priority", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "ok"], ["content", "ookokkokl"], ["end_time", "2020-10-14"], ["created_at", "2020-10-14 10:52:41.575639"], ["updated_at", "2020-10-14 10:52:41.575639"], ["statut", 0], ["priority", 0], ["user_id", 1]]
+  ↳ app/controllers/tasks_controller.rb:26:in `create'
+  [1m[35m (81.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tasks_controller.rb:26:in `create'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 161ms (ActiveRecord: 83.0ms | Allocations: 5518)
+
+
+Started GET "/users/1" for ::1 at 2020-10-14 10:52:41 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:56:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_search.html.erb (Duration: 2.9ms | Allocations: 2863)
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered users/show.html.erb within layouts/application (Duration: 7.5ms | Allocations: 3947)
+Completed 200 OK in 38ms (Views: 32.5ms | ActiveRecord: 0.9ms | Allocations: 24819)
+
+
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+Started GET "/tasks" for ::1 at 2020-10-14 14:12:43 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered layouts/_top.html.erb (Duration: 102.9ms | Allocations: 186718)
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY "tasks"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 2], ["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/tasks/index.html.erb:15
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 82)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 893.8ms | Allocations: 189050)
+Completed 200 OK in 1169ms (Views: 1129.5ms | ActiveRecord: 10.0ms | Allocations: 513735)
+
+
+Started GET "/images/apps.jpg" for ::1 at 2020-10-14 14:12:45 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/apps.jpg"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-10-14 14:12:49 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+Redirected to http://localhost:3000/users/2
+Filter chain halted as :login_check rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms | Allocations: 1557)
+
+
+Started GET "/users/2" for ::1 at 2020-10-14 14:12:49 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:56:in `set_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_search.html.erb (Duration: 6.7ms | Allocations: 3410)
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered users/show.html.erb within layouts/application (Duration: 13.2ms | Allocations: 4939)
+Completed 200 OK in 63ms (Views: 56.9ms | ActiveRecord: 1.3ms | Allocations: 26639)
+
+
+Started GET "/" for ::1 at 2020-10-14 14:12:55 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+Redirected to http://localhost:3000/users/2
+Filter chain halted as :login_check rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms | Allocations: 1433)
+
+
+Started GET "/users/2" for ::1 at 2020-10-14 14:12:55 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:56:in `set_user'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_search.html.erb (Duration: 1.9ms | Allocations: 2854)
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+  Rendered users/show.html.erb within layouts/application (Duration: 6.4ms | Allocations: 3771)
+Completed 200 OK in 51ms (Views: 43.1ms | ActiveRecord: 1.7ms | Allocations: 24638)
+
+
+Started DELETE "/sessions/2" for ::1 at 2020-10-14 14:13:04 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mgjEcbv3A6l+/o1t4vH1AG7cUxoDuluHE+tx+tT4OzuHMoun7jvf+zoNJF7IVutobfcHF9YYcBudqqzjXsq1og==", "id"=>"2"}
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms | Allocations: 932)
+
+
+Started GET "/sessions/new" for ::1 at 2020-10-14 14:13:04 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 890)
+Completed 200 OK in 45ms (Views: 37.9ms | ActiveRecord: 0.5ms | Allocations: 22005)
+
+
+Started POST "/sessions" for ::1 at 2020-10-14 14:13:12 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pEN691UqRpVMDn9+sA1Hn/jZHQ/ZU7usIfzB+pJQ8MK5eTUhAOaaxwj91k2aqln3+/JJAgzxkDCvvRzjGGJ+Ww==", "session"=>{"email"=>"kpondehou@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kpondehou@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms | Allocations: 1549)
+
+
+Started GET "/sessions/new" for ::1 at 2020-10-14 14:13:12 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 501)
+Completed 200 OK in 34ms (Views: 30.6ms | ActiveRecord: 0.4ms | Allocations: 20927)
+
+
+Started POST "/sessions" for ::1 at 2020-10-14 14:13:20 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aOtGxM0YXClygA5otWtijLu+059Bis4uLAq15Icgixp10QkSmNSAezZzp1ufzHzkuJWHkpQo5bKiS2j9DRIFgw==", "session"=>{"email"=>"kpondehou@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kpondehou@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms | Allocations: 1425)
+
+
+Started GET "/sessions/new" for ::1 at 2020-10-14 14:13:20 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 500)
+Completed 200 OK in 37ms (Views: 33.2ms | ActiveRecord: 0.6ms | Allocations: 20929)
+
+
+Started GET "/sessions/new" for ::1 at 2020-10-14 14:13:41 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 500)
+Completed 200 OK in 33ms (Views: 31.1ms | ActiveRecord: 0.3ms | Allocations: 20868)
+
+
+Started POST "/sessions" for ::1 at 2020-10-14 14:13:52 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k2WP6KlYDXd6l3rCDtfnGNcDaHVYdpcsccGpTiIOHFuOX8A+/JTRJT5k0/EkcPlw1Cg8eI3UvLD/gHRXqDySwg==", "session"=>{"email"=>"kpondehou@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kpondehou@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms | Allocations: 1417)
+
+
+Started GET "/sessions/new" for ::1 at 2020-10-14 14:13:52 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 500)
+Completed 200 OK in 40ms (Views: 36.2ms | ActiveRecord: 0.4ms | Allocations: 20957)
+
+
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kpondehou@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "kpondehou"], ["email", "kpondehou@gmail.com"], ["password_digest", "$2a$12$rvbDgVmU0gEiF..FcpuwZ.hRWy8IOqvpxJ6mzenuvqSXjo..dfG1a"], ["created_at", "2020-10-14 14:14:25.342166"], ["updated_at", "2020-10-14 14:14:25.342166"], ["admin", true]]
+  [1m[35m (725.9ms)[0m  [1m[35mCOMMIT[0m
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+Started POST "/sessions" for ::1 at 2020-10-14 14:16:58 +0100
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wOYjvvhaL92aex/EttmPh/noBpQTn726W8wz+pLfqCXd3GxorZbzj96ItvecfpHv+sNSmcY9libVje7jGO0mvA==", "session"=>{"email"=>"admin@1.it", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@1.it"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 18ms (ActiveRecord: 3.2ms | Allocations: 2566)
+
+
+Started GET "/sessions/new" for ::1 at 2020-10-14 14:16:58 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 88)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 64.5ms | Allocations: 185426)
+Completed 200 OK in 289ms (Views: 283.4ms | ActiveRecord: 0.3ms | Allocations: 502352)
+
+
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+Started GET "/sessions/new" for ::1 at 2020-10-14 14:18:21 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 88)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 59.6ms | Allocations: 185445)
+Completed 200 OK in 341ms (Views: 324.2ms | ActiveRecord: 3.2ms | Allocations: 503308)
+
+
+Started POST "/sessions" for ::1 at 2020-10-14 14:18:51 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M4eCYfufbSwDGx+bxrICY0X1en4nzchm0wiRUxtWF4wuvc23rlOxfkfotqjsFRwLRt4uc/Jv4/pdSUxKkWSZFQ==", "session"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 1592)
+
+
+Started GET "/sessions/new" for ::1 at 2020-10-14 14:18:51 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 507)
+Completed 200 OK in 30ms (Views: 26.1ms | ActiveRecord: 0.4ms | Allocations: 20944)
+
+
+Started POST "/sessions" for ::1 at 2020-10-14 14:19:07 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CuWIGsvR5TW9M8RFX3P3op2eis9rjLeRWc8iwgfad4EX38fMnh05Z/nAbXZ11OnKnrXewr4unA3Xjv/bjej5GA==", "session"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 1438)
+
+
+Started GET "/sessions/new" for ::1 at 2020-10-14 14:19:07 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 501)
+Completed 200 OK in 37ms (Views: 32.7ms | ActiveRecord: 0.5ms | Allocations: 20932)
+
+
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+Started POST "/sessions" for ::1 at 2020-10-14 14:19:37 +0100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0XEYSFsDUaGfpiT6nWt0JCRpS2GYpoAh8A+Fdvxve/7MS1eeDs+N89tVjcm3zGpMJ0IfbE0Eq71+Tlhvdl31Zw==", "session"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 14ms (ActiveRecord: 2.5ms | Allocations: 2560)
+
+
+Started GET "/sessions/new" for ::1 at 2020-10-14 14:19:37 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 88)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 51.7ms | Allocations: 185426)
+Completed 200 OK in 289ms (Views: 281.8ms | ActiveRecord: 1.3ms | Allocations: 502368)
+
+
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kpondehou@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kpondehou@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "kpondehou"], ["email", "admin@gmail.com"], ["password_digest", "$2a$12$3fv7IKzGv8ISp7E6b3.7Ze4WzEnVikW2KZjg6c84LRxoAcuDMe.iK"], ["created_at", "2020-10-14 14:32:06.480036"], ["updated_at", "2020-10-14 14:32:06.480036"], ["admin", true]]
+  [1m[35m (742.9ms)[0m  [1m[35mCOMMIT[0m
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> Coffee::Rails::TemplateHandler.call(template)
+To:
+  >> Coffee::Rails::TemplateHandler.call(template, source)
+ (called from <main> at /home/wilromeo/Bureau/TasksApp/config/environment.rb:5)
+An enum element in Task uses the prefix 'not_'. This will cause a conflict with auto generated negative scopes.
+Creating scope :not_started. Overwriting existing method Task.not_started.
+Started GET "/" for ::1 at 2020-10-14 14:53:48 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+Redirected to http://localhost:3000/users/4
+Filter chain halted as :login_check rendered or redirected
+Completed 302 Found in 42ms (ActiveRecord: 10.9ms | Allocations: 6180)
+
+
+Started GET "/users/4" for ::1 at 2020-10-14 14:53:48 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:56:in `set_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_search.html.erb (Duration: 137.3ms | Allocations: 201763)
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 87)
+  Rendered users/show.html.erb within layouts/application (Duration: 149.4ms | Allocations: 206696)
+Completed 200 OK in 416ms (Views: 408.6ms | ActiveRecord: 2.6ms | Allocations: 524267)
+
+
+Started DELETE "/sessions/4" for ::1 at 2020-10-14 14:53:56 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"k1jGrDmKSaJT+xkKqoMwIuPaSCg8g86/H7MpIKNoMoqOYol6bEaV8BcIsDmAJC5K4PEcJekh5SOR8vQ5KVq8Ew==", "id"=>"4"}
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 930)
+
+
+Started GET "/sessions/new" for ::1 at 2020-10-14 14:53:56 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 896)
+Completed 200 OK in 47ms (Views: 41.7ms | ActiveRecord: 0.4ms | Allocations: 22031)
+
+
+Started POST "/sessions" for ::1 at 2020-10-14 14:54:05 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aLfkKfUkZOOKDwl7kMeQDaTXiV5hS7cigvpbowJ1x8l1jav/oOi4sc78oEi6YI5lp/zdU7TpnL4Mu4a6iEdJUA==", "session"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/admin/users
+Completed 302 Found in 305ms (ActiveRecord: 0.5ms | Allocations: 1610)
+
+
+Started GET "/sessions/" for ::1 at 2020-10-14 14:55:44 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/sessions"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-10-14 14:55:50 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+Redirected to http://localhost:3000/users/4
+Filter chain halted as :login_check rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 1443)
+
+
+Started GET "/users/4" for ::1 at 2020-10-14 14:55:50 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:56:in `set_user'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_search.html.erb (Duration: 6.1ms | Allocations: 2921)
+  [1m[36mTask Load (1.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/users/show.html.erb:15
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 5)
+  Rendered users/show.html.erb within layouts/application (Duration: 16.4ms | Allocations: 3860)
+Completed 200 OK in 75ms (Views: 64.0ms | ActiveRecord: 3.0ms | Allocations: 24740)
+
+
+Started DELETE "/sessions/4" for ::1 at 2020-10-14 14:56:22 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"AUnttIm3Uvs/tw2lstcJTwPDPKvLog8R5p5bpdyGMp0cc6Ji3HuOqXtEpJaYcBcnAOhoph4AJI1o34a8VrS8BA==", "id"=>"4"}
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 863)
+
+
+Started GET "/sessions/new" for ::1 at 2020-10-14 14:56:22 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 501)
+Completed 200 OK in 37ms (Views: 33.7ms | ActiveRecord: 0.4ms | Allocations: 20952)
+
+
+Started POST "/sessions" for ::1 at 2020-10-14 14:56:33 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SQl3sjmehi6eYhK2dH34ptwPDT+egFjK2YUx88Uqrb9UMzhkbFJafNqRu4Ve2ubO3yRZMksic1ZXxOzqTxgjJg==", "session"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/admin/users
+Completed 302 Found in 307ms (ActiveRecord: 0.5ms | Allocations: 1470)
+
+
+Started GET "/admin/users" for ::1 at 2020-10-14 14:56:34 +0100
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:3:in `current_user'
+  Rendering admin/users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY created_at DESC[0m
+  ↳ app/views/admin/users/index.html.erb:37
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/admin/users/index.html.erb:41
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/views/admin/users/index.html.erb:41
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/admin/users/index.html.erb:41
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 6)
+  Rendered admin/users/index.html.erb within layouts/application (Duration: 287.4ms | Allocations: 4258)
+Completed 200 OK in 323ms (Views: 316.5ms | ActiveRecord: 3.0ms | Allocations: 25325)
+
+
